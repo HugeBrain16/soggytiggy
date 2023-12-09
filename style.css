@@ -1,0 +1,35 @@
+body {
+  background-color: #1e252e;
+  color: #4b5c73;
+  font-family: "Iosevka";
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #8f9fb7;
+}
+
+.content {
+  margin: 2%;
+  color: #5c6d84;
+  border: 3px solid #5c6d84;
+  background-color: #2f363f;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.content p {
+  margin: 5px;
+  white-space: pre-line;
+}
+
+.content-link {
+  text-decoration: underline;
+  font-style: italic;
+}
