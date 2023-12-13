@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>soggypuppy - Commissions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css" />
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      .process {
+        background-color: #3f474f;
+        border: 3px solid #98971a;
+        color: #b8bb26;
+        margin: 3%;
+        padding-left: 3%;
+        padding-right: 3%;
+        font-size: small;
+      }
+
+      .header {
+        text-align: center;
+      }
+
+      .content-wrapper {
+        overflow: hidden;
+        font-size: x-large;
+      }
+
+      .img-container {
+        display: grid;
+        float: left;
+      }
+
+      .img-container img {
+        width: 65%;
+        max-width: 512px;
+        min-width: 128px;
+        border: 3px solid #5c6d84;
+        margin: 5%; 
+      }
+
+      .text-container {
+        white-space: pre-line;
+      }
+
+      .text-container h3 {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="modal.js" ></script>
+    <div class="nav-top">
+      <a href="/index.html">[home]</a>
+    </div>
+    <div class="content">
+      <div class="header">
+        <h1>Commissions</h1>
+        <hr />
+      </div>
+      <div class="process">
+        <h2>Commission process:</h2>
+        <ol>
+          <li>If I'm open for commissions, dm me and tell me your idea (may not respond immediately).</li>
+          <li>I will decide if I will do it or not, and I can offer changes if I can't draw something.</li>
+          <li>payment upfront, I will work on it once i see the money in my bank, after which you will receive a sketch. In this stage you can ask for big changes.</li>
+          <li>I will finish the commission in a span of few days, you can ask for small changes in the coloring and shading stage.</li>
+          <li>After the commission is finished, I'll send you the finished piece with a big watermark and after the other half of the payment is done, I'll send you the one with small, non-intrusive watermark.</li>
+          <li>Depending on the commission, I may or may not post it on my account. (You get to choose whether I @ you or not).</li>
+        </ol>
+      </div>
+      <div class="content-wrapper">
+        <h2>Headshots / Busts</h2>
+        <div class="img-container">
+          <img
+            src="/assets/me.png"
+            onclick="openModal('/assets/me.png')"
+          >
+          <img
+            src="https://pbs.twimg.com/media/GBGYxfZXEAAsKlk?format=jpg"
+            onclick="openModal('https://pbs.twimg.com/media/GBGYxfZXEAAsKlk?format=jpg')"
+          >
+        </div>
+        <div class="text-container">
+          <h3>Base</h3>
+          <p>sketch: 10€
+            lineart: 15€</p>
+          <h3>Additions</h3>
+          <p>flat color: +5€
+            render: +10€</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
