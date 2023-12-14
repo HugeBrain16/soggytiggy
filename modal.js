@@ -20,3 +20,13 @@ document.body.appendChild(modal);
 modalClose.onclick = function() {
   modal.style.display = "none";
 }
+
+document.body.onload = function() {
+  var thumbs = document.getElementsByClassName("thumbnail");
+
+  for (let i = 0; i < thumbs.length; i++) {
+    thumbs[i].onclick = function() {
+      openModal(thumbs[i].src);
+    }
+  }
+}
