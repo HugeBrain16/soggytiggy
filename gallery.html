@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>soggypuppy - Gallery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      .gallery {
+        display: inline-grid;
+        margin: 1%;
+        border: 3px solid #5c6d84;
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        animation: fadeIn 0.3s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .post-sort {
+        padding: 1%;
+      }
+
+      @media only screen and (max-width: 700px) {
+        .gallery {
+          width: 35%;
+        }
+
+        .gallery-desc {
+          font-size: xx-small;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-top">
+      <a href="/index.html">[home]</a>
+    </div>
+    <div class="content">
+      <div align="center">
+        <h1>Gallery</h1>
+        <hr />
+        <div class="post-sort" align="left">
+          <div class="content-button" id="buttonLatest">Latest</div>
+          <div class="content-button" id="buttonOldest">Oldest</div>
+          <div class="content-button" id="buttonRandom">Random</div>
+        </div>
+      </div>
+    </div>
+    <script src="gallery.js"></script>
+  </body>
+</html>

@@ -7,12 +7,12 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
-  transition: 0.2s;
+  color: #8099bd;
+  transition: 0.3s;
 }
 
 a:hover {
-  color: #8f9fb7;
+  color: #b0bed4;
 }
 
 .content {
@@ -24,14 +24,32 @@ a:hover {
   padding-right: 3%;
 }
 
-.content p {
-  margin: 5px;
+.content p { margin: 5px;
   white-space: pre-line;
 }
 
 .content-link {
   text-decoration: underline;
   font-style: italic;
+}
+
+.content-button {
+  display: inline-block;
+  padding: 0.5%;
+  color: #8099bd;
+  background-color: #4b5c73;
+  border: 3px solid #5c6d84;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.content-button:hover {
+  color:  #b0bed4;
+  background-color: #5c6d84;
+  border: 3px solid #8099bd;
+  cursor: pointer;
 }
 
 .nav-top {
@@ -46,6 +64,7 @@ a:hover {
 
 .modal {
   display: none;
+  overflow: auto;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -63,10 +82,10 @@ a:hover {
 
 .modal-close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 2.5%;
+  right: 2.5%;
   color: #555555;
-  font-size: 40px;
+  font-size: 50px;
   transition: 0.3s;
 }
 

@@ -21,7 +21,7 @@ modalClose.onclick = function() {
   modal.style.display = "none";
 }
 
-document.body.onload = function() {
+window.onload = function() {
   var thumbs = document.getElementsByClassName("thumbnail");
 
   for (let i = 0; i < thumbs.length; i++) {
