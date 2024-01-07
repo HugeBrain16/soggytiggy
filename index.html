@@ -8,7 +8,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css"
     />
-    <link href="style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" /> 
+    <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
     <div class="nav-top">
@@ -16,18 +17,21 @@
       <a href="https://twitter.com/soggytiggy">[twitter]</a>
     </div>
     <div align="center">
-      <img id="silly" src="/assets/me.png"/>
-      <h1>soggytiggy</h1>
+      <img id="silly" src="https://i.imgur.com/TtM3jR4.png"/>
+      <h1 id="soggy">soggytiggy</h1>
       <hr />
       <div class="nav">
         <div class="nav-links">
-          <a href="gallery.html">Gallery</a>
-          <a href="tos.html">ToS</a>
-          <a href="commissions.html">Commissions</a>
-          <a href="about.html">About</a>
+          <a href="gallery.html"><span class="nav-sel">-</span> Gallery <span class="nav-sel">-</span></a>
+          <a href="tos.html"><span class="nav-sel">-</span> ToS <span class="nav-sel">-</span></a>
+          <a href="commissions.html"><span class="nav-sel">-</span> Commissions <span class="nav-sel">-</span></a>
+          <a href="about.html"><span class="nav-sel">-</span> About <span class="nav-sel">-</span></a>
         </div>
       </div>
+      <img id="sudo" src="/assets/sudo.gif" />
+      <img id="neofetch" src="/assets/neofetch.gif" />
     </div>
+    <small id="silly-credit">Made by <span id="bf" style="font-style: italic;"><a href="/assets/kissies.gif">my boyfriend</a></span> with <span id="heart" style="color: #eb221a;">&lt;3</span></small>
     <style>  
       #silly {
         width: 20%;
@@ -42,19 +46,107 @@
       #silly:hover {
         transform: translateY(-2%);
       }
+
+      #silly-credit {
+        position: fixed;
+      }
+
+      #soggy {
+        color: #b0bed4;
+      }
       
       .nav {
         padding-top: 10px;
       }
       
       hr {
-        max-width: 90%;
+        max-width: 30%;
       }
       
       .nav-links {
-        display: flex;
+        display: inline-grid;
+        font-size: xx-large;
         justify-content: space-around;
       }
+
+      .nav-links a {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.3cm;
+      }
+
+      #sudo {
+        position: fixed;
+        float: right;
+        width: 6cm;
+        height: 6cm;
+        bottom: 0;
+        right: -1.5cm;
+      }
+
+      #neofetch {
+        position: fixed;
+        float: right;
+        width: 6cm;
+        height: 6cm;
+        bottom: 0;
+        right: 2.5cm;
+      }
+
+      .nav-sel {
+        opacity: 0;
+        transition: opacity 0.3s;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (max-width: 700px) {
+        hr {
+          max-width: 50%;
+        }
+
+        #sudo {
+          width: 64px;
+          height: 64px;
+          bottom: 0;
+          right: -15px;
+        }
+
+        #neofetch {
+          width: 64px;
+          height: 64px;
+          bottom: 0;
+          right: 30px;
+        }
+
+        #silly-credit {
+          position: relative;
+        }
+      }
     </style>
+    <script>
+      var links = document.getElementsByClassName("nav-links")[0];
+      
+      for (let link of links.children) {
+        link.onmouseover = function() {
+          var vis = link.getElementsByClassName("nav-sel");
+
+          for (let v of vis) {
+            v.style.opacity = 1;
+          }
+        }
+
+        link.onmouseleave = function() {
+          var vis = link.getElementsByClassName("nav-sel");
+
+          for (let v of vis) {
+            v.style.opacity = 0;
+          }
+        }
+      }
+    </script>
   </body>
 </html>

@@ -64,7 +64,7 @@ a:hover {
 
 .modal {
   display: none;
-  overflow: auto;
+  overflow: scroll;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -91,4 +91,31 @@ a:hover {
 
 .modal-close:hover {
   color: #ffffff;
+}
+
+#silly-credit {
+  position: relative;
+  float: left;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+
+#bf {
+  transition: 0.3s;
+}
+
+#bf:hover {
+  color: #b0bed4;
+  text-decoration: wavy underline;
+}
+
+#heart {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  #silly-credit {
+    font-size: x-small;
+  }
 }

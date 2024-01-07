@@ -22,11 +22,11 @@ modalClose.onclick = function() {
 }
 
 window.onload = function() {
-  var thumbs = document.getElementsByClassName("thumbnail");
-
+  var thumbs = document.getElementsByClassName("gallery-thumbnail");
+  
   for (let i = 0; i < thumbs.length; i++) {
     thumbs[i].onclick = function() {
-      openModal(thumbs[i].src);
+      openModal(thumbs[i].style.backgroundImage.split(/"/)[1]);
     }
   }
 }

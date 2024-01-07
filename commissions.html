@@ -6,6 +6,7 @@
     <title>soggytiggy - Commissions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css" />
     <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="/favicon.ico" />
     <style>
       .process {
         background-color: #3f474f;
@@ -25,19 +26,6 @@
         font-size: x-large;
       }
 
-      .img-container {
-        display: grid;
-        float: left;
-      }
-
-      .img-container img {
-        width: 65%;
-        max-width: 512px;
-        min-width: 128px;
-        border: 3px solid #5c6d84;
-        margin: 5%; 
-      }
-
       .text-container {
         white-space: pre-line;
       }
@@ -45,6 +33,55 @@
       .text-container h3 {
         margin: 0;
         padding: 0;
+      }
+
+      .gallery {
+        display: inline-grid;
+        text-align: center;
+        font-size: small;
+        margin: 1%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        animation: fadeIn 0.3s ease forwards;
+      }
+      
+      .gallery-thumbnail {
+        border: 3px solid #5c6d84;
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .content-title {
+        color: #b0bed4;
+        text-decoration: underline;
+      }
+
+      #misc-title {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .content-tip {
+        color: #fabd2f;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .gallery-thumbnail {
+          width: 128px;
+          height: 128px;
+        }
       }
     </style>
   </head>
@@ -69,11 +106,48 @@
           <li>Depending on the commission, I may or may not post it on my account. (You get to choose whether I @ you or not).</li>
         </ol>
       </div>
+      <small class="content-tip">Click to expand pictures!</small>
       <div class="content-wrapper">
-        <h2>Headshots / Busts</h2>
+        <h2 class="content-title">Headshots / Busts</h2>
         <div class="img-container">
-          <img class="thumbnail" src="/assets/me.png">
-          <img class="thumbnail" src="https://pbs.twimg.com/media/GBGYxfZXEAAsKlk?format=jpg">
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/bP2qkHo.png');"></div>
+            <p>flat color</p>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/MDIfnWq.png');"></div>
+            <p>rendered</p>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/uUVhiyU.png');"></div>
+            <p>rendered</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <h3>Base</h3>
+          <p>sketch: 5€
+            lineart: 10€</p>
+          <h3>Additions</h3>
+          <p>flat color: +5€
+            render: +10€
+            extra characters: +50% total price</p>
+        </div>
+        <h2 class="content-title">Halfbody</h2>
+        <div class="img-container">
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/Mly6kYx.jpg');"></div>
+            <p>detailed background</p>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/AVyHMYY.png');"></div>
+            <p>simple background
+              (free)</p>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/WNZ8FNA.png')"></div>
+            <p>simple background
+              (free)</p>
+          </div>
         </div>
         <div class="text-container">
           <h3>Base</h3>
@@ -81,9 +155,86 @@
             lineart: 15€</p>
           <h3>Additions</h3>
           <p>flat color: +5€
-            render: +10€</p>
+            render: +10€
+            detailed background: +5€
+            extra characters: +50% total price</p>
+        </div>
+        <h2 class="content-title">Fullbody</h2>
+        <div class="img-container">
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/IbOfLy8.png');"></div>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/lrcKngv.png');"></div>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/izThN2r.jpg');"></div>
+          </div>
+        </div>
+        <div class="text-container">
+          <h3>Base</h3>
+          <p>sketch: 15€
+            lineart: 20€</p>
+          <h3>Additions</h3>
+          <p>flat color: +5€
+            render: +10€
+            detailed background: +5€
+            extra characters: +50% total price</p>
+        </div>
+        <h2 class="content-title">Dakimakura (body pillow)</h2>
+        <div class="img-container">
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/B3VsXCQ.jpg');"></div>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/tDPPOvx.jpg');"></div>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>one side: 15€
+            two sides: 30€</p>
+        </div>
+        <h2 class="content-title">Icons</h2>
+        <div class="img-container">
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/KOf8YaW.png');"></div>
+            <p>(old)</p>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/qHN5bBv.png');"></div>
+            <p>(old)</p>
+          </div>
+        </div>
+        <div class="img-container">
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/TtM3jR4.png');"></div>
+            <p>rendered</p>
+          </div>
+          <div class="gallery">
+            <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/5aKvZp5.png');"></div>
+            <p>flat color</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>flat color: 5€
+            render: 10€</p>
+        </div>
+        <h2 id="misc-title" class="content-title">Misc</h2>
+        <small id="misc-desc">Chibi, etc.</small>
+        <div class="img-container">
+          <div class="gallery-thumbnail" style="background-image: url('https://i.imgur.com/yi9f6dI.png');"></div>
+        </div>
+        <div class="text-container">
+          <h3>Base</h3>
+          <p>sketch: 5€
+            lineart: 10€</p>
+          <h3>Additions</h3>
+          <p>flat color: +5€
+            render: +10€
+            extra characters: +50% total price</p>
         </div>
       </div>
     </div>
+    <small id="silly-credit">Made by <span id="bf" style="font-style: italic;"><a href="/assets/kissies.gif">my boyfriend</a></span> with <span id="heart" style="color: #eb221a;">&lt;3</span></small>
   </body>
 </html>
