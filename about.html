@@ -38,8 +38,8 @@
         </tr>
       </table>
     </div>
-    <img id="puppy" src="/assets/puppy.gif" />
     <small id="silly-credit">Made by <span id="bf" style="font-style: italic;"><a href="/assets/kissies.gif">my boyfriend</a></span> with <span id="heart" style="color: #eb221a;">&lt;3</span></small>
+    <img id="puppy" src="/assets/puppy.gif" />
     <style>
       #brush img {
         width: 64px;
@@ -56,11 +56,19 @@
         float: right;
         bottom: 0;
         right: 0;
-        width: 200px;
-        height: 200px;
+        width: 256px;
+        height: 256px;
+      }
+
+      #silly-credit {
+        position: fixed;
       }
 
       @media (max-width: 700px) {
+        #silly-credit {
+          position: relative;
+        }
+
         #puppy {
           display: none;
         }
