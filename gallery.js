@@ -28,7 +28,10 @@ modalClose.onclick = function () {
 };
 
 function loadImages(file) {
-  return fetch(file)
+  const timestamp = new Date().getTime();
+  const url = `${file}?timestamp=${timestamp}`;
+
+  return fetch(url)
     .then((response) => response.text())
     .then((images) => {
       var lines = images.split("\n");
