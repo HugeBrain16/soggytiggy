@@ -62,25 +62,31 @@ function createImage(image) {
   gallery.classList.add("gallery");
   gallery.setAttribute("imagelink", image["link"]);
   gallery.setAttribute("postDate", image["date"]);
-  placeholder.innerHTML = "Loading";
-  placeholder.style.textAlign = "center";
-  placeholder.style.display = "flex";
-  placeholder.style.alignItems = "center";
-  placeholder.style.justifyContent = "center";
-  gallery.style.backgroundImage = "none";
+  placeholder.textContent = "Loading";
+  placeholder.style.position = "absolute";
+  placeholder.style.padding = "5px";
+  placeholder.style.fontWeight = "bold";
+  placeholder.style.color = "#5c6d84";
+  gallery.style.backgroundImage = `url('${image["link"]}')`;
   gallery.appendChild(placeholder);
 
   function updateLoading() {
-    placeholder.innerText += ".";
-    if (placeholder.innerText.length > 10) {
-      placeholder.innerText = "Loading";
+    placeholder.textContent += ".";
+    if (placeholder.textContent.length > 10) {
+      placeholder.textContent = "Loading";
     }
   }
 
   updateLoading();
   var interval = setInterval(updateLoading, 500);
-  gallery.intervalId = interval;
-  gallery.loadingId = placeholder;
+
+  const img = new Image();
+  img.src = image["link"];
+  img.loading = "lazy";
+  img.onload = function () {
+    clearInterval(interval);
+    gallery.removeChild(placeholder);
+  };
 
   return gallery;
 }
@@ -111,18 +117,6 @@ function clearPosts() {
   }
 }
 
-function handleIntersection(entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const imgLink = entry.target.getAttribute("imagelink");
-      entry.target.style.backgroundImage = `url('${imgLink}')`;
-      clearInterval(entry.target.intervalId);
-      entry.target.removeChild(entry.target.loadingId);
-      observer.unobserve(entry.target);
-    }
-  });
-}
-
 function loadPost(old = false, random = false) {
   var content = document.getElementsByClassName("content")[0];
 
@@ -147,13 +141,6 @@ function loadPost(old = false, random = false) {
       for (let post of posts) {
         content.appendChild(post);
       }
-
-      const observer = new IntersectionObserver(handleIntersection, {
-        threshold: 0.5,
-      });
-      posts.forEach((post) => {
-        observer.observe(post);
-      });
     })
     .catch((error) => {
       console.error("Error loading images:", error);
