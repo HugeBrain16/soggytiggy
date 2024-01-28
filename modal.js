@@ -25,6 +25,7 @@ function getImage(url) {
   var result = "";
   var string = url.split("").reverse().join("");
   var skipmode = false;
+  var skipped = false;
 
   for (let c of string) {
     if (skipmode) {
@@ -32,7 +33,11 @@ function getImage(url) {
       continue;
     }
 
-    if (c === ".") skipmode = true;
+    if (c === "." && !skipped) {
+      skipmode = true;
+      skipped = true;
+    }
+
     result += c;
   }
 
