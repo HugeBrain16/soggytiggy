@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css"
     />
-    <link href="style.css" rel="stylesheet" /> 
+    <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
@@ -17,22 +17,40 @@
       <a href="https://twitter.com/soggytiggy">[twitter]</a>
     </div>
     <div align="center">
-      <img id="silly" src="https://i.imgur.com/TtM3jR4.png"/>
+      <img id="silly" src="https://i.imgur.com/TtM3jR4m.png" />
       <h1 id="soggy">soggytiggy</h1>
       <hr />
       <div class="nav">
         <div class="nav-links">
-          <a href="gallery.html"><span class="nav-sel">-</span> Gallery <span class="nav-sel">-</span></a>
-          <a href="tos.html"><span class="nav-sel">-</span> ToS <span class="nav-sel">-</span></a>
-          <a href="commissions.html"><span class="nav-sel">-</span> Commissions <span class="nav-sel">-</span></a>
-          <a href="about.html"><span class="nav-sel">-</span> About <span class="nav-sel">-</span></a>
+          <a href="gallery.html"
+            ><span class="nav-sel">-</span> Gallery
+            <span class="nav-sel">-</span></a
+          >
+          <a href="tos.html"
+            ><span class="nav-sel">-</span> ToS
+            <span class="nav-sel">-</span></a
+          >
+          <a href="commissions.html"
+            ><span class="nav-sel">-</span> Commissions
+            <span class="nav-sel">-</span></a
+          >
+          <a href="about.html"
+            ><span class="nav-sel">-</span> About
+            <span class="nav-sel">-</span></a
+          >
         </div>
       </div>
       <img id="sudo" src="/assets/sudo.gif" />
       <img id="neofetch" src="/assets/neofetch.gif" />
     </div>
-    <small id="silly-credit">Made by <span id="bf" style="font-style: italic;"><a href="/assets/kissies.gif">my boyfriend</a></span> with <span id="heart" style="color: #eb221a;">&lt;3</span></small>
-    <style>  
+    <small id="silly-credit"
+      >Made by
+      <span id="bf" style="font-style: italic"
+        ><a href="/assets/kissies.gif">my boyfriend</a></span
+      >
+      with <span id="heart" style="color: #eb221a">&lt;3</span></small
+    >
+    <style>
       #silly {
         width: 20%;
         max-width: 256px;
@@ -42,7 +60,7 @@
         border: 3px solid #4b5c73;
         transition: transform 0.2s;
       }
-      
+
       #silly:hover {
         transform: translateY(-2%);
       }
@@ -54,15 +72,15 @@
       #soggy {
         color: #b0bed4;
       }
-      
+
       .nav {
         padding-top: 10px;
       }
-      
+
       hr {
         max-width: 30%;
       }
-      
+
       .nav-links {
         display: inline-grid;
         font-size: xx-large;
@@ -129,23 +147,23 @@
     </style>
     <script>
       var links = document.getElementsByClassName("nav-links")[0];
-      
+
       for (let link of links.children) {
-        link.onmouseover = function() {
+        link.onmouseover = function () {
           var vis = link.getElementsByClassName("nav-sel");
 
           for (let v of vis) {
             v.style.opacity = 1;
           }
-        }
+        };
 
-        link.onmouseleave = function() {
+        link.onmouseleave = function () {
           var vis = link.getElementsByClassName("nav-sel");
 
           for (let v of vis) {
             v.style.opacity = 0;
           }
-        }
+        };
       }
     </script>
   </body>

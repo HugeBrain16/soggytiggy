@@ -58,38 +58,30 @@ function loadImages(file) {
     });
 }
 
+function getThumbnail(url) {
+  var result = "";
+  var string = url.split("").reverse().join("");
+  var added = false;
+
+  for (let c of string) {
+    result += c;
+
+    if (c === "." && !added) {
+      result += "m";
+      added = true;
+    }
+  }
+
+  return result.split("").reverse().join("");
+}
+
 function createImage(image) {
   var gallery = document.createElement("div");
-  var placeholder = document.createElement("span");
 
   gallery.classList.add("gallery");
   gallery.setAttribute("imagelink", image["link"]);
   gallery.setAttribute("postDate", image["date"]);
-  placeholder.textContent = "Loading";
-  placeholder.style.position = "absolute";
-  placeholder.style.padding = "5px";
-  placeholder.style.fontWeight = "bold";
-  placeholder.style.color = "#5c6d84";
-  gallery.style.backgroundImage = `url('${image["link"]}')`;
-  gallery.appendChild(placeholder);
-
-  function updateLoading() {
-    placeholder.textContent += ".";
-    if (placeholder.textContent.length > 10) {
-      placeholder.textContent = "Loading";
-    }
-  }
-
-  updateLoading();
-  var interval = setInterval(updateLoading, 500);
-
-  const img = new Image();
-  img.src = image["link"];
-  img.loading = "lazy";
-  img.onload = function () {
-    clearInterval(interval);
-    gallery.removeChild(placeholder);
-  };
+  gallery.style.backgroundImage = `url('${getThumbnail(image["link"])}')`;
 
   return gallery;
 }
