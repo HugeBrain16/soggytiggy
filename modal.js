@@ -1,17 +1,20 @@
 var modal = document.createElement("div");
 var modalClose = document.createElement("span");
-var modalContent = document.createElement("img");
 
 modal.classList.add("modal");
 modalClose.classList.add("modal-close");
 modalClose.innerHTML = "&times;";
-modalContent.classList.add("modal-content");
 
 modal.appendChild(modalClose);
-modal.appendChild(modalContent);
 document.body.appendChild(modal);
 
 function openModal(img) {
+  var modalContent = document.createElement("img");
+  var oldModalContent = modal.getElementsByTagName("img")[0];
+
+  if (oldModalContent) oldModalContent.remove();
+  modalContent.classList.add("modal-content");
+  modal.appendChild(modalContent);
   modal.style.display = "flex";
   modalContent.src = img;
 }
