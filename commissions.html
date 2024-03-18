@@ -41,7 +41,6 @@
         font-size: small;
         margin: 1%;
         opacity: 0;
-        transition: opacity 0.3s ease;
         animation: fadeIn 0.3s ease forwards;
       }
 
@@ -52,6 +51,12 @@
         background-size: cover;
         background-position: top center;
         background-repeat: no-repeat;
+        transition: 0.2s ease;
+        cursor: pointer;
+      }
+
+      .gallery-thumbnail:hover {
+        border: 3px solid #b0bed4;
       }
 
       .content-title {
