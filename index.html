@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>soggytiggy</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.0.7/400.min.css" />
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" />
   </head>
@@ -18,27 +15,22 @@
       <a href="https://itaku.ee/profile/soggytiggy">[itaku]</a>
     </div>
     <div align="center">
-      <img id="silly" src="https://i.imgur.com/TtM3jR4m.png" />
+      <img id="silly" src="/assets/pixiv.png" draggable="false" />
       <h1 id="soggy">soggytiggy</h1>
       <hr />
       <div class="nav">
         <div class="nav-links">
-          <a href="gallery.html"
-            ><span class="nav-sel">-</span> Gallery
-            <span class="nav-sel">-</span></a
-          >
-          <a href="tos.html"
-            ><span class="nav-sel">-</span> ToS
-            <span class="nav-sel">-</span></a
-          >
-          <a href="commissions.html"
-            ><span class="nav-sel">-</span> Commissions
-            <span class="nav-sel">-</span></a
-          >
-          <a href="about.html"
-            ><span class="nav-sel">-</span> About
-            <span class="nav-sel">-</span></a
-          >
+          <a href="gallery.html">
+            <span class="nav-sel">-</span> Gallery <span class="nav-sel">-</span>
+          </a>
+          <a href="tos.html">
+            <span class="nav-sel">-</span> ToS <span class="nav-sel">-</span>
+          </a>
+          <a href="commissions.html">
+            <span class="nav-sel">-</span> Commissions <span class="nav-sel">-</span></a>
+          <a href="about.html">
+            <span class="nav-sel">-</span> About <span class="nav-sel">-</span>
+          </a>
         </div>
       </div>
       <img id="sudo" src="/assets/sudo.gif" />
@@ -58,12 +50,11 @@
         min-width: 256px;
         margin-top: 15px;
         margin-bottom: 0;
-        border: 3px solid #4b5c73;
-        transition: transform 0.2s;
-      }
-
-      #silly:hover {
-        transform: translateY(-2%);
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
       }
 
       #silly-credit {
@@ -148,9 +139,26 @@
     </style>
     <script>
       var links = document.getElementsByClassName("nav-links")[0];
+      const silly = document.getElementById("silly");
+
+      silly.onmouseover = () => {
+        silly.src = "/assets/pixiv_blush.png";
+      }
+
+      silly.onmouseleave = () => {
+        silly.src = "/assets/pixiv.png";
+      }
+
+      silly.onmousedown = () => {
+        silly.style.cursor = "grabbing";
+      }
+
+      silly.onmouseup = () => {
+        silly.style.cursor = "grab";
+      }
 
       for (let link of links.children) {
-        link.onmouseover = function () {
+        link.onmouseover = () => {
           var vis = link.getElementsByClassName("nav-sel");
 
           for (let v of vis) {
@@ -158,7 +166,7 @@
           }
         };
 
-        link.onmouseleave = function () {
+        link.onmouseleave = () => {
           var vis = link.getElementsByClassName("nav-sel");
 
           for (let v of vis) {
