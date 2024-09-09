@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soggytiggy - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="/green.css" rel="stylesheet">
+    <link href="/gallery.css" rel="stylesheet">
+    <link href="/modal.css" rel="stylesheet">
+    <script src="/assets/jquery.js"></script>
+  </head>
+  <body>
+    <div id="soggy-header" class="content">
+      <div class="content-header">
+        <h1 id="brand"><i class="fa-solid fa-bone"></i> soggytiggy <i class="fa-solid fa-bone"></i></h1>
+        <h2>Welcome to my website!</h2>
+        <p id="puppy-call"><small>Don't wake up the puppy -&gt;</small></p>
+        <p><img id="puppy-eep" src="/assets/puppy_eep.gif"></p>
+        <p><img id="kitty-tail" src="/assets/cattail.gif"></p>
+        <img id="berry-button" title="Click for fun stuff&#010;CW: Flashing lights" src="/assets/berries.png">
+      </div>
+    </div>
+    <p id="longflowers-decor"></p>
+    <div class="content-wrapper">
+      <div class="content" style="flex-grow: 1;">
+        <div class="content-main">
+          <section>
+            <section>
+              <h2>About me</h2>
+              <p>Self-taught artist from Finland, 18y/o</p>
+            </section>
+            <h3>Links</h3>
+            <table>
+              <tr>
+                <td><img class="content-icon" src="/assets/instagram.png"></td>
+                <td><a href="https://instagram.com/soggytiggy">Instagram</a></td>
+              </tr>
+              <tr>
+                <td><img class="content-icon" src="/assets/toyhouse.svg"></td>
+                <td><a href="https://toyhou.se/soggytiggy">Toyhouse</a></td>
+              </tr>
+              <tr>
+                <td><i class="fa-brands fa-bluesky"></i></td>
+                <td><a href="https://soggytiggy.bsky.social">Bluesky</a></td>
+              </tr>
+            </table>
+          </section>
+        </div>
+      </div>
+      <div class="content" align="center">
+        <div class="content-navbar">
+          <p class="navbar-item"><a href="#">Home</a></p>
+          <p class="navbar-item"><a href="/comms.html">Commissions</a></p>
+          <p class="navbar-item"><a href="/gallery.html">Gallery</a></p>
+        </div>
+        <img id="welcome-kitty" src="/assets/welcome.gif">
+        <div id="home-latest" class="content-boxbg">
+          <h2>Latest work</h2>
+          <div class="content-scroll">
+            <div class="gallery-content">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img id="fufu-plush" src="/assets/fufu_plush.png">
+    <script src="/assets/oneko.js"></script>
+    <script src="/gallery.js"></script>
+    <script>
+      $(document).ready(function() {
+        loadPost(false, 1);
+      });
+    </script>
+  </body>
+</html>

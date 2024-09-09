@@ -1,0 +1,17 @@
+@import url(/style.css);
+
+body {
+  background: url(/assets/gingham_pink.png);
+}
+
+.content {
+  background-color: #d991a9;
+}
+
+.content a:hover {
+  color: #f7abc4;
+}
+
+.gallery:hover {
+  filter: drop-shadow(5px 5px #f5b3c7);
+}

@@ -1,0 +1,252 @@
+@font-face {
+  font-family: nanum;
+  src: url(/assets/nanum.woff2);
+}
+
+@font-face {
+  font-family: patrickhand;
+  src: url(/assets/patrickhand.woff2);
+}
+
+@keyframes shake {
+  0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+  10% { transform: translate(-0.5px, -1.5px) rotate(-1deg); }
+  20% { transform: translate(-2.5px, 0px) rotate(1deg); }
+  30% { transform: translate(2.5px, 1.5px) rotate(0deg); }
+  40% { transform: translate(0.5px, -0.5px) rotate(1deg); }
+  50% { transform: translate(-0.5px, 1.5px) rotate(-1deg); }
+  60% { transform: translate(-2.5px, 0.5px) rotate(0deg); }
+  70% { transform: translate(2.5px, 0.5px) rotate(-1deg); }
+  80% { transform: translate(-0.5px, -0.5px) rotate(1deg); }
+  90% { transform: translate(0.5px, 1.5px) rotate(0deg); }
+  100% { transform: translate(0.5px, -1.5px) rotate(-1deg); }
+}
+
+body {
+  font-family: patrickhand, sans-serif;
+  margin: 0;
+  margin-top: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+section {
+  padding-bottom: 20px;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+td {
+  padding-right: 5px;
+  margin: 0;
+}
+
+.tl-1-1 {
+  width: 85%;
+}
+
+#soggy-header {
+  margin-bottom: 10px;
+}
+
+#brand {
+  font-size: 3em;
+}
+
+#puppy-call {
+  float: right;
+  position: absolute;
+  color: #b5cc81; 
+  top: 8px;
+  right: 40px;
+}
+
+#berry-button {
+  float: right;
+  position: absolute;
+  top: 40px;
+  right: 0; 
+}
+
+#berry-button {
+  cursor: pointer;
+  filter: drop-shadow(5px 5px #444);
+}
+
+#berry-button:active {
+  filter: drop-shadow(3px 3px #444);
+  transform: translate(1px, 1px);
+}
+
+#puppy-eep {
+  float: right;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  top: -8px;
+  right: -5px;
+}
+
+#puppy-eep {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+#puppy-eep:active {
+  animation: shake 0.3s;
+}
+
+#kitty-tail {
+  display: flex;
+  width: 120px;
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+#fufu-plush {
+  position: fixed;
+  height: 512px;
+  bottom: 10px;
+  left: -40px;
+}
+
+#home-latest .gallery {
+  display: grid;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+#welcome-kitty {
+  margin-top: 10px;
+}
+
+#longflowers-decor {
+  margin: 0;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background: url(/assets/longflowers.png) repeat-x;
+}
+
+#longflowers {
+  padding: 0;
+  margin: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin: 10px;
+  margin-top: 0;
+  color: #fff;
+  filter: drop-shadow(5px 5px #444);
+}
+
+.content-main {
+  padding: 10px;
+}
+
+.content-header {
+  text-align: center;
+}
+
+.content a {
+  color: inherit;
+  font-style: italic;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  transition: all 100ms;
+}
+
+.content-icon {
+  color: #fff;
+  vertical-align: middle;
+  width: 18px;
+  padding: 0 !important;
+  height: auto;
+}
+
+.content img {
+  max-width: 250px;
+  padding: 8px;
+}
+
+.alt-font {
+  font-family: nanum, sans-serif;
+}
+
+.content-navbar {
+  display: flex;
+  padding-top: 1px;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.content-boxbg {
+  padding: 5px;
+  background-color: #9dad76;
+}
+
+.navbar-item {
+  padding: 5px 5px;
+}
+
+.small-img {
+  vertical-align: middle;
+  width: 35px;
+  height: auto;
+}
+
+@media (max-width: 1800px) {
+  #fufu-plush {
+    height: 200px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .content img {
+    max-width: 200px;
+  }
+
+  #puppy-call {
+    font-size: 10px;
+    top: 4px;
+    right: 25px;
+  }
+
+  #puppy-eep {
+    width: 18px;
+    height: 18px;
+  }
+
+  #welcome-kitty {
+    width: 200px;
+    height: 200px;
+  }
+
+  #kitty-tail {
+    width: 70px;
+    top: 40px;
+  }
+}

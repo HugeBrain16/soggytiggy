@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soggytiggy - Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="/pink.css" rel="stylesheet">
+    <link href="/gallery.css" rel="stylesheet">
+    <link href="/modal.css" rel="stylesheet">
+    <script src="/assets/jquery.js"></script>
+  </head>
+  <body>
+    <div id="soggy-header" class="content">
+      <div class="content-header">
+        <h1 id="brand"><i class="fa-solid fa-palette"></i> Gallery <i class="fa-solid fa-palette"></i></i></h1>
+        <h2>My works!</h2>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-navbar">
+        <p class="navbar-item"><a href="/index.html">Home</a></p>
+        <p class="navbar-item"><a href="/comms.html">Commissions</a></p>
+        <p class="navbar-item"><a href="#">Gallery</a></p>
+      </div>
+      <div class="content-main">
+        <select id="gallery-sort">
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+        <div class="gallery-content">
+        </div>
+      </div>
+    </div>
+    <script src="/gallery.js"></script>
+    <script>
+      $(document).ready(function() {
+        loadPost();
+
+        $("#gallery-sort").on("change", function() {
+          if (this.value === "latest") {
+            loadPost();
+          } else if (this.value === "oldest") {
+            loadPost(true);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

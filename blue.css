@@ -1,0 +1,13 @@
+@import url(/style.css);
+
+body {
+  background-image: url(/assets/gingham_blue.png);
+}
+
+.content {
+  background-color: #2cb0c7;
+}
+
+.content a:hover {
+  color: #3ddaf5;
+}
