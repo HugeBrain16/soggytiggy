@@ -1,0 +1,226 @@
+@import url(/styles/style.css);
+@import url(/styles/green.css);
+
+@keyframes shake {
+  0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+  10% { transform: translate(-0.5px, -1.5px) rotate(-1deg); }
+  20% { transform: translate(-2.5px, 0px) rotate(1deg); }
+  30% { transform: translate(2.5px, 1.5px) rotate(0deg); }
+  40% { transform: translate(0.5px, -0.5px) rotate(1deg); }
+  50% { transform: translate(-0.5px, 1.5px) rotate(-1deg); }
+  60% { transform: translate(-2.5px, 0.5px) rotate(0deg); }
+  70% { transform: translate(2.5px, 0.5px) rotate(-1deg); }
+  80% { transform: translate(-0.5px, -0.5px) rotate(1deg); }
+  90% { transform: translate(0.5px, 1.5px) rotate(0deg); }
+  100% { transform: translate(0.5px, -1.5px) rotate(-1deg); }
+}
+
+@keyframes bawn-shake {
+  0% { transform: translate(0px, -5px) rotate(-8deg); }
+  14% { transform: translate(0px, -5px) rotate(-6deg); }
+  28% { transform: translate(0px, -5px) rotate(-2deg); }
+  42% { transform: translate(0px, -5px) rotate(0deg); }
+  57% { transform: translate(0px, -5px) rotate(8deg); }
+  71% { transform: translate(0px, -5px) rotate(6deg); }
+  85% { transform: translate(0px, -3px) rotate(2deg); }
+  100% { transform: translate(0px, -1.5px) rotate(0deg); }
+}
+
+@keyframes bawn-rain {
+  0% { top: -10%; }
+  100% { top: 100%; }
+}
+
+@keyframes bawn-speen {
+  0%    { transform: rotateZ(10deg); }
+  14%   { transform: rotateZ(60deg); }
+  28%   { transform: rotateZ(100deg); }
+  42%   { transform: rotateZ(140deg); }
+  57%   { transform: rotateZ(180deg); }
+  71%   { transform: rotateZ(240deg); }
+  85%   { transform: rotateZ(280deg); }
+  100%  { transform: rotateZ(360deg); }
+}
+
+#puppy-call {
+  float: right;
+  position: absolute;
+  color: #b5cc81; 
+  top: 8px;
+  right: 40px;
+}
+
+#berry-button {
+  float: right;
+  position: absolute;
+  top: 40px;
+  right: 0; 
+}
+
+#berry-button {
+  cursor: pointer;
+  filter: drop-shadow(5px 5px #444);
+}
+
+#berry-button:active {
+  filter: drop-shadow(3px 3px #444);
+  transform: translate(1px, 1px);
+}
+
+#puppy-eep {
+  float: right;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+  top: -8px;
+  right: -5px;
+}
+
+#puppy-eep {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+#puppy-eep.clicked {
+  animation: shake 0.3s;
+}
+
+.puppy-bawn.clicked {
+  animation: bawn-shake 0.2s linear;
+}
+
+.bawn {
+  position: fixed;
+  color: #fff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  animation-name: bawn-rain, bawn-speen;
+  animation-timing-function: linear, linear;
+  animation-duration: 1.5s, 1s;
+  animation-iteration-count: 1, infinite;
+}
+
+.bawn:nth-of-type(1)  { left: 4%;   animation-delay: 0.2s;  }
+.bawn:nth-of-type(2)  { left: 8%;   animation-delay: 0.6s;  }
+.bawn:nth-of-type(3)  { left: 12%;  animation-delay: 1.1s;  }
+.bawn:nth-of-type(4)  { left: 16%;  animation-delay: 0.4s;  }
+.bawn:nth-of-type(5)  { left: 20%;  animation-delay: 1.8s;  }
+.bawn:nth-of-type(6)  { left: 24%;  animation-delay: 1.3s;  }
+.bawn:nth-of-type(7)  { left: 28%;  animation-delay: 1.6s;  }
+.bawn:nth-of-type(8)  { left: 32%;  animation-delay: 0.9s;  }
+.bawn:nth-of-type(9)  { left: 36%;  animation-delay: 0.5s;  }
+.bawn:nth-of-type(10) { left: 40%;  animation-delay: 1.7s;  }
+.bawn:nth-of-type(11) { left: 44%;  animation-delay: 0.8s;  }
+.bawn:nth-of-type(12) { left: 48%;  animation-delay: 1.2s;  }
+.bawn:nth-of-type(13) { left: 52%;  animation-delay: 0.3s;  }
+.bawn:nth-of-type(14) { left: 56%;  animation-delay: 1.9s;  }
+.bawn:nth-of-type(15) { left: 60%;  animation-delay: 0.7s;  }
+.bawn:nth-of-type(16) { left: 64%;  animation-delay: 1.5s;  }
+.bawn:nth-of-type(17) { left: 68%;  animation-delay: 1.0s;  }
+.bawn:nth-of-type(18) { left: 72%;  animation-delay: 1.4s;  }
+.bawn:nth-of-type(19) { left: 76%;  animation-delay: 0.1s;  }
+.bawn:nth-of-type(20) { left: 80%;  animation-delay: 1.99s; }
+.bawn:nth-of-type(21) { left: 84%;  animation-delay: 0.15s; }
+.bawn:nth-of-type(22) { left: 88%;  animation-delay: 1.75s; }
+.bawn:nth-of-type(23) { left: 92%;  animation-delay: 1.5s;  }
+.bawn:nth-of-type(24) { left: 96%;  animation-delay: 0.95s; }
+.bawn:nth-of-type(25) { left: 100%; animation-delay: 1.25s; }
+
+#kitty-tail {
+  display: flex;
+  width: 120px;
+  position: absolute;
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+#fufu-plush {
+  position: fixed;
+  height: 512px;
+  bottom: 10px;
+  left: -40px;
+}
+
+#home-latest .gallery {
+  display: grid;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+#welcome-kitty {
+  margin-top: 10px;
+}
+
+#longflowers-decor {
+  margin: 0;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background: url(/assets/longflowers.png) repeat-x;
+}
+
+#longflowers {
+  padding: 0;
+  margin: 0;
+}
+
+#stamps {
+  position: absolute;
+  float: right;
+  top: 10px;
+  right: 10px;
+}
+
+#log-stamps {
+  position: absolute;
+  float: left;
+  top: 10px;
+  left: 10px;
+}
+
+.berry-web {
+  display: none;
+  overflow-y: hidden;
+  max-height: 100%;
+}
+
+.berry-web img {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+@media (max-width: 1800px) {
+  #fufu-plush {
+    height: 200px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #puppy-call {
+    font-size: 10px;
+    top: 4px;
+    right: 25px;
+  }
+
+  #puppy-eep {
+    width: 18px;
+    height: 18px;
+  }
+
+  #welcome-kitty {
+    width: 200px;
+    height: 200px;
+  }
+
+  #kitty-tail {
+    width: 70px;
+    top: 40px;
+  }
+}

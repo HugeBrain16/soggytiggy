@@ -8,7 +8,7 @@ modalClose.innerHTML = "&times;";
 modal.appendChild(modalClose);
 document.body.insertBefore(
   modal,
-  document.getElementsByClassName("content")[0],
+  document.getElementsByClassName("content-floatsie")[0],
 );
 
 function openModal(img) {
