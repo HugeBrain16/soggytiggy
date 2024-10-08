@@ -58,6 +58,8 @@ function loadImages(file) {
         if (_image.length < 2) continue;
         image["link"] = _image[0].trim();
         image["date"] = _image[1].trim();
+        if (_image.length >= 3)
+          image["crop"] = _image[2].trim();
 
         if (Object.keys(image).length !== 0) result.push(image);
       }
@@ -93,6 +95,7 @@ function createImage(image) {
   gallery.setAttribute("imagelink", image["link"]);
   gallery.setAttribute("postDate", image["date"]);
   gallery.style.backgroundImage = `url('${getThumbnail(image["link"])}')`;
+  gallery.style.backgroundPosition = (image["crop"] !== undefined) ? image["crop"] : "top center";
 
   return gallery;
 }
