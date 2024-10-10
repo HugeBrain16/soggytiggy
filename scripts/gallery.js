@@ -1,5 +1,6 @@
 var modal = document.createElement("div");
 var modalClose = document.createElement("span");
+const hiddenTags = ["gore", "nsfw"];
 
 modal.classList.add("modal");
 modalClose.classList.add("modal-close");
@@ -60,6 +61,8 @@ function loadImages(file) {
         image["date"] = _image[1].trim();
         if (_image.length >= 3)
           image["crop"] = _image[2].trim();
+        if (_image.length >= 4)
+          image["tags"] = _image[3].trim().split(",");
 
         if (Object.keys(image).length !== 0) result.push(image);
       }
@@ -69,6 +72,13 @@ function loadImages(file) {
     .catch((error) => {
       console.error("Error reading file:", error);
     });
+}
+
+function filterImage(image) {
+  if (image["tags"] !== undefined)
+    return image["tags"].some(filter => hiddenTags.includes(filter));
+
+  return false;
 }
 
 function getThumbnail(url) {
@@ -94,8 +104,14 @@ function createImage(image) {
   gallery.classList.add("gallery");
   gallery.setAttribute("imagelink", image["link"]);
   gallery.setAttribute("postDate", image["date"]);
+  if (image["tags"] !== undefined) {
+    gallery.setAttribute("tags", image["tags"]);
+
+    if (filterImage(image))
+      gallery.style.display = "none";
+  }
   gallery.style.backgroundImage = `url('${getThumbnail(image["link"])}')`;
-  gallery.style.backgroundPosition = (image["crop"] !== undefined) ? image["crop"] : "top center";
+  gallery.style.backgroundPosition = (image["crop"] === undefined || image["crop"] === "default") ? "top center" : image["crop"];
 
   return gallery;
 }
@@ -118,7 +134,7 @@ function clearPosts() {
   }
 }
 
-function loadPost(old = false, max = 0) {
+function loadPost(old = false, max = 0, filter = false) {
   var content = document.getElementsByClassName("gallery-content")[0];
   var maxPost = 0;
 
@@ -126,7 +142,11 @@ function loadPost(old = false, max = 0) {
     .then((images) => {
       var posts = [];
       for (let image of images) {
+        if (filterImage(image) && filter === true)
+          continue;
+
         let gallery = createImage(image);
+
         gallery.onclick = function () {
           openModal(gallery.getAttribute("imagelink"));
         };

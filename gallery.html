@@ -29,15 +29,56 @@
             <option value="latest">Latest</option>
             <option value="oldest">Oldest</option>
           </select>
+          <ul>
+            <li><input type="checkbox" class="gallery-filter-toggle" filter="gore"> Show gore</input></li>
+            <li><input type="checkbox" class="gallery-filter-toggle" filter="nsfw"> Show NSFW</input></li>
+          </ul>
         </p>
-        <div class="gallery-content">
+        <div class="gallery-content" align="center">
         </div>
       </div>
     </div>
     <script src="/scripts/gallery.js"></script>
     <script>
       $(document).ready(function() {
+        var SHOW_FILTERED_CONTENT = false;
+
+        function clearFilters() {
+          $(".gallery-filter-toggle").each(function() {
+            this.checked = false;
+          });
+        }
+
         loadPost();
+        clearFilters();
+
+        $(".gallery-filter-toggle").on("change", function() {
+          if (!SHOW_FILTERED_CONTENT)
+            if (confirm("These images may contain sensitive themes, gore and nudity.\ndo you wish to proceed?"))
+              SHOW_FILTERED_CONTENT = true;
+            else
+              return clearFilters();
+
+          var filters = [];
+
+          $(".gallery-filter-toggle").each(function() {
+            const filter = $(this);
+
+            if (filter.is(":checked"))
+              filters.push(filter.attr("filter"));
+          });
+
+          $(".gallery").each(function() {
+            const image = $(this);
+
+            if (image.attr("tags") !== undefined) {
+              if (image.attr("tags").split(",").some(filter => filters.includes(filter)))
+                image.css("display", "inline-grid");
+              else
+                image.css("display", "none");
+            }
+          });
+        });
 
         $("#gallery-sort").on("change", function() {
           if (this.value === "latest") {

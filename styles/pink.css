@@ -4,6 +4,15 @@ body {
   background: url(/assets/gingham_pink.png);
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 .content {
   background-color: #d991a9;
 }
