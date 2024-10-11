@@ -195,17 +195,21 @@
   padding-bottom: 2px;
 }
 
+.gallery:nth-of-type(2) { display: none !important; }
+.gallery:nth-of-type(3) { display: none !important; }
+.gallery:nth-of-type(4) { display: none !important; }
+
 @media (max-width: 1800px) {
   #fufu-plush {
     height: 200px;
-    left: -10px;
+    left: -15px;
   }
 }
 
 @media (max-width: 1200px) {
   #puppy-call {
     font-size: 10px;
-    top: 4px;
+    top: 0;
     right: 25px;
   }
 
@@ -220,7 +224,24 @@
   }
 
   #kitty-tail {
-    width: 70px;
-    top: 40px;
+    width: 65px;
+    top: 45px;
   }
+
+  #berry-button,
+  #fufu-plush {
+    display: none;
+  }
+
+  .content-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .gallery {
+    display: inline-grid !important;
+  }
+
+  .gallery:nth-of-type(2) { display: inline-grid !important; }
+  .gallery:nth-of-type(3) { display: inline-grid !important; }
+  .gallery:nth-of-type(4) { display: inline-grid !important; }
 }

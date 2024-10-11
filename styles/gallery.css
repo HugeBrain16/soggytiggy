@@ -27,7 +27,8 @@
 
 @media (max-width: 700px) {
   .gallery {
-    width: 35%;
+    width: 100px;
+    height: 100px;
   }
 
   .gallery-desc {
