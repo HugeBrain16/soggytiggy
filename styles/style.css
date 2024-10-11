@@ -44,6 +44,11 @@ td {
   margin-top: 0;
 }
 
+.content-floatsie {
+  position: relative;
+  overflow: hidden;
+}
+
 .content {
   padding-left: 10px;
   padding-right: 10px;
@@ -82,7 +87,7 @@ td {
 
 .content img {
   max-width: 250px;
-  padding: 8px;
+  padding: 5px;
 }
 
 .alt-font {

@@ -1,11 +1,10 @@
 .gallery {
   display: inline-grid;
-  margin: 1%;
   width: 200px;
   height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
   transition: 0.2s ease;
   animation: fadeIn 0.3s ease forwards;
   filter: drop-shadow(4px 4px #444);

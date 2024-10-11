@@ -150,7 +150,6 @@
   display: grid;
   width: 150px;
   height: 150px;
-  margin-bottom: 15px;
 }
 
 #welcome-kitty {
@@ -186,8 +185,9 @@
 
 .berry-web {
   display: none;
-  overflow-y: hidden;
+  overflow-y: auto;
   max-height: 100%;
+  scrollbar-width: none;
 }
 
 .berry-web img {
@@ -229,8 +229,9 @@
   }
 
   #berry-button,
-  #fufu-plush {
-    display: none;
+  #fufu-plush,
+  .berry-web {
+    display: none !important;
   }
 
   .content-wrapper {

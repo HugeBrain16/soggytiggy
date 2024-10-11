@@ -5,6 +5,7 @@ const hiddenTags = ["gore", "nsfw"];
 modal.classList.add("modal");
 modalClose.classList.add("modal-close");
 modalClose.innerHTML = "&times;";
+modalClose.style.position = "fixed";
 
 modal.appendChild(modalClose);
 document.body.insertBefore(
@@ -99,7 +100,7 @@ function getThumbnail(url) {
 }
 
 function createImage(image) {
-  var gallery = document.createElement("div");
+  var gallery = document.createElement("img");
 
   gallery.classList.add("gallery");
   gallery.setAttribute("imagelink", image["link"]);
@@ -110,8 +111,8 @@ function createImage(image) {
     if (filterImage(image))
       gallery.style.display = "none";
   }
-  gallery.style.backgroundImage = `url('${getThumbnail(image["link"])}')`;
-  gallery.style.backgroundPosition = (image["crop"] === undefined || image["crop"] === "default") ? "top center" : image["crop"];
+  gallery.src = getThumbnail(image["link"]);
+  gallery.style.objectPosition = (image["crop"] === undefined || image["crop"] === "default") ? "top center" : image["crop"];
 
   return gallery;
 }
