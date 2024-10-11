@@ -108,8 +108,10 @@ function createImage(image) {
   if (image["tags"] !== undefined) {
     gallery.setAttribute("tags", image["tags"]);
 
-    if (filterImage(image))
+    if (filterImage(image)) {
       gallery.style.display = "none";
+      gallery.classList.add("gallery-nsfw");
+    }
   }
   gallery.src = getThumbnail(image["link"]);
   gallery.style.objectPosition = (image["crop"] === undefined || image["crop"] === "default") ? "top center" : image["crop"];

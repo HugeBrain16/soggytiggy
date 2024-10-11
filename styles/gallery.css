@@ -11,6 +11,15 @@
   cursor: pointer;
 }
 
+.gallery-nsfw {
+  clip-path: inset(0);
+  filter: blur(8px) drop-shadow(4px 4px #444);
+}
+
+.gallery-nsfw:hover {
+  filter: blur(8px) drop-shadow(5px 5px #f5b3c7);
+}
+
 .gallery:hover {
   transform: translate(-1px, -1px);
 }
