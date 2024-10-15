@@ -25,6 +25,21 @@
       <img src="/assets/stamps/cute.webp">
       <img src="/assets/stamps/colon.webp">
       <img src="/assets/stamps/73a.webp">
+      <img src="/assets/stamps/18.png">
+      <img src="/assets/stamps/stamp10.gif">
+      <img src="/assets/stamps/nich.webp">
+      <img src="/assets/stamps/e82.gif">
+      <img src="/assets/stamps/sleep.webp">
+      <img src="/assets/stamps/lucky.gif">
+      <img src="/assets/stamps/jerm.gif">
+      <img src="/assets/stamps/pizza.webp">
+      <img src="/assets/stamps/2001.webp">
+      <img src="/assets/stamps/tetris.webp">
+      <img src="/assets/stamps/egg.png">
+      <img src="/assets/stamps/stars.webp">
+      <img src="/assets/stamps/stamp100.gif">
+      <img src="/assets/stamps/garfpenis.png">
+      <img src="/assets/stamps/stamp121.gif">
     </div>
     <div id="log-stamps" class="berry-web">
       <img src="/assets/log-stamps/t1.gif">
@@ -58,6 +73,25 @@
       <img src="/assets/log-stamps/n3.gif">
       <img src="/assets/log-stamps/bondageblink.gif">
       <img src="/assets/log-stamps/62.gif">
+      <img src="/assets/log-stamps/z4.gif">
+      <img src="/assets/log-stamps/u14.gif">
+      <img src="/assets/log-stamps/g18.gif">
+      <img src="/assets/log-stamps/w1.gif">
+      <img src="/assets/log-stamps/g24.gif">
+      <img src="/assets/log-stamps/k18.gif">
+      <img src="/assets/log-stamps/s4.gif">
+      <img src="/assets/log-stamps/x38.gif">
+      <img src="/assets/log-stamps/yum.gif">
+      <img src="/assets/log-stamps/g26.gif">
+      <img src="/assets/log-stamps/p42.gif">
+      <img src="/assets/log-stamps/j52.gif">
+      <img src="/assets/log-stamps/t53.gif">
+      <img src="/assets/log-stamps/s53.gif">
+      <img src="/assets/log-stamps/g99.gif">
+      <img src="/assets/log-stamps/g12.gif">
+      <img src="/assets/log-stamps/c93.gif">
+      <img src="/assets/log-stamps/preg.webp">
+      <img src="/assets/log-stamps/pplejack.webp">
     </div>
     <div id="bawn-rain-container"></div>
     <div class="content-floatsie">
@@ -163,10 +197,13 @@
         });
 
         $("#berry-button").on("click", function() {
-          if ($(".berry-web").css("display") === "none")
+          if ($(".berry-web").css("display") === "none") {
             $(".berry-web").css("display", "grid");
-          else
+            $("#fufu-plush").hide();
+          } else {
             $(".berry-web").css("display", "none");
+            $("#fufu-plush").css("display", "inherit");
+          }
         });
       });
     </script>
