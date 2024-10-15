@@ -4,9 +4,7 @@ var modalClose = document.createElement("span");
 modal.classList.add("modal");
 modalClose.classList.add("modal-close");
 modalClose.innerHTML = "&times;";
-
-modal.appendChild(modalClose);
-document.body.appendChild(modal);
+modalClose.style.position = "fixed";
 
 function openModal(img) {
   var modalContent = document.createElement("img");
@@ -48,11 +46,17 @@ function getImage(url) {
 }
 
 $(document).ready(function () {
-  var thumbs = $(".gallery-thumbnail");
+  var thumbs = $(".gallery");
+
+  modal.appendChild(modalClose);
+  document.body.insertBefore(
+    modal,
+    document.getElementById("soggy-header"),
+  );
 
   for (let i = 0; i < thumbs.length; i++) {
     thumbs[i].onclick = function () {
-      openModal(getImage(thumbs[i].style.backgroundImage.split(/"/)[1]));
+      openModal(getImage(thumbs[i].src));
     };
   }
 });

@@ -6,40 +6,11 @@
     <title>soggytiggy - Commissions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="/styles/blue.css" rel="stylesheet">
+    <link href="/styles/comms.css" rel="stylesheet">
+    <link href="/styles/gallery.css" rel="stylesheet">
+    <link href="/styles/modal.css" rel="stylesheet">
+    <link href="/styles/colors.css" rel="stylesheet">
     <script src="/assets/jquery.js"></script>
-    <style>
-      #temp {
-        font-size: 200%;
-      }
-
-      #temp img {
-        width: 140px;
-        margin: 5px;
-        vertical-align: middle;
-      }
-
-      @media (max-width: 1200px) {
-        #temp {
-          font-size: 150%;
-        }
-
-        #temp img {
-          width: 100px;
-          height: auto;
-        }
-      }
-
-      @media (max-width: 700px) {
-        #temp {
-          font-size: 120%;
-        }
-
-        #temp img {
-          width: 75px;
-          height: auto;
-        }
-      }
-    </style>
   </head>
   <body>
     <div id="soggy-header" class="content">
@@ -55,10 +26,97 @@
         <p class="navbar-item"><a href="/gallery.html">Gallery</a></p>
       </div>
       <div class="content-main">
-        <div id="temp" align="center">
-          <h1><img src="/assets/brick.gif">Work in progress!<img src="/assets/brick.gif"></h1>
+        <div class="category">
+          <h1>Sketch</h1>
+          <ul>
+            <li>- Half body <span class="category-price">€2</span></li>
+            <li>- Full body <span class="category-price">€4</span></li>
+          </ul>
+          <ul>
+            <li>- messy sketch + color + shadows <span class="category-price">€10-15</span></li>
+          </ul>
+          <div class="category-example">
+            <img class="gallery" src="https://i.imgur.com/i7y7m3Pm.png">
+            <img class="gallery" src="https://i.imgur.com/mgN3DKum.png">
+          </div>
+        </div>
+        <div class="category">
+          <h1>Lineart</h1>
+          <p>/w flat color</p>
+          <ul>
+            <li>- Half body <span class="category-price">€10</span></li>
+            <li>- Full body <span class="category-price">€13</span></li>
+          </ul>
+          <p>/w rendering</p>
+          <ul>
+            <li>- Half body <span class="category-price">€20</span></li>
+            <li>- Full body <span class="category-price">€25-30</span></li>
+          </ul>
+          <div class="category-example">
+            <img class="gallery" src="https://i.imgur.com/M3nATtfm.png">
+            <img class="gallery" src="https://i.imgur.com/NNpezUym.png">
+          </div>
+        </div>
+        <div class="category">
+          <h1>Bodypillow Cover</h1>
+          <ul>
+            <li>- One side <span class="category-price">€30</span></li>
+            <li>- Two sides <span class="category-price">€55</span></li>
+          </ul>
+          <div class="category-example">
+            <img class="gallery" style="object-position: center top;" src="https://i.imgur.com/zd6Y6fWm.jpg">
+          </div>
+        </div>
+        <div class="category">
+          <h1>Reference Sheet</h1>
+          <p>Price depends on size</p>
+          <ul>
+            <li>Front & back view + random items etc. <span class="category-price">+€25</span></li>
+          </ul>
+          <div class="category-example">
+            <img class="gallery" style="object-position: center right;" src="https://i.imgur.com/hOJCAolm.png">
+          </div>
+        </div>
+        <div class="category">
+          <h1>Humans</h1>
+          <ul>
+            <li><span class="category-price">+€5</span> to original price</li>
+          </ul>
+          <div class="category-example">
+            <img class="gallery" src="https://i.imgur.com/ZJJXQg0m.png">
+          </div>
+        </div>
+        <div class="category">
+          <h1 class="h1-alt">Extras</h1>
+          <ul>
+            <li>- Detailed background <span class="category-price">+€5</span></li>
+            <li>- More than one character <span class="category-price">+50% of original price</span></li>
+          </ul>
         </div>
       </div>
     </div>
+    <div class="content">
+      <div class="content-main">
+        <h1 class="cl-under" align="center">YCHs</h1>
+        <div class="category">
+          <h1>Onesie YCH</h1>
+          <ul>
+            <li>- Flat color <span class="category-price">€10</span></li>
+            <li>- Shaded <span class="category-price">€12</span></li>
+            <li>- Different tail and/or ears <span class="category-price">+€2</span></li>
+          </ul>
+          <p>Addons</p>
+          <ul>
+            <li>- Background <span class="category-price">+€5</span></li>
+            <li>- Custom onesie pattern <span class="category-price">+€5</span></li>
+            <li>- Custom zipper <span class="category-price">+€1</span></li>
+          </ul>
+          <p>You can freely choose all the colors and the species.</p>
+          <img class="gallery" src="https://i.imgur.com/z8l9Jvhm.png">
+          <img class="gallery" src="https://i.imgur.com/3neZJ4rm.png">
+        </div>
+      </div>
+    </div>
+    <script src="/scripts/modal.js"></script>
   </body>
 </html>

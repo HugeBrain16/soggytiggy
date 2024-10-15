@@ -25,6 +25,14 @@ h1, h2, h3, p {
   padding: 0;
 }
 
+p {
+  white-space: pre-line;
+}
+
+h3 {
+  padding-top: 20px;
+}
+
 td {
   padding-right: 5px;
   margin: 0;

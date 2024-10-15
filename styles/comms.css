@@ -1,0 +1,27 @@
+ul {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 0;
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.h1-alt {
+  text-decoration: underline;
+}
+
+.category h1 {
+  color: #f5b767;
+}
+
+.category-price {
+  color: #ffd78f;
+}
+
+.category-example {
+  margin-bottom: 20px;
+}

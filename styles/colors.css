@@ -1,0 +1,15 @@
+/* colors */
+
+.cl-mango {
+  color: #f5b767;
+}
+
+.cl-yellow {
+  color: #f5c367;
+}
+
+/* decorations */
+
+.cl-under {
+  text-decoration: underline;
+}

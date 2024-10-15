@@ -152,6 +152,28 @@
   height: 150px;
 }
 
+#home-latest .gallery-content {
+  padding-bottom: 20px;
+}
+
+#home-linkies {
+  display: flex;
+}
+
+.linkies-wrapper {
+  margin-right: 20px;
+}
+
+#news-parent {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #647346;
+  padding-bottom: 10px;
+}
+
+#news-content {
+  margin: 10px;
+}
+
 #welcome-kitty {
   margin-top: 10px;
 }

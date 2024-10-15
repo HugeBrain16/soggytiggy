@@ -11,3 +11,7 @@ body {
 .content a:hover {
   color: #3ddaf5;
 }
+
+.gallery:hover {
+  filter: drop-shadow(4px 4px #6cdcf0);
+}
