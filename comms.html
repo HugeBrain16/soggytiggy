@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="/styles/blue.css" rel="stylesheet">
     <script src="/assets/jquery.js"></script>
+    <style>
+      #temp {
+        font-size: 200%;
+      }
+
+      #temp img {
+        width: 140px;
+        margin: 5px;
+        vertical-align: middle;
+      }
+
+      @media (max-width: 1200px) {
+        #temp {
+          font-size: 150%;
+        }
+
+        #temp img {
+          width: 100px;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 700px) {
+        #temp {
+          font-size: 120%;
+        }
+
+        #temp img {
+          width: 75px;
+          height: auto;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="soggy-header" class="content">
@@ -22,6 +55,9 @@
         <p class="navbar-item"><a href="/gallery.html">Gallery</a></p>
       </div>
       <div class="content-main">
+        <div id="temp" align="center">
+          <h1><img src="/assets/brick.gif">Work in progress!<img src="/assets/brick.gif"></h1>
+        </div>
       </div>
     </div>
   </body>
