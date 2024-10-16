@@ -141,9 +141,9 @@
 
 #fufu-plush {
   position: fixed;
-  height: 512px;
-  bottom: 10px;
-  left: -40px;
+  bottom: 0;
+  right: -15px;
+  transform: scale(1, -1) rotateZ(180deg);
 }
 
 #home-latest .gallery {
@@ -171,7 +171,17 @@
 }
 
 #news-content {
+  overflow-y: auto;
+  max-height: 500px;
   margin: 10px;
+}
+
+.news-gist {
+  margin: 10px;
+}
+
+#buttons img {
+  padding: 2px !important;
 }
 
 #welcome-kitty {
@@ -220,13 +230,6 @@
 .gallery:nth-of-type(2) { display: none !important; }
 .gallery:nth-of-type(3) { display: none !important; }
 .gallery:nth-of-type(4) { display: none !important; }
-
-@media (max-width: 1800px) {
-  #fufu-plush {
-    height: 200px;
-    left: -15px;
-  }
-}
 
 @media (max-width: 1200px) {
   #puppy-call {
