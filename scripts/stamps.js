@@ -146,6 +146,7 @@ function loadStamps() {
     var img = document.createElement("img");
     if (item[1].length > 0) link.href = item[1];
     img.src = `/assets/buttons/${item[0]}`;
+    link.target = "_blank";
     link.appendChild(img);
     $("#buttons").append(link);
   });
