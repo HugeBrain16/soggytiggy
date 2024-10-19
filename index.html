@@ -19,7 +19,7 @@
       <div id="soggy-header" class="content">
         <div class="content-header">
           <h1 id="brand"><i class="fa-solid fa-bone puppy-bawn"></i> soggytiggy <i class="fa-solid fa-bone puppy-bawn"></i></h1>
-          <h2>Welcome to my website!</h2>
+          <h2 id="brand-sub">Welcome to my website!</h2>
           <p id="puppy-call"><small>Don't wake up the puppy -&gt;</small></p>
           <p><img id="puppy-eep" src="/assets/puppy_eep.gif"></p>
           <p><img id="kitty-tail" src="/assets/cattail.gif"></p>
@@ -108,6 +108,13 @@
           </div>
           <div id="news-content">
             <section>
+              <h2>New stuff added ;) - <small>19.10.2024</small></h2>
+              <div class="news-gist">
+                <img src="https://i.imgur.com/APi11Nn.gif">
+                <p>Click around to find out ^-^</p>
+              </div>
+            </section>
+            <section>
               <h2>The buttons are here! - <small>16.10.2024</small></h2>
               <div class="news-gist">
                 <img src="https://i.imgur.com/yeEtLzU.png">
@@ -127,7 +134,7 @@
               </div>
             </section>
           </div>
-          <p><small>Site updated: 16.10.2024</small></p>
+          <p><small>Site updated: 19.10.2024</small></p>
         </div>
       </div>
       <div class="content">
@@ -146,6 +153,7 @@
       $(document).ready(function() {
         loadPost(false, 4, true);
         loadStamps();
+        $.getScript("/scripts/lain.js");
 
         var bawnRain = 0;
 
