@@ -1,0 +1,44 @@
+@keyframes shake {
+  0%   { transform: translate(0.5px, 0.5px)   rotate(0deg);  }
+  10%  { transform: translate(-0.5px, -1.5px) rotate(-1deg); }
+  20%  { transform: translate(-2.5px, 0px)    rotate(1deg);  }
+  30%  { transform: translate(2.5px, 1.5px)   rotate(0deg);  }
+  40%  { transform: translate(0.5px, -0.5px)  rotate(1deg);  }
+  50%  { transform: translate(-0.5px, 1.5px)  rotate(-1deg); }
+  60%  { transform: translate(-2.5px, 0.5px)  rotate(0deg);  }
+  70%  { transform: translate(2.5px, 0.5px)   rotate(-1deg); }
+  80%  { transform: translate(-0.5px, -0.5px) rotate(1deg);  }
+  90%  { transform: translate(0.5px, 1.5px)   rotate(0deg);  }
+  100% { transform: translate(0.5px, -1.5px)  rotate(-1deg); }
+}
+
+@keyframes bawn-shake {
+  0%   { transform: translate(0px, -5px)   rotate(-8deg); }
+  14%  { transform: translate(0px, -5px)   rotate(-6deg); }
+  28%  { transform: translate(0px, -5px)   rotate(-2deg); }
+  42%  { transform: translate(0px, -5px)   rotate(0deg);  }
+  57%  { transform: translate(0px, -5px)   rotate(8deg);  }
+  71%  { transform: translate(0px, -5px)   rotate(6deg);  }
+  85%  { transform: translate(0px, -3px)   rotate(2deg);  }
+  100% { transform: translate(0px, -1.5px) rotate(0deg);  }
+}
+
+@keyframes bawn-rain {
+  0%   { top: -10%; }
+  100% { top: 100%; }
+}
+
+@keyframes bawn-speen {
+  0%    { transform: rotateZ(10deg);  }
+  14%   { transform: rotateZ(60deg);  }
+  28%   { transform: rotateZ(100deg); }
+  42%   { transform: rotateZ(140deg); }
+  57%   { transform: rotateZ(180deg); }
+  71%   { transform: rotateZ(240deg); }
+  85%   { transform: rotateZ(280deg); }
+  100%  { transform: rotateZ(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}

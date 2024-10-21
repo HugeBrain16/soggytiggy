@@ -26,7 +26,8 @@ const stamps = [
   "stars.webp",
   "stamp100.gif",
   "garfpenis.png",
-  "stamp121.gif"
+  "stamp121.gif",
+  "29.gif"
 ]
 
 const logStamps = [
