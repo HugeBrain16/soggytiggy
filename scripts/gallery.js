@@ -1,5 +1,6 @@
 var modal = document.createElement("div");
 var modalClose = document.createElement("span");
+var page = 1;
 const hiddenTags = ["gore", "nsfw"];
 
 modal.classList.add("modal");
@@ -130,20 +131,18 @@ function sortPosts(posts, old = false) {
 }
 
 function clearPosts() {
-  var posts = document.getElementsByClassName("gallery");
-
-  while (posts.length > 0) {
-    posts[0].remove();
-  }
+  $(".gallery").remove();
 }
 
-function loadPost(old = false, max = 0, filter = false) {
+function loadPost(old = false, max = 0, filter = false, paged = false) {
   var content = document.getElementsByClassName("gallery-content")[0];
   var maxPost = 0;
+  var posts = [];
+  var chunks = [];
+  var chunk = [];
 
   loadImages("gallery.txt")
     .then((images) => {
-      var posts = [];
       for (let image of images) {
         if (filterImage(image) && filter === true)
           continue;
@@ -157,13 +156,65 @@ function loadPost(old = false, max = 0, filter = false) {
       }
       sortPosts(posts, old);
 
+      if (paged) {
+        for (let post of posts) {
+          if (chunk.length === 30) {
+            chunks.push(chunk);
+            chunk = [];
+          } else {
+            chunk.push(post);
+          }
+        }
+
+        if (chunk.length > 0)
+          chunks.push(chunk);
+      }
+
       clearPosts();
-      for (let post of posts) {
+      for (let post of (paged ? chunks[page - 1] : posts)) {
         if (maxPost >= max && max !== 0)
           break;
         content.appendChild(post);
         maxPost++;
       }
+
+      if (paged) {
+        var pages = $("#gallery-page-pages");
+        pages.empty();
+        for (var pageX = 1; pageX <= chunks.length; pageX++) {
+          let ePage = document.createElement("li");
+          if (pageX === page)
+            ePage.innerHTML = `<span id='gallery-page-current'>${pageX}</span>`;
+          else
+            ePage.innerHTML = `<span class="gallery-page-page">${pageX}</span>`;
+          pages.append(ePage);
+        }
+      }
+
+      $("body").off("click", ".gallery-page-page").on("click", ".gallery-page-page", function() {
+        page = parseInt($(this).text());
+        loadPost(old, max, filter, paged);
+      });
+
+      $("#gallery-page-prev").off("click").on("click", function() {
+        var currentPage = parseInt($("#gallery-page-current").text());
+
+        page = currentPage - 1;
+        if (page < 1)
+          return;
+
+        loadPost(old, max, filter, paged);
+      });
+
+      $("#gallery-page-next").off("click").on("click", function() {
+        var currentPage = parseInt($("#gallery-page-current").text());
+
+        page = currentPage + 1;
+        if (page > chunks.length)
+          return;
+
+        loadPost(old, max, filter, paged);
+      });
     })
     .catch((error) => {
       console.error("Error loading images:", error);

@@ -127,6 +127,7 @@ const buttons = [
   ["wedding.gif", ""],
   ["raspberry.png", "https://youtu.be/eQS4zaSWjVk"],
   ["stalker.gif", "https://www.moddb.com/mods/stalker-anomaly"],
+  ["bettysgraphics.gif", "https://bettysgraphics.neocities.org/"],
 ];
 
 function loadStamps() {

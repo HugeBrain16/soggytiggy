@@ -1,30 +1,54 @@
 function lainMode() {
+  var divider = $($(".content-divider")[0]);
+
+  $(".content").css({
+    "background-color": "#000",
+    "filter": "drop-shadow(0 0 3px #00ff00)"
+  });
+  $("body").css({
+    "background-image": "url(/assets/haxx.gif)",
+    "background-size": "30%",
+    "font-family": "nouveau-ibm, sans-serif"
+  });
+  divider.css({
+    "background": "url(/assets/pulse.gif)",
+    "background-size": "100% 100%"
+  });
+  $("#berry-button").attr("src", "/assets/dvd.gif");
+  $("#berry-button").css({
+    "filter": "none",
+    "top": "30px"
+  });
+  $("#brand-sub").html("Connecting to The Wired<span id='brand-subby'></span>");
+  $("#brand-sub").css({
+    "font-size": "15px",
+    "padding-bottom": "20px"
+  });
+  $("#brand").css({
+    "font-size": "40px",
+    "padding-top": "10px"
+  });
+
   $("#welcome-kitty").attr("src", "/assets/puter.gif");
-  $(".content").css("background-color", "#000");
-  $(".content").css("filter", "drop-shadow(0 0 3px #00ff00)");
   $(".content-boxbg").css("background-color", "#001100");
   $("p, h1, h2, h3, a, i, span").css("color", "#00ff00");
+
   $("a").hover(function() {
     $(this).css("filter", "drop-shadow(0 0 5px #00ff00)");
   }, function() {
     $(this).css("filter", "none");
   });
+  
   $(".gallery").css("filter", "none");
   $(".gallery").hover(function() {
     $(this).css("filter", "drop-shadow(0 0 5px #00ff00)");
   }, function() {
     $(this).css("filter", "none");
   });
-  $("#buttons a").css("filter", "none");
-  $("#berry-button").attr("src", "/assets/dvd.gif");
-  $("#berry-button").css("filter", "none");
+  
+  $("#buttons a").css("filter", "none"); 
   $("#kitty-tail").attr("src", "/assets/skull.gif");
-  $("#fufu-plush").hide();
-  $("body").css("background-image", "url(/assets/haxx.gif)");
-  $("body").css("background-size", "30%");
-  $("#brand-sub").html("Connecting to The Wired<span id='brand-subby'></span>");
-  $("#longflowers-decor").css("background-image", "url(/assets/pulse.gif)");
-  $("#longflowers-decor").css("background-size", "100% 100%");
+  $("#fufu-plush").hide(); 
   $("#news-parent").css("border-bottom", "2px solid #00ff00");
 
   setInterval(function() {

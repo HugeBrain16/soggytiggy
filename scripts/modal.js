@@ -22,6 +22,18 @@ modalClose.onclick = function () {
   modal.style.display = "none";
 };
 
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    modal.style.display = "none";
+  }
+});
+
 function getImage(url) {
   var result = "";
   var string = url.split("").reverse().join("");

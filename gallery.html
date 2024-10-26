@@ -13,10 +13,13 @@
   <body>
     <div id="soggy-header" class="content">
       <div class="content-header">
-        <h1 id="brand"><i class="fa-solid fa-palette"></i> Gallery <i class="fa-solid fa-palette"></i></h1>
+        <h1 id="brand">Gallery</h1>
         <h2>My works!</h2>
+        <p><img id="cake" src="/assets/cake.png"></p>
+        <p><img id="xylo" src="/assets/xylo.png"></p>
       </div>
     </div>
+    <p class="content-divider" style="background: url(/assets/huggo.png) repeat-x; padding-bottom: 32px; margin-left: 8px; margin-right: 8px;"></p>
     <div class="content">
       <div class="content-navbar">
         <p class="navbar-item"><a href="/index.html">Home</a></p>
@@ -33,6 +36,14 @@
             <li><input type="checkbox" class="gallery-filter-toggle" filter="gore"> Show gore</li>
             <li><input type="checkbox" class="gallery-filter-toggle" filter="nsfw"> Show NSFW/Suggestive</li>
           </ul>
+          <div align="center">
+            <ul id="gallery-page">
+              <li id="gallery-page-prev">Prev</li>
+              <li id="gallery-page-pages"></li>
+              <li id="gallery-page-next">Next</li>
+            </ul>
+          </div>
+          <img id="lps" src="/assets/lps1.gif">
         </p>
         <div class="gallery-content" align="center">
         </div>
@@ -42,6 +53,9 @@
     <script>
       $(document).ready(function() {
         var SHOW_FILTERED_CONTENT = false;
+        var LPS = 1;
+        const LPS_SIZE = $("#lps").css("width");
+        const LPS_TOP = $("#lps").css("top");
 
         function clearFilters() {
           $(".gallery-filter-toggle").each(function() {
@@ -49,7 +63,7 @@
           });
         }
 
-        loadPost();
+        loadPost(false, 0, false, true);
         clearFilters();
 
         $(".gallery-filter-toggle").on("change", function() {
@@ -82,10 +96,31 @@
 
         $("#gallery-sort").on("change", function() {
           if (this.value === "latest") {
-            loadPost();
+            loadPost(false, 0, false, true);
           } else if (this.value === "oldest") {
-            loadPost(true);
+            loadPost(true, 0, false, true);
           }
+        });
+
+        $("#lps").on("click", function() {
+          if (LPS < 5)
+            LPS++;
+          else
+            LPS = 1
+
+          var lps = `/assets/lps${LPS}.gif`;
+          $("#lps").attr("src", lps);
+
+          if (LPS === 5)
+            $("#lps").css({
+              "width": "120px",
+              "top": "30px"
+            });
+          else
+            $("#lps").css({
+              "width": LPS_SIZE,
+              "top": LPS_TOP
+            });
         });
       });
     </script>

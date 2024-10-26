@@ -8,6 +8,16 @@
   src: url(/assets/patrickhand.woff2);
 }
 
+@font-face {
+  font-family: nouveau-ibm;
+  src: url(/assets/nouveau-ibm.woff2);
+}
+
+@font-face {
+  font-family: creaked;
+  src: url(/assets/creaked.woff2);
+}
+
 body {
   font-family: patrickhand, sans-serif;
   margin: 0;
@@ -122,6 +132,13 @@ td {
   vertical-align: middle;
   width: 35px;
   height: auto;
+}
+
+.content-divider {
+  margin: 0;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 @media (max-width: 1000px) {

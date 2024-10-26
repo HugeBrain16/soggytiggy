@@ -1,39 +1,69 @@
 function sayaMode() {
-  $("body").css("background", "url(/assets/dawa1.gif)");
-  $(".content").css("background-color", "#400000");
-  $(".content").css("filter", "drop-shadow(0 0 8px #6e2a2a)");
-  $(".content-boxbg").css("background-color", "#6e2a2a");
+  var divider = $($(".content-divider")[0]);
+
+  $(".content").css({
+    "background-color": "#400000",
+    "filter": "drop-shadow(0 0 8px #6e2a2a)"
+  });
+  $("body").css({
+    "background": "url(/assets/dawa1.gif)",
+    "cursor": "url(/assets/eye.png), auto",
+    "font-family": "creaked, sans-serif"
+  });
+  $("#kitty-tail").attr("src", "/assets/blobber.gif");
+  $("#kitty-tail").css({
+    "bottom": "0",
+    "top": "unset",
+    "width": "85px"
+  });
+  $("#fufu-plush").attr("src", "/assets/saya1.png");
+  $("#fufu-plush").css({
+    "transform": "unset",
+    "height": "250px",
+    "right": "5px",
+    "bottom": "-5px"
+  });
+  divider.css({
+    "background": "url(/assets/blood.gif)",
+    "margin-left": "10px",
+    "margin-right": "10px"
+  });
+  $("#berry-button").attr("src", "/assets/meaty.gif");
+  $("#berry-button").css({
+    "filter": "none",
+    "top": "unset",
+    "bottom": "0"
+  });
+  $("#welcome-kitty").attr("src", "/assets/brain.gif");
+  $("#welcome-kitty").css({
+    "width": "200px",
+    "height": "auto",
+    "cursor": "pointer"
+  });
+  $("#welcome-kitty").on("click", function() {
+    window.open("https://github.com/hugebrain16", "_blank");
+  });
+
   $("p, h1, h2, h3, a, i, span").css("color", "#d44848");
   $("a").hover(function() {
     $(this).css("filter", "drop-shadow(0 0 5px #d44848)");
   }, function() {
     $(this).css("filter", "none");
   });
+  
   $(".gallery").css("filter", "none");
   $(".gallery").hover(function() {
     $(this).css("filter", "drop-shadow(0 0 10px #d44848)");
   }, function() {
     $(this).css("filter", "none");
   });
-  $("#kitty-tail").attr("src", "/assets/blobber.gif");
-  $("#kitty-tail").css("top", "20px");
-  $("#berry-button").attr("src", "/assets/meaty.gif");
-  $("#berry-button").css("filter", "none");
+
+  $(".content-boxbg").css("background-color", "#6e2a2a");  
   $("#brand-sub").text("Welcome home!");
-  $("#news-parent").css("border-bottom", "2px solid #6e2a2a");
-  $("#fufu-plush").attr("src", "/assets/saya1.png");
-  $("#fufu-plush").css("transform", "unset");
-  $("#fufu-plush").css("height", "250px");
-  $("#fufu-plush").css("right", "5px");
-  $("#fufu-plush").css("bottom", "-5px");
-  $("#longflowers-decor").css("background", "url(/assets/blood.gif)");
-  $("#longflowers-decor").css("margin-left", "10px");
-  $("#longflowers-decor").css("margin-right", "10px");
-  $("#soggy-header").css("margin-bottom", "0");
-  $("#welcome-kitty").attr("src", "/assets/brain.gif");
-  $("#welcome-kitty").css("width", "200px");
-  $("#welcome-kitty").css("height", "auto");
-  $("body").css("cursor", "url(/assets/eye.png), auto");
+  $("#brand-sub").css("padding-bottom", "25px");
+  $("#brand").css("padding-top", "20px");
+  $("#news-parent").css("border-bottom", "2px solid #6e2a2a"); 
+  $("#soggy-header").css("margin-bottom", "0"); 
 
   var icons = $(".content-icon");
   icons[0].src = "/assets/instagram_dawa.png";

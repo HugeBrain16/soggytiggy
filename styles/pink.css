@@ -24,3 +24,44 @@ li {
 .gallery:hover {
   filter: drop-shadow(5px 5px #f5b3c7);
 }
+
+#cake {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  width: 108px;
+}
+
+#xylo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 125px;
+}
+
+#lps {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 100px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #cake {
+    right: 0;
+    top: 25px;
+    width: 85px;
+  }
+
+  #xylo {
+    top: unset;
+    left: -10px;
+    bottom: -10px;
+    width: 100px;
+  }
+
+  #lps {
+    right: 0;
+  }
+}

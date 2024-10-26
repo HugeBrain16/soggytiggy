@@ -44,3 +44,35 @@
   border: 2px solid #f5b3c7;
   background-color: #e3a1b5;
 }
+
+#gallery-page li {
+  display: inline;
+  padding: 0 0 2px 2px;
+}
+
+#gallery-page-pages {
+  padding: 0;
+}
+
+#gallery-page-pages li {
+  padding: 0 8px;
+}
+
+#gallery-page-current {
+  color: #f7c6d5;
+  font-style: italic;
+}
+
+.gallery-page-page,
+#gallery-page-next,
+#gallery-page-prev {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+}
+
+.gallery-page-page:hover,
+#gallery-page-next:hover,
+#gallery-page-prev:hover {
+  color: #f7c6d5;
+}
