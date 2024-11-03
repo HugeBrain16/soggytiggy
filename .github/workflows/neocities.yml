@@ -14,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Prepare source files
+    - name: Checkout source files
       uses: actions/checkout@v4
+
+    - name: Prepare source files
       run: |
-        cd ${{ github.workspace }}
         mkdir -p public
         cp -r assets    public
         cp -r scripts   public
@@ -27,6 +28,7 @@ jobs:
         cp gallery.html public
         cp gallery.txt  public
         cp favicon.ico  public
+
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2
       with:
