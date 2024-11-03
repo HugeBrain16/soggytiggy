@@ -29,12 +29,34 @@
         <p class="navbar-item"><a href="/gallery.html">Gallery</a></p>
       </div>
       <div class="content-main">
-        <div class="content-main" align="center" style="background-color: #7edced;">
-          <img class="comm-accs" src="/assets/rarrow1.gif">
-          <a href="https://forms.gle/TBLZuhmjY1mtSSnB9" target="_blank" style="text-decoration: unset;">
-            <img id="commission" src="/assets/commission.gif">
-          </a>
-          <img class="comm-accs" src="/assets/larrow1.gif">
+        <div id="comm">
+          <div align="center">
+            <img class="comm-accs" src="/assets/rarrow1.gif">
+            <a href="https://forms.gle/TBLZuhmjY1mtSSnB9" target="_blank" style="text-decoration: unset;">
+              <img id="commission" src="/assets/commission.gif">
+            </a>
+            <img class="comm-accs" src="/assets/larrow1.gif">
+          </div>
+          <p id="comm-read"><span id="comm-tos">Terms of Service</span> | <span id="comm-proc">Commission Process</span></p>
+          <div class="comm-read-item">
+            <div class="comm-read-content">
+              <ul>
+                <li>I have the right to cancel the commission if the client is disrespectful or difficult to work with.</li>
+                <li>You may request changes while the commission is in progress. Changes requested after the commission is finished may require additional fees.</li>
+                <li>Payment will be required through Paypal. Other methods can be discussed in DMs.</li>
+                <li>Do not use any of my works for any AI programs or AI art purposes.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="comm-read-item">
+            <div class="comm-read-content">
+              <ol>
+                <li>You will be required to pay the first half of the price before I can start working on the commission.</li>
+                <li>You will receive a half finished piece with a big watermark.</li>
+                <li>After the commission is finished, you will be required to pay the other half to receive the full piece.</li>
+              </ol>
+            </div>
+          </div>
         </div>
         <div class="category">
           <h1>Lineart</h1>
@@ -52,6 +74,7 @@
             <img class="gallery" src="https://i.imgur.com/L0Bscvsm.png">
             <img class="gallery" src="https://i.imgur.com/M3nATtfm.png">
             <img class="gallery" src="https://i.imgur.com/NNpezUym.png">
+            <img class="gallery" style="object-position: center top;" src="https://i.imgur.com/cvaZooxm.png">
           </div>
         </div>
         <div class="category">
@@ -129,5 +152,38 @@
     </div>
     <img id="toffee" src="/assets/toffee.png">
     <script src="/scripts/modal.js"></script>
+    <script>
+      var tos = $("#comm-tos");
+      var proc = $("#comm-proc");
+      var content = $(".comm-read-item");
+
+      tos.on("click", function() {
+        tos.toggleClass("active");
+
+        if (proc.hasClass("active"))
+          proc.toggleClass("active");
+
+        if (content[0].style.maxHeight)
+          content[0].style.maxHeight = null;
+        else {
+          content[0].style.maxHeight = content[0].scrollHeight + "px";
+          content[1].style.maxHeight = null;
+        }
+      });
+
+      proc.on("click", function() {
+        proc.toggleClass("active");
+
+        if (tos.hasClass("active"))
+          tos.toggleClass("active");
+
+        if (content[1].style.maxHeight)
+          content[1].style.maxHeight = null;
+        else {
+          content[1].style.maxHeight = content[1].scrollHeight + "px";
+          content[0].style.maxHeight = null;
+        }
+      });
+    </script>
   </body>
 </html>

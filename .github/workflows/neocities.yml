@@ -1,0 +1,33 @@
+name: Deploy to neocities
+
+on:
+  push:
+    branches:
+      - r1
+
+concurrency:
+  group: deploy-to-neocities
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Prepare source files
+      run: |
+        mkdir -p public
+        cp -r assets    public
+        cp -r scripts   public
+        cp -r styles    public
+        cp index.html   public
+        cp comms.html   public
+        cp gallery.html public
+        cp gallery.txt  public
+        cp favicon.ico  public
+    - name: Deploy to neocities
+      uses: bcomnes/deploy-to-neocities@v2
+      with:
+        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        cleanup: true
+        dist_dir: public

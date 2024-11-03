@@ -1,12 +1,19 @@
-ul {
+ul, ol {
   margin: 0;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 0;
+}
+
+ul {
   padding-left: 10px;
 }
 
-li {
+ol {
+  padding-left: 15px;
+}
+
+.category li {
   list-style: none;
 }
 
@@ -62,6 +69,52 @@ li {
   right: 5px;
   width: 180px;
   transform: scale(1, -1) rotateZ(180deg);
+}
+
+#comm {
+  background-color: #6cdcf0;
+  padding-top: 10px;
+}
+
+#comm-read {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#comm-read span {
+  margin: 0 8px 0 8px;
+  padding: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#comm-read span.active {
+  background-color: #4f9fb0;
+}
+
+.comm-read-item {
+  max-height: 0;
+  overflow: scroll;
+  transition: max-height 0.3s ease-out;
+  color: #21b3cc;
+}
+
+.comm-read-item:nth-of-type(2) {
+  background-color: #f0dd7d;
+}
+
+.comm-read-item:nth-of-type(3) {
+  background-color: #97f27e;
+}
+
+.comm-read-content {
+  padding: 0 20px 0 20px;
+}
+
+.comm-read-content ul > li {
+  list-style: "- ";
 }
 
 @media (min-width: 1800px) {
