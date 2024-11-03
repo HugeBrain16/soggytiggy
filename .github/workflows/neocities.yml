@@ -16,6 +16,7 @@ jobs:
     steps:
     - name: Prepare source files
       run: |
+        ls
         mkdir -p public
         cp -r assets    public
         cp -r scripts   public
