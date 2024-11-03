@@ -15,7 +15,18 @@ jobs:
 
     steps:
     - name: Prepare source files
-      run: ls
+      uses: actions/checkout@v4
+      run: |
+        cd ${{ github.workspace }}
+        mkdir -p public
+        cp -r assets    public
+        cp -r scripts   public
+        cp -r styles    public
+        cp index.html   public
+        cp comms.html   public
+        cp gallery.html public
+        cp gallery.txt  public
+        cp favicon.ico  public
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2
       with:
