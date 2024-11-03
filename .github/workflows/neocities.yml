@@ -3,7 +3,7 @@ name: Deploy to neocities
 on:
   push:
     branches:
-      - r1
+      - re1
 
 concurrency:
   group: deploy-to-neocities
