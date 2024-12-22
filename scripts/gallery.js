@@ -1,7 +1,8 @@
 var modal = document.createElement("div");
 var modalClose = document.createElement("span");
 var page = 1;
-const hiddenTags = ["gore", "nsfw"];
+const hiddenTags = ["gore", "nsfw", "doodle"];
+const warnTags = ["gore", "nsfw"];
 
 modal.classList.add("modal");
 modalClose.classList.add("modal-close");
@@ -83,6 +84,13 @@ function filterImage(image) {
   return false;
 }
 
+function warnImage(image) {
+  if (image["tags"] !== undefined)
+    return image["tags"].some(filter => warnTags.includes(filter));
+
+  return false;
+}
+
 function getThumbnail(url) {
   var result = "";
   var string = url.split("").reverse().join("");
@@ -111,7 +119,9 @@ function createImage(image) {
 
     if (filterImage(image)) {
       gallery.style.display = "none";
-      gallery.classList.add("gallery-nsfw");
+
+      if (warnImage(image))
+        gallery.classList.add("gallery-nsfw");
     }
   }
   gallery.src = getThumbnail(image["link"]);

@@ -33,8 +33,9 @@
             <option value="oldest">Oldest</option>
           </select>
           <ul>
-            <li><input type="checkbox" class="gallery-filter-toggle" filter="gore"> Show gore</li>
-            <li><input type="checkbox" class="gallery-filter-toggle" filter="nsfw"> Show NSFW/Suggestive</li>
+            <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
+            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
+            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/Suggestive</li>
           </ul>
           <div align="center">
             <ul id="gallery-page">
@@ -63,15 +64,23 @@
           });
         }
 
+        function clearUnsafeFilters() {
+          $(".gallery-filter-unsafe").each(function() {
+            this.checked = false;
+          });
+        }
+
         loadPost(false, 0, false, true);
         clearFilters();
 
         $(".gallery-filter-toggle").on("change", function() {
-          if (!SHOW_FILTERED_CONTENT)
-            if (confirm("These images may contain sensitive themes, gore and nudity.\ndo you wish to proceed?"))
-              SHOW_FILTERED_CONTENT = true;
-            else
-              return clearFilters();
+          if ($(this).hasClass("gallery-filter-unsafe")) {
+            if (!SHOW_FILTERED_CONTENT)
+              if (confirm("These images may contain sensitive themes, gore and nudity.\ndo you wish to proceed?"))
+                SHOW_FILTERED_CONTENT = true;
+              else
+                return clearUnsafeFilters();
+          }
 
           var filters = [];
 
