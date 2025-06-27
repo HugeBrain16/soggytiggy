@@ -2,6 +2,11 @@
 @import url(/styles/green.css);
 @import url(/styles/animations.css);
 
+#pfp {
+  width: 256px;
+  height: auto;
+}
+
 #puppy-call {
   float: right;
   position: absolute;
