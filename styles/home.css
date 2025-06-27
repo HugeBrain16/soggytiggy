@@ -7,6 +7,12 @@
   height: auto;
 }
 
+#pfp-small {
+  display: none;
+  width: 256px;
+  height: auto;
+}
+
 #puppy-call {
   float: right;
   position: absolute;
@@ -189,6 +195,14 @@
 .gallery:nth-of-type(4) { display: none !important; }
 
 @media (max-width: 1200px) {
+  #pfp {
+    display: none;
+  }
+
+  #pfp-small {
+    display: block;
+  }
+
   #puppy-call {
     font-size: 10px;
     top: 0;
