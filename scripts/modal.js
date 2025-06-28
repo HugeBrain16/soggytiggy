@@ -58,13 +58,10 @@ function getImage(url) {
 }
 
 $(document).ready(function () {
-  var thumbs = $(".gallery");
+  var thumbs = $(".gallery-modal");
 
   modal.appendChild(modalClose);
-  document.body.insertBefore(
-    modal,
-    document.getElementById("soggy-header"),
-  );
+  $(modal).insertBefore("#soggy-header");
 
   for (let i = 0; i < thumbs.length; i++) {
     thumbs[i].onclick = function () {
