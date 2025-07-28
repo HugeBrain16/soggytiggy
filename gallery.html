@@ -55,6 +55,7 @@
       $(document).ready(function() {
         var SHOW_FILTERED_CONTENT = false;
         var LPS = 1;
+        var filters = [];
         const LPS_SIZE = $("#lps").css("width");
         const LPS_TOP = $("#lps").css("top");
 
@@ -70,27 +71,7 @@
           });
         }
 
-        loadPost(false, 0, false, true);
-        clearFilters();
-
-        $(".gallery-filter-toggle").on("change", function() {
-          if ($(this).hasClass("gallery-filter-unsafe")) {
-            if (!SHOW_FILTERED_CONTENT)
-              if (confirm("These images may contain sensitive themes, gore and nudity.\ndo you wish to proceed?"))
-                SHOW_FILTERED_CONTENT = true;
-              else
-                return clearUnsafeFilters();
-          }
-
-          var filters = [];
-
-          $(".gallery-filter-toggle").each(function() {
-            const filter = $(this);
-
-            if (filter.is(":checked"))
-              filters.push(filter.attr("filter"));
-          });
-
+        function applyFilter() {
           $(".gallery").each(function() {
             const image = $(this);
 
@@ -101,7 +82,35 @@
                 image.css("display", "none");
             }
           });
+        }
+
+        loadPost(false, 0, false, true);
+        clearFilters();
+
+        $(".gallery-filter-toggle").on("change", function() {
+          if ($(this).hasClass("gallery-filter-unsafe")) {
+            if (!SHOW_FILTERED_CONTENT)
+              if (confirm("These images may contain sensitive themes, suggestive themes, gore and nudity.\ndo you wish to proceed?"))
+                SHOW_FILTERED_CONTENT = true;
+              else
+                return clearUnsafeFilters();
+          }
+
+          $(".gallery-filter-toggle").each(function() {
+            const cFilter = $(this);
+
+            if (cFilter.is(":checked"))
+              filters.push(cFilter.attr("filter"));
+            else
+              filters = filters.filter(val => val !== cFilter.attr("filter"))
+          });
+
+          applyFilter();
         });
+        
+        postLoadPost = function() {
+          applyFilter();
+        };
 
         $("#gallery-sort").on("change", function() {
           if (this.value === "latest") {

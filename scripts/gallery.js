@@ -1,6 +1,7 @@
 var modal = document.createElement("div");
 var modalClose = document.createElement("span");
 var page = 1;
+var postLoadPost = function() {};
 const hiddenTags = ["gore", "nsfw", "doodle"];
 const warnTags = ["gore", "nsfw"];
 
@@ -180,6 +181,11 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
           chunks.push(chunk);
       }
 
+      if (page < 1)
+        page = 1;
+      else if (page > chunks.length)
+        page--;
+
       clearPosts();
       for (let post of (paged ? chunks[page - 1] : posts)) {
         if (maxPost >= max && max !== 0)
@@ -225,6 +231,7 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
 
         loadPost(old, max, filter, paged);
       });
+      postLoadPost();
     })
     .catch((error) => {
       console.error("Error loading images:", error);
