@@ -42,14 +42,19 @@ upload = driver.find_element(By.ID, "images")
 upload.send_keys(str(image.resolve()))
 
 upload_button = driver.find_element(By.ID, "upload-button")
-upload_button.click()
+driver.execute_script("arguments[0].click();", upload_button)
 
 print("Uploading (can take up to 10 seconds)...")
 
 copylink = wait.until(Expect.visibility_of_element_located((By.CLASS_NAME, "copy-all-btn")))
-link = copylink.get_attribute("data-content")
+link = copylink.get_attribute("data-content").strip()
 
 driver.quit()
+
+if not link.startswith("https://i.imgur.com"):
+    print("Upload failed! received invalid imgur link. try again.")
+    raise SystemExit(1)
+
 print("Uploaded successfully!")
 
 # -- uploadtool --
@@ -59,20 +64,23 @@ current_datetime = datetime.now().strftime(ftime)
 
 def match_datetime(time: str, fmt: str):
     try:
-        dt = datetime.strptime(s, fmt)
-        return dt.strftime(fmt) == s
+        dt = datetime.strptime(time, fmt)
+        return dt.strftime(fmt) == time
     except ValueError:
         return False
 
 def get_time():
-    while input(f"Enter datetime (leave blank to default to '{current_datetime}'): ").strip():
+    while True:
+        time = input(f"Enter datetime (leave blank to default to '{current_datetime}'): ").strip()
+
+        if not time:
+            print("Defaulting to current datetime...")
+            return current_datetime
+
         if match_datetime(time, ftime):
-            return datetime.strptime(time, fmt)
+            return time
         else:
             print("Datetime invalid!")
-
-    print("Defaulting to current datetime...")
-    return current_datetime
 
 def get_crop():
     crop = input(f"Enter cropping (e.g., 'center left', leave blank if unsure): ").strip()
@@ -105,6 +113,6 @@ with open("gallery.txt", "a") as db:
         if crop:
             record += f" {crop}"
 
-    db.write(record)
+    db.write(record + "\n")
 
 print("Done!")
