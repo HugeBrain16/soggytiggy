@@ -98,11 +98,13 @@ with open("gallery.txt", "a") as db:
 
     if tags:
         if not crop:
-            record += " default | " + tags
+            record += f" default | {tags}"
         else:
             record += f" {crop} | {tags}"
+    else:
+        if crop:
+            record += f" {crop}"
 
     db.write(record)
 
 print("Done!")
-
