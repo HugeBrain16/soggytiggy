@@ -18,7 +18,7 @@ parser.add_argument('filename')
 args = parser.parse_args()
 
 image = Path(args.filename)
-if not image.exists() and not image.is_file():
+if not image.exists() or not image.is_file():
     print("Filename invalid!")
     raise SystemExit(1)
 
