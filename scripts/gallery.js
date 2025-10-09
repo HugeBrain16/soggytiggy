@@ -25,6 +25,12 @@ function openModal(img) {
   modal.appendChild(modalContent);
   modal.style.display = "flex";
   modalContent.src = img;
+
+  modalContent.addEventListener('click', (event) => {
+    if (event.target == modalContent) {
+      modalContent.classList.toggle("zoomed");
+    }
+  });
 }
 
 modalClose.onclick = function () {
@@ -125,6 +131,12 @@ function createImage(image) {
         gallery.classList.add("gallery-nsfw");
     }
   }
+
+  gallery.classList.add("placeholder");
+  gallery.onload = function () {
+    gallery.classList.remove("placeholder");
+  }
+
   gallery.src = getThumbnail(image["link"]);
   gallery.style.objectPosition = (image["crop"] === undefined || image["crop"] === "default") ? "top center" : image["crop"];
 

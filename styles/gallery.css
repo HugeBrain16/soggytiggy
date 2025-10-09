@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.gallery.placeholder {
+  box-shadow: inset 0 0px 10px rgba(0, 0, 0, 0.2);
+}
+
 .gallery-nsfw {
   clip-path: inset(0);
   filter: blur(8px) drop-shadow(4px 4px #444);
