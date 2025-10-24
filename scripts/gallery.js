@@ -1,5 +1,7 @@
 var modal = document.createElement("div");
 var modalClose = document.createElement("span");
+var modalPrev = document.createElement("span");
+var modalNext = document.createElement("span");
 var page = 1;
 var postLoadPost = function() {};
 const hiddenTags = ["gore", "nsfw", "doodle"];
@@ -9,32 +11,61 @@ modal.classList.add("modal");
 modalClose.classList.add("modal-close");
 modalClose.innerHTML = "&times;";
 modalClose.style.position = "fixed";
+modalPrev.classList.add("modal-prev");
+modalPrev.innerHTML = "&lt;";
+modalPrev.style.position = "fixed";
+modalNext.classList.add("modal-next");
+modalNext.innerHTML = "&gt;";
+modalNext.style.position = "fixed";
 
 modal.appendChild(modalClose);
+modal.appendChild(modalPrev);
+modal.appendChild(modalNext);
 document.body.insertBefore(
   modal,
   document.getElementsByClassName("content-floatsie")[0],
 );
 
-function openModal(img) {
+function openModal(gallery) {
   var modalContent = document.createElement("img");
   var oldModalContent = modal.getElementsByTagName("img")[0];
+  var modalItem = 0;
+  var imageLinks = gallery.getAttribute("imagelinks").split(",");
+
+  if (imageLinks.length > 1) {
+    modalPrev.style.visibility = "visible";
+    modalNext.style.visibility = "visible";
+  }
 
   if (oldModalContent) oldModalContent.remove();
   modalContent.classList.add("modal-content");
   modal.appendChild(modalContent);
   modal.style.display = "flex";
-  modalContent.src = img;
+  modalContent.src = imageLinks[modalItem];
 
   modalContent.addEventListener('click', (event) => {
     if (event.target == modalContent) {
       modalContent.classList.toggle("zoomed");
     }
   });
+
+  modalPrev.addEventListener('click', (event) => {
+    if (modalItem > 0)
+      modalItem--;
+    modalContent.src = imageLinks[modalItem];
+  });
+
+  modalNext.addEventListener('click', (event) => {
+    if (modalItem < imageLinks.length - 1)
+      modalItem++;
+    modalContent.src = imageLinks[modalItem];
+  });
 }
 
 modalClose.onclick = function () {
   modal.style.display = "none";
+  modalPrev.style.visibility = "hidden";
+  modalNext.style.visibility = "hidden";
 };
 
 modal.addEventListener('click', (event) => {
@@ -67,7 +98,7 @@ function loadImages(file) {
 
         let _image = line.split("|");
         if (_image.length < 2) continue;
-        image["link"] = _image[0].trim();
+        image["links"] = _image[0].trim().split(",");
         image["date"] = _image[1].trim();
         if (_image.length >= 3)
           image["crop"] = _image[2].trim();
@@ -116,31 +147,45 @@ function getThumbnail(url) {
 }
 
 function createImage(image) {
-  var gallery = document.createElement("img");
+  const container = document.createElement("div");
+  container.classList.add("gallery-container");
+  container.style.position = "relative";
+  container.style.display = "inline-block";
 
+  const gallery = document.createElement("img");
   gallery.classList.add("gallery");
-  gallery.setAttribute("imagelink", image["link"]);
-  gallery.setAttribute("postDate", image["date"]);
+  container.setAttribute("displaylink", 0);
+  container.setAttribute("imagelinks", image["links"].join(","));
+  container.setAttribute("postDate", image["date"]);
+
   if (image["tags"] !== undefined) {
     gallery.setAttribute("tags", image["tags"]);
-
     if (filterImage(image)) {
       gallery.style.display = "none";
-
-      if (warnImage(image))
-        gallery.classList.add("gallery-nsfw");
+      if (warnImage(image)) gallery.classList.add("gallery-nsfw");
     }
   }
 
   gallery.classList.add("placeholder");
   gallery.onload = function () {
     gallery.classList.remove("placeholder");
-  }
+  };
 
-  gallery.src = getThumbnail(image["link"]);
-  gallery.style.objectPosition = (image["crop"] === undefined || image["crop"] === "default") ? "top center" : image["crop"];
+  gallery.src = getThumbnail(image["links"][0]);
+  gallery.style.objectPosition = image["crop"] === undefined || image["crop"] === "default" ? "top center" : image["crop"];
 
-  return gallery;
+  const galleryL = document.createElement("span");
+  galleryL.classList.add("gallery-multiple");
+  galleryL.innerHTML = "<i class='fa-solid fa-images'></i>";
+  if (image["links"].length > 1)
+    galleryL.style.visibility = "visible";
+  else
+    galleryL.style.visibility = "hidden";
+
+  container.appendChild(gallery);
+  container.appendChild(galleryL);
+
+  return container;
 }
 
 function sortPosts(posts, old = false) {
@@ -173,7 +218,7 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
         let gallery = createImage(image);
 
         gallery.onclick = function () {
-          openModal(gallery.getAttribute("imagelink"));
+          openModal(gallery);
         };
         posts.push(gallery);
       }

@@ -26,16 +26,39 @@
   padding: 10px;
 }
 
-.modal-close {
+.modal-close,
+.modal-prev,
+.modal-next {
   position: absolute;
-  top: 2.5%;
-  right: 2.5%;
-  color: #555555;
+  color: #555;
   font-size: 50px;
   transition: 0.3s;
   cursor: pointer;
+  user-select: none;
 }
 
-.modal-close:hover {
+.modal-prev,
+.modal-next {
+  top: 50%;
+  font-size: 100px;
+  visibility: hidden;
+}
+
+.modal-close {
+  top: 2.5%;
+  right: 2.5%;
+}
+
+.modal-prev {
+  left: 2.5%;
+}
+
+.modal-next {
+  right: 2.5%;
+}
+
+.modal-close:hover,
+.modal-prev:hover,
+.modal-next:hover {
   color: white;
 }

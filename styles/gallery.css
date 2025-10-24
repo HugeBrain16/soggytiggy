@@ -26,7 +26,18 @@
   filter: blur(8px) drop-shadow(5px 5px #f5b3c7);
 }
 
-.gallery:hover {
+.gallery-multiple {
+  position: absolute;
+  top: 5%;
+  right: 7.5%;
+  color: #fff;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+.gallery:hover,
+.gallery:hover ~ .gallery-multiple {
   transform: translate(-1px, -1px);
 }
 
