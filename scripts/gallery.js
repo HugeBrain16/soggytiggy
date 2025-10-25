@@ -26,9 +26,21 @@ document.body.insertBefore(
   document.getElementsByClassName("content-floatsie")[0],
 );
 
+function addModalImage(image) {
+  var oldContent = modal.getElementsByTagName("img")[0];
+  var content = document.createElement("img");
+  content.classList.add("modal-content");
+  content.src = image;
+  if (oldContent) oldContent.remove();
+  content.addEventListener('click', (event) => {
+    if (event.target == content) {
+      content.classList.toggle("zoomed");
+    }
+  });
+  modal.appendChild(content);
+}
+
 function openModal(gallery) {
-  var modalContent = document.createElement("img");
-  var oldModalContent = modal.getElementsByTagName("img")[0];
   var modalItem = 0;
   var imageLinks = gallery.getAttribute("imagelinks").split(",");
 
@@ -37,28 +49,18 @@ function openModal(gallery) {
     modalNext.style.visibility = "visible";
   }
 
-  if (oldModalContent) oldModalContent.remove();
-  modalContent.classList.add("modal-content");
-  modal.appendChild(modalContent);
   modal.style.display = "flex";
-  modalContent.src = imageLinks[modalItem];
-
-  modalContent.addEventListener('click', (event) => {
-    if (event.target == modalContent) {
-      modalContent.classList.toggle("zoomed");
-    }
-  });
-
+  addModalImage(imageLinks[modalItem]);
   modalPrev.addEventListener('click', (event) => {
     if (modalItem > 0)
       modalItem--;
-    modalContent.src = imageLinks[modalItem];
+    addModalImage(imageLinks[modalItem]);
   });
 
   modalNext.addEventListener('click', (event) => {
     if (modalItem < imageLinks.length - 1)
       modalItem++;
-    modalContent.src = imageLinks[modalItem];
+    addModalImage(imageLinks[modalItem]);
   });
 }
 
