@@ -176,3 +176,5 @@ https://i.imgur.com/rjbcadO.png  | 2025-08-06 02:00 | center left | gore
 https://i.imgur.com/EiM1kEG.png  | 2025-10-24 00:00 | center right
 https://i.imgur.com/b8AbuTK.png,https://i.imgur.com/wRQkeH9.png  | 2025-10-24 21:21 | center left
 https://i.imgur.com/4Ka1GUA.png,https://i.imgur.com/H47MvIo.png  | 2025-10-24 21:23
+https://i.imgur.com/O8yL5Gq.jpeg | 2025-10-26 00:00 | center right
+https://i.imgur.com/tjJX4i8.jpeg | 2025-10-26 00:10 | center right
