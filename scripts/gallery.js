@@ -196,7 +196,7 @@ function sortPosts(posts, old = false) {
 }
 
 function clearPosts() {
-  $(".gallery").remove();
+  $(".gallery-container").remove();
 }
 
 function loadPost(old = false, max = 0, filter = false, paged = false) {
