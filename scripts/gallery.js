@@ -177,13 +177,10 @@ function createImage(image) {
   const galleryL = document.createElement("span");
   galleryL.classList.add("gallery-multiple");
   galleryL.innerHTML = "<i class='fa-solid fa-images'></i>";
-  if (image["links"].length > 1)
-    galleryL.style.visibility = "visible";
-  else
-    galleryL.style.visibility = "hidden";
 
   container.appendChild(gallery);
-  container.appendChild(galleryL);
+  if (image["links"].length > 1)
+    container.appendChild(galleryL);
 
   return container;
 }
