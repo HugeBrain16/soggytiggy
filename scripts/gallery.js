@@ -27,17 +27,26 @@ document.body.insertBefore(
 );
 
 function addModalImage(image) {
-  var oldContent = modal.getElementsByTagName("img")[0];
-  var content = document.createElement("img");
+  var oldContent = modal.getElementsByClassName("modal-content")[0];
+  var content = document.createElement("div");
+  var contentImg = document.createElement("img");
   content.classList.add("modal-content");
-  content.src = image;
+  content.classList.add("placeholder");
+  content.style.cursor = "unset";
   if (oldContent) oldContent.remove();
-  content.addEventListener('click', (event) => {
-    if (event.target == content) {
+  contentImg.addEventListener('click', (event) => {
+    if (event.target == contentImg && contentImg.style.opacity === "1") {
       content.classList.toggle("zoomed");
     }
   });
+  contentImg.onload = function () {
+    content.classList.remove("placeholder");
+    contentImg.style.opacity = 1;
+    content.style.cursor = "zoom-in";
+  };
+  content.appendChild(contentImg);
   modal.appendChild(content);
+  contentImg.src = image;
 }
 
 function openModal(gallery) {
@@ -52,15 +61,17 @@ function openModal(gallery) {
   modal.style.display = "flex";
   addModalImage(imageLinks[modalItem]);
   modalPrev.addEventListener('click', (event) => {
-    if (modalItem > 0)
+    if (modalItem > 0) {
       modalItem--;
-    addModalImage(imageLinks[modalItem]);
+      addModalImage(imageLinks[modalItem]);
+    }
   });
 
   modalNext.addEventListener('click', (event) => {
-    if (modalItem < imageLinks.length - 1)
+    if (modalItem < imageLinks.length - 1) {
       modalItem++;
-    addModalImage(imageLinks[modalItem]);
+      addModalImage(imageLinks[modalItem]);
+    }
   });
 }
 
@@ -156,6 +167,8 @@ function createImage(image) {
 
   const gallery = document.createElement("img");
   gallery.classList.add("gallery");
+  gallery.classList.add("placeholder");
+  gallery.style.objectPosition = image["crop"] === undefined || image["crop"] === "default" ? "top center" : image["crop"];
   container.setAttribute("displaylink", 0);
   container.setAttribute("imagelinks", image["links"].join(","));
   container.setAttribute("postDate", image["date"]);
@@ -168,14 +181,6 @@ function createImage(image) {
     }
   }
 
-  gallery.classList.add("placeholder");
-  gallery.onload = function () {
-    gallery.classList.remove("placeholder");
-  };
-
-  gallery.src = getThumbnail(image["links"][0]);
-  gallery.style.objectPosition = image["crop"] === undefined || image["crop"] === "default" ? "top center" : image["crop"];
-
   const galleryL = document.createElement("span");
   galleryL.classList.add("gallery-multiple");
   galleryL.innerHTML = "<i class='fa-solid fa-images'></i>";
@@ -183,6 +188,13 @@ function createImage(image) {
   container.appendChild(gallery);
   if (image["links"].length > 1)
     container.appendChild(galleryL);
+
+  gallery.onload = function () {
+    gallery.classList.remove("placeholder");
+    gallery.style.opacity = 1;
+    galleryL.style.opacity = 1;
+  };
+  gallery.src = getThumbnail(image["links"][0]);
 
   return container;
 }
