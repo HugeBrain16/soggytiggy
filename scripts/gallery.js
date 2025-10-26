@@ -44,7 +44,7 @@ function addModalImage(image) {
   contentImg.onload = function () {
     content.classList.remove("placeholder");
     contentImg.style.opacity = 1;
-    content.style.cursor = "zoom-in";
+    contentImg.style.cursor = "zoom-in";
   };
   content.appendChild(contentImg);
   inner.appendChild(content);
