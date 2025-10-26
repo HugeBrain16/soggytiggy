@@ -30,7 +30,7 @@
 
 .modal-content img {
   margin: auto;
-  max-width: 700px;
+  max-width: 1000px;
   transition: 0.2s;
   opacity: 0;
 }
