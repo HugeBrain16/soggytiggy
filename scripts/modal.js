@@ -7,9 +7,11 @@ modalClose2.innerHTML = "&times;";
 modalClose2.style.position = "fixed";
 
 function addModalImage2(image) {
-  var oldContent = modal2.getElementsByClassName("modal-content")[0];
+  var oldContent = modal2.getElementsByClassName("modal-inner")[0];
+  var inner = document.createElement("div");
   var content = document.createElement("div");
   var contentImg = document.createElement("img");
+  content.classList.add("modal-inner");
   content.classList.add("modal-content");
   content.classList.add("placeholder");
   content.style.cursor = "unset";

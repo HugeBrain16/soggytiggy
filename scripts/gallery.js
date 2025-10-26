@@ -27,9 +27,11 @@ document.body.insertBefore(
 );
 
 function addModalImage(image) {
-  var oldContent = modal.getElementsByClassName("modal-content")[0];
+  var oldContent = modal.getElementsByClassName("modal-inner")[0];
+  var inner = document.createElement("div");
   var content = document.createElement("div");
   var contentImg = document.createElement("img");
+  content.classList.add("modal-inner");
   content.classList.add("modal-content");
   content.classList.add("placeholder");
   content.style.cursor = "unset";
@@ -45,6 +47,7 @@ function addModalImage(image) {
     content.style.cursor = "zoom-in";
   };
   content.appendChild(contentImg);
+  inner.appendChild(content);
   modal.appendChild(content);
   contentImg.src = image;
 }
