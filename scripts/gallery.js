@@ -85,7 +85,9 @@ modalClose.onclick = function () {
 };
 
 modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
+  var targetClass = event.target.classList;
+
+  if (targetClass.contains("modal-inner") || targetClass.contains("modal-content")) {
     modal.style.display = "none";
   }
 });

@@ -42,7 +42,9 @@ modalClose2.onclick = function () {
 };
 
 modal2.addEventListener('click', (event) => {
-  if (event.target === modal2) {
+  var targetClass = event.target.classList;
+
+  if (targetClass.contains("modal-inner") || targetClass.contains("modal-content")) {
     modal2.style.display = "none";
   }
 });
