@@ -27,8 +27,7 @@ document.body.insertBefore(
 );
 
 function addModalImage(image) {
-  var oldContent = modal.getElementsByClassName("modal-inner")[0];
-  var inner = document.createElement("div");
+  var oldContent = modal.getElementsByClassName("modal-content")[0];
   var content = document.createElement("div");
   var contentImg = document.createElement("img");
   content.classList.add("modal-inner");
@@ -47,7 +46,6 @@ function addModalImage(image) {
     contentImg.style.cursor = "zoom-in";
   };
   content.appendChild(contentImg);
-  inner.appendChild(content);
   modal.appendChild(content);
   contentImg.src = image;
 }
@@ -245,9 +243,8 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
           if (chunk.length === 30) {
             chunks.push(chunk);
             chunk = [];
-          } else {
-            chunk.push(post);
           }
+          chunk.push(post);
         }
 
         if (chunk.length > 0)
