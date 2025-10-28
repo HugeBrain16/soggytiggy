@@ -90,7 +90,7 @@
         $(".gallery-filter-toggle").on("change", function() {
           if ($(this).hasClass("gallery-filter-unsafe")) {
             if (!SHOW_FILTERED_CONTENT)
-              if (confirm("These images may contain sensitive themes, suggestive themes, gore and nudity.\ndo you wish to proceed?"))
+              if (confirm("The images may contain sensitive themes, suggestive themes, gore and nudity.\ndo you wish to proceed?"))
                 SHOW_FILTERED_CONTENT = true;
               else
                 return clearUnsafeFilters();
