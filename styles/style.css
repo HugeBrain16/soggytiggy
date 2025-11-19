@@ -1,25 +1,7 @@
-@font-face {
-  font-family: nanum;
-  src: url(/assets/nanum.woff2);
-}
-
-@font-face {
-  font-family: patrickhand;
-  src: url(/assets/patrickhand.woff2);
-}
-
-@font-face {
-  font-family: nouveau-ibm;
-  src: url(/assets/nouveau-ibm.woff2);
-}
-
-@font-face {
-  font-family: creaked;
-  src: url(/assets/creaked.woff2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  font-family: patrickhand, sans-serif;
+  font-family: 'Gentium Plus', sans-serif;
   margin: 0;
   margin-top: 10px;
   padding-left: 15%;
@@ -74,7 +56,8 @@ td {
   margin: 10px;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #fff;
+  color: #504945;
+  background-color: #BDAE93;
   filter: drop-shadow(5px 5px #444);
 }
 
