@@ -1,0 +1,21 @@
+#pfp {
+    width: 256px;
+    height: 256px;
+    margin-right: 40px;
+}
+
+.row-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.wrapper {
+    margin-right: 40px;
+}
+
+@media (max-width: 1000px) {
+    .row-wrapper {
+        display: block;
+        align-items: unset;
+    }
+}

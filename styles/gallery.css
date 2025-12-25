@@ -1,4 +1,10 @@
-@import url(/styles/animations.css);
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
 
 .gallery {
   display: inline-grid;
@@ -9,7 +15,6 @@
   padding: 0;
   transition: 0.2s ease;
   animation: fadeIn 0.3s ease forwards;
-  filter: drop-shadow(4px 4px #444);
   cursor: pointer;
   opacity: 0;
 }
@@ -24,11 +29,7 @@
 
 .gallery-nsfw {
   clip-path: inset(0);
-  filter: blur(8px) drop-shadow(4px 4px #444);
-}
-
-.gallery-nsfw:hover {
-  filter: blur(8px) drop-shadow(5px 5px #f5b3c7);
+  filter: blur(8px);
 }
 
 .gallery-multiple {
@@ -42,28 +43,10 @@
   opacity: 0;
 }
 
-.gallery:hover,
-.gallery:hover ~ .gallery-multiple {
-  transform: translate(-1px, -1px);
-}
-
-@media (max-width: 700px) {
-  .gallery {
-    width: 100px;
-    height: 100px;
-  }
-
-  .gallery-desc {
-    font-size: xx-small;
-  }
-}
-
 #gallery-sort {
   font-family: inherit;
   font-size: 15px;
-  color: inherit;
-  border: 2px solid #f5b3c7;
-  background-color: #e3a1b5;
+  color: #1d2021;
 }
 
 #gallery-page li {
@@ -80,8 +63,9 @@
 }
 
 #gallery-page-current {
-  color: #f7c6d5;
-  font-style: italic;
+  font-weight: bold;
+  font-size: 1.8em;
+  text-shadow: #f4fbff 1px 0 10px;
 }
 
 .gallery-page-page,
@@ -90,10 +74,29 @@
   cursor: pointer;
   user-select: none;
   transition: all 0.3s;
+  font-size: 1.8em;
 }
 
 .gallery-page-page:hover,
 #gallery-page-next:hover,
 #gallery-page-prev:hover {
-  color: #f7c6d5;
+  text-shadow: #f4fbff 1px 0 10px;
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gallery-desc {
+    font-size: xx-small;
+  }
+
+  .gallery-page-page,
+  #gallery-page-next,
+  #gallery-page-prev,
+  #gallery-page-current {
+    font-size: 1em;
+  }
 }

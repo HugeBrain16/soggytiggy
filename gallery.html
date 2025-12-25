@@ -3,143 +3,110 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soggytiggy - Gallery</title>
+    <title>soggytiggy - About</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="/styles/pink.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet"> 
     <link href="/styles/gallery.css" rel="stylesheet">
     <link href="/styles/modal.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <script src="/assets/jquery.js"></script>
   </head>
   <body>
-    <div id="soggy-header" class="content">
+    <div class="content-background-image"></div>
+    <h1 id="title" align="center">Soggytiggy</h1>
+    <div class="animate__animated animate__fadeIn animate__faster content">
       <div class="content-header">
-        <h1 id="brand">Gallery</h1>
-        <h2>My works!</h2>
-        <p><img id="cake" src="/assets/cake.png"></p>
-        <p><img id="xylo" src="/assets/xylo.png"></p>
-      </div>
-    </div>
-    <p class="content-divider" style="background: url(/assets/huggo.png) repeat-x; padding-bottom: 32px; margin-left: 8px; margin-right: 8px;"></p>
-    <div class="content">
-      <div class="content-navbar">
-        <p class="navbar-item"><a href="/index.html">Home</a></p>
-        <p class="navbar-item"><a href="/comms.html">Commissions</a></p>
-        <p class="navbar-item"><a href="#">Gallery</a></p>
-      </div>
-      <div class="content-main">
-        <p>Sort by:
-          <select id="gallery-sort">
-            <option value="latest">Latest</option>
-            <option value="oldest">Oldest</option>
-          </select>
-          <ul>
-            <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
-            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
-            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/Suggestive</li>
-          </ul>
-          <div align="center">
-            <ul id="gallery-page">
-              <li id="gallery-page-prev">Prev</li>
-              <li id="gallery-page-pages"></li>
-              <li id="gallery-page-next">Next</li>
-            </ul>
-          </div>
-          <img id="lps" src="/assets/lps1.gif">
-        </p>
-        <div class="gallery-content">
+        <h1>Gallery</h1>
+        <div class="content-navbar">
+          <p class="content-navbar-item"><a href="/index.html">Home</a></p>
+          <p class="content-navbar-item content-navbar-active">Gallery</p>
+          <p class="content-navbar-item"><a href="/about.html">About</a></p>
         </div>
       </div>
+      <p>Sort by: <select id="gallery-sort">
+        <option value="latest">Latest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+      </p>
+      <ul>
+        <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
+        <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
+        <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/Suggestive</li>
+      </ul>
+      <div align="center">
+        <ul id="gallery-page">
+          <li id="gallery-page-prev">Prev</li>
+          <li id="gallery-page-pages"></li>
+          <li id="gallery-page-next">Next</li>
+        </ul>
+      </div>
+      <div class="gallery-content"></div>
     </div>
+    <p align="center" id="copyright"><small>@soggytiggy 2024 - 2025, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
     <script src="/scripts/gallery.js"></script>
     <script>
-      $(document).ready(function() {
-        var SHOW_FILTERED_CONTENT = false;
-        var LPS = 1;
-        var filters = [];
-        const LPS_SIZE = $("#lps").css("width");
-        const LPS_TOP = $("#lps").css("top");
+      var SHOW_FILTERED_CONTENT = false;
+      var filters = [];
 
-        function clearFilters() {
-          $(".gallery-filter-toggle").each(function() {
-            this.checked = false;
-          });
-        }
+      function clearFilters() {
+        $(".gallery-filter-toggle").each(function() {
+          this.checked = false;
+        });
+      }
 
-        function clearUnsafeFilters() {
-          $(".gallery-filter-unsafe").each(function() {
-            this.checked = false;
-          });
-        }
+      function clearUnsafeFilters() {
+        $(".gallery-filter-unsafe").each(function() {
+          this.checked = false;
+        });
+      }
 
-        function applyFilter() {
-          $(".gallery").each(function() {
-            const image = $(this);
+      function applyFilter() {
+        $(".gallery").each(function() {
+          const image = $(this);
 
-            if (image.attr("tags") !== undefined) {
-              if (image.attr("tags").split(",").some(filter => filters.includes(filter)))
-                image.css("display", "inline-grid");
-              else
-                image.css("display", "none");
-            }
-          });
-        }
-
-        loadPost(false, 0, false, true);
-        clearFilters();
-
-        $(".gallery-filter-toggle").on("change", function() {
-          if ($(this).hasClass("gallery-filter-unsafe")) {
-            if (!SHOW_FILTERED_CONTENT)
-              if (confirm("The images may contain sensitive themes, suggestive themes, gore and nudity.\ndo you wish to proceed?"))
-                SHOW_FILTERED_CONTENT = true;
-              else
-                return clearUnsafeFilters();
-          }
-
-          $(".gallery-filter-toggle").each(function() {
-            const cFilter = $(this);
-
-            if (cFilter.is(":checked"))
-              filters.push(cFilter.attr("filter"));
+          if (image.attr("tags") !== undefined) {
+            if (image.attr("tags").split(",").some(filter => filters.includes(filter)))
+              image.css("display", "inline-grid");
             else
-              filters = filters.filter(val => val !== cFilter.attr("filter"))
-          });
-
-          applyFilter();
-        });
-        
-        postLoadPost = function() {
-          applyFilter();
-        };
-
-        $("#gallery-sort").on("change", function() {
-          if (this.value === "latest") {
-            loadPost(false, 0, false, true);
-          } else if (this.value === "oldest") {
-            loadPost(true, 0, false, true);
+              image.css("display", "none");
           }
         });
+      }
 
-        $("#lps").on("click", function() {
-          if (LPS < 5)
-            LPS++;
+      loadPost(false, 0, false, true);
+      clearFilters();
+
+      $(".gallery-filter-toggle").on("change", function() {
+        if ($(this).hasClass("gallery-filter-unsafe")) {
+          if (!SHOW_FILTERED_CONTENT)
+            if (confirm("The images may contain sensitive themes, suggestive themes, gore and nudity.\ndo you wish to proceed?"))
+              SHOW_FILTERED_CONTENT = true;
+            else
+              return clearUnsafeFilters();
+        }
+
+        $(".gallery-filter-toggle").each(function() {
+          const cFilter = $(this);
+
+          if (cFilter.is(":checked"))
+            filters.push(cFilter.attr("filter"));
           else
-            LPS = 1
-
-          var lps = `/assets/lps${LPS}.gif`;
-          $("#lps").attr("src", lps);
-
-          if (LPS === 5)
-            $("#lps").css({
-              "width": "120px",
-              "top": "30px"
-            });
-          else
-            $("#lps").css({
-              "width": LPS_SIZE,
-              "top": LPS_TOP
-            });
+            filters = filters.filter(val => val !== cFilter.attr("filter"))
         });
+
+        applyFilter();
+      });
+      
+      postLoadPost = function() {
+        applyFilter();
+      };
+
+      $("#gallery-sort").on("change", function() {
+        if (this.value === "latest") {
+          loadPost(false, 0, false, true);
+        } else if (this.value === "oldest") {
+          loadPost(true, 0, false, true);
+        }
       });
     </script>
   </body>

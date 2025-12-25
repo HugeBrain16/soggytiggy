@@ -164,6 +164,9 @@ function getThumbnail(url) {
 
 function createImage(image) {
   const container = document.createElement("div");
+  container.classList.add("animate__animated");
+  container.classList.add("animate__fadeIn");
+  container.classList.add("animate__faster");
   container.classList.add("gallery-container");
   container.style.position = "relative";
   container.style.display = "inline-block";

@@ -3,7 +3,7 @@ name: Deploy to neocities
 on:
   push:
     branches:
-      - re1
+      - re2
 
 concurrency:
   group: deploy-to-neocities
@@ -23,7 +23,7 @@ jobs:
         cp -r scripts   public
         cp -r styles    public
         cp index.html   public
-        cp comms.html   public
+        cp about.html   public
         cp gallery.html public
         cp gallery.txt  public
         cp favicon.ico  public
