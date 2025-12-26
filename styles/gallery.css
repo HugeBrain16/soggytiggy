@@ -17,6 +17,7 @@ li {
   animation: fadeIn 0.3s ease forwards;
   cursor: pointer;
   opacity: 0;
+  vertical-align: top;
 }
 
 .gallery.placeholder {
@@ -47,6 +48,16 @@ li {
   font-family: inherit;
   font-size: 15px;
   color: #1d2021;
+}
+
+.content-body {
+  position: relative;
+}
+
+#gallery-sort-text {
+  position: absolute;
+  top: -10px;
+  left: 0;
 }
 
 #gallery-page li {
@@ -85,8 +96,8 @@ li {
 
 @media (max-width: 700px) {
   .gallery {
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 140px;
   }
 
   .gallery-desc {
@@ -98,5 +109,10 @@ li {
   #gallery-page-prev,
   #gallery-page-current {
     font-size: 1em;
+  }
+
+  #gallery-sort-text {
+    position: relative;
+    padding-top: 10px;
   }
 }

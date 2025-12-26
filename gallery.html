@@ -23,24 +23,26 @@
           <p class="content-navbar-item"><a href="/about.html">About</a></p>
         </div>
       </div>
-      <p>Sort by: <select id="gallery-sort">
-        <option value="latest">Latest</option>
-        <option value="oldest">Oldest</option>
-      </select>
-      </p>
-      <ul>
-        <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
-        <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
-        <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/Suggestive</li>
-      </ul>
-      <div align="center">
-        <ul id="gallery-page">
-          <li id="gallery-page-prev">Prev</li>
-          <li id="gallery-page-pages"></li>
-          <li id="gallery-page-next">Next</li>
+      <div class="content-body">
+        <p align="center">My commissions are open at <a class="content-button" href="https://soggytiggy-prices.carrd.co">soggytiggy.carrd.co</a>, if you're interested</p>
+        <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select></p>
+        <ul>
+          <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
+          <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
+          <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/Suggestive</li>
         </ul>
+        <div align="center">
+          <ul id="gallery-page">
+            <li id="gallery-page-prev">Prev</li>
+            <li id="gallery-page-pages"></li>
+            <li id="gallery-page-next">Next</li>
+          </ul>
+        </div>
+        <div class="gallery-content"></div>
       </div>
-      <div class="gallery-content"></div>
     </div>
     <p align="center" id="copyright"><small>@soggytiggy 2024 - 2025, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
     <script src="/scripts/gallery.js"></script>

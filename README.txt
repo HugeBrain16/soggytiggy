@@ -1,4 +1,4 @@
-soggytiggy: redesigned #1
+soggytiggy: redesigned #2
 
 ## How to setup upload tool
 
