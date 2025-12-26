@@ -193,8 +193,8 @@ a {
 #copyright {
   width: 100%;
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: right;
+  align-items: right;
   margin-top: 20vh;
 }
 
@@ -211,7 +211,7 @@ a {
   visibility: hidden;
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
 }
 
 #doll1 {
@@ -220,7 +220,7 @@ a {
 
 #doll2 {
   width: 25%;
-  right: -25px;
+  left: -25px;
 }
 
 #doll3 {
