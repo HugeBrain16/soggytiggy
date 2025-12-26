@@ -1,0 +1,13 @@
+#news-layout-mobile {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    #news-layout-pc {
+        display: none;
+    }
+
+    #news-layout-mobile {
+        display: initial;
+    }
+}

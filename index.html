@@ -6,6 +6,7 @@
     <title>soggytiggy - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="/styles/style.css" rel="stylesheet">
+    <link href="/styles/home.css" rel="stylesheet">
     <link href="/styles/modal.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <script src="/assets/jquery.js"></script>
@@ -16,21 +17,41 @@
     <div class="animate__animated animate__fadeIn animate__faster content">
       <div class="content-header">
         <h1>Welcome!</h1>
+        <img id="divider1" src="https://biscuit.crd.co/assets/images/gallery88/e29b711a.png" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">
         <div class="content-navbar">
           <p class="content-navbar-item content-navbar-active">Home</p>
           <p class="content-navbar-item"><a href="/gallery.html">Gallery</a></p>
           <p class="content-navbar-item"><a href="/about.html">About</a></p>
         </div>
       </div>
-      <p>Welcome to my website! I post all of my artwork here</p>
-      <br/>
-      <h3>News</h3>
-      <div class="news-wrapper">
-        <div class="news-entry">
-          <p class="news-title">Major site change - 26 December 2025</p>
-          <p>A site overhaul is in the works
-          -
-          update: it's ready :)</p> 
+      <div class="content-body">
+        <div class="row-wrapper">
+          <div class="wrapper" style="flex-grow: 1;">
+            <p>Welcome to my website! I post all of my artwork here</p>
+            <div class="news-wrapper" id="news-layout-pc">
+              <br/>
+              <h3>News</h3>
+              <div class="news-entry">
+                <p class="news-title">Major site change - 26 December 2025</p>
+                <p>A site overhaul is in the works
+                -
+                update: it's ready :)</p> 
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            <div id="fufudon-entry"></div>
+            <div class="news-wrapper" id="news-layout-mobile">
+              <br/>
+              <h3>News</h3>
+              <div class="news-entry">
+                <p class="news-title">Major site change - 26 December 2025</p>
+                <p>A site overhaul is in the works
+                -
+                update: it's ready :)</p> 
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -38,5 +59,6 @@
     <img id="doll1" class="doll" src="/assets/doll1.png">
     <img id="doll2" class="doll" src="/assets/doll2.png">
     <script src="/scripts/doll.js"></script>
+    <script src="/scripts/fufudon.js"></script>
   </body>
 </html>

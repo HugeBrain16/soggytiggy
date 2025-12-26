@@ -1,3 +1,8 @@
+body {
+  padding-left: 6.1%;
+  padding-right: 6.1%;
+}
+
 ul {
   padding: 0;
 }
@@ -50,10 +55,6 @@ li {
   color: #1d2021;
 }
 
-.content-body {
-  position: relative;
-}
-
 #gallery-sort-text {
   position: absolute;
   top: -10px;
@@ -95,6 +96,11 @@ li {
 }
 
 @media (max-width: 700px) {
+  body {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+  }
+
   .gallery {
     width: 115px;
     height: 140px;

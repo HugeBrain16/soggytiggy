@@ -4,8 +4,8 @@ body {
   font-family: 'Gentium Plus', sans-serif;
   margin: 0;
   margin-top: 10px;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 18%;
+  padding-right: 18%;
   color: #f4fbff;
 }
 
@@ -52,6 +52,10 @@ td {
 
 #brand {
   font-size: 3em;
+}
+
+.content-body {
+  position: relative;
 }
 
 .content-wrapper {
@@ -194,6 +198,15 @@ a {
   margin-top: 20vh;
 }
 
+.row-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.wrapper {
+    margin-right: 10px;
+}
+
 .doll {
   visibility: hidden;
   position: fixed;
@@ -249,5 +262,14 @@ a {
 
   .doll {
     display: none;
+  }
+
+  #divider1 {
+    display: none;
+  }
+
+  .row-wrapper {
+      display: block;
+      align-items: unset;
   }
 }
