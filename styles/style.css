@@ -224,7 +224,15 @@ a {
 }
 
 #doll3 {
-  width: 22%;
+  width: 10%;
+  left: 40px;
+  bottom: -5px;
+}
+
+#doll4 {
+  width: 10%;
+  left: 40px;
+  bottom: -20px;
 }
 
 @media (max-width: 1000px) {
