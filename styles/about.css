@@ -3,9 +3,54 @@ body {
     padding-right: 21%;
 }
 
+.img-border-content {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.img-border-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.img-border-border {
+  content: '';
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: -12%;
+  left: -12%;
+  z-index: 1;
+}
+
+#fav-leo .img-border-content {
+  background: #bfbbae;
+}
+
+#fav-lee .img-border-content {
+  background: url('/assets/lee-bg.jpg');
+  border-radius: 2px;
+}
+
+#fav-lee .img-border-border {
+  width: 235px;
+  height: 235px;
+  top: -9%;
+  left: -8.5%;
+}
+
 @media (max-width: 1000px) {
     body {
         padding-left: 1%;
         padding-right: 1%;
+    }
+
+    .row-wrapper-spaced {
+      text-align: center;
+    }
+
+    .img-border-wrap {
+      margin-bottom: 50px;
     }
 }

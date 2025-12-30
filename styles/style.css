@@ -199,8 +199,12 @@ a {
 }
 
 .row-wrapper {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
+}
+
+.row-wrapper-spaced {
+  justify-content: space-evenly;
 }
 
 .wrapper {
