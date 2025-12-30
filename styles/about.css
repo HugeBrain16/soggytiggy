@@ -21,6 +21,7 @@ body {
   position: absolute;
   top: -12%;
   left: -12%;
+  pointer-events: none;
   z-index: 1;
 }
 
@@ -32,6 +33,21 @@ body {
   background: #bfbbae;
 }
 
+#fav-leo .img-border-border {
+  top: -10%;
+}
+
+#fav-strelok .img-border-content {
+  border-radius: 8px;
+}
+
+#fav-strelok .img-border-border {
+  width: 235px;
+  height: 235px;
+  top: -8%;
+  left: -10%;
+}
+
 #fav-lee .img-border-content {
   background: url('/assets/lee-bg.jpg');
   border-radius: 2px;
@@ -40,7 +56,7 @@ body {
 #fav-lee .img-border-border {
   width: 235px;
   height: 235px;
-  top: -9%;
+  top: -7.5%;
   left: -8.5%;
 }
 
