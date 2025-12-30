@@ -24,6 +24,10 @@ body {
   z-index: 1;
 }
 
+.img-border-name {
+  margin-top: 3px;
+}
+
 #fav-leo .img-border-content {
   background: #bfbbae;
 }
@@ -52,5 +56,9 @@ body {
 
     .img-border-wrap {
       margin-bottom: 50px;
+    }
+
+    .img-border-name {
+      margin-top: 5px;
     }
 }
