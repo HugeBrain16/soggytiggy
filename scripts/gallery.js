@@ -3,6 +3,8 @@ var modalClose = document.createElement("span");
 var modalPrev = document.createElement("span");
 var modalNext = document.createElement("span");
 var page = 1;
+var modalItem = 0;
+var imageLinks = [];
 var postLoadPost = function() {};
 const hiddenTags = ["gore", "nsfw", "doodle"];
 const warnTags = ["gore", "nsfw"];
@@ -50,9 +52,17 @@ function addModalImage(image) {
   contentImg.src = image;
 }
 
+function seekImage(direction) {
+  if (direction.toLowerCase() === "left")
+    modalItem--;
+  else if (direction.toLowerCase() === "right")
+    modalItem++;
+  addModalImage(imageLinks[modalItem]);
+}
+
 function openModal(gallery) {
-  var modalItem = 0;
-  var imageLinks = gallery.getAttribute("imagelinks").split(",");
+  modalItem = 0;
+  imageLinks = gallery.getAttribute("imagelinks").split(",");
 
   if (imageLinks.length > 1) {
     modalPrev.style.visibility = "visible";
@@ -63,15 +73,13 @@ function openModal(gallery) {
   addModalImage(imageLinks[modalItem]);
   modalPrev.addEventListener('click', (event) => {
     if (modalItem > 0) {
-      modalItem--;
-      addModalImage(imageLinks[modalItem]);
+      seekImage("left");
     }
   });
 
   modalNext.addEventListener('click', (event) => {
     if (modalItem < imageLinks.length - 1) {
-      modalItem++;
-      addModalImage(imageLinks[modalItem]);
+      seekImage("right");
     }
   });
 }
@@ -80,6 +88,9 @@ function closeModal() {
   modal.style.display = "none";
   modalPrev.style.visibility = "hidden";
   modalNext.style.visibility = "hidden";
+
+  modalItem = 0;
+  imageLinks = [];
 }
 
 modalClose.onclick = function () {
@@ -95,8 +106,22 @@ modal.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
+  if (event.repeat) return;
+
   if (event.key === 'Escape') {
     closeModal();
+  }
+
+  if (event.key === 'ArrowLeft') {
+    if (modalItem > 0) {
+      seekImage("left");
+    }
+  }
+
+  if (event.key === 'ArrowRight') {
+    if (modalItem < imageLinks.length - 1) {
+      seekImage("right");
+    }
   }
 });
 
