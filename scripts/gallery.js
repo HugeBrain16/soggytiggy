@@ -76,23 +76,27 @@ function openModal(gallery) {
   });
 }
 
-modalClose.onclick = function () {
+function closeModal() {
   modal.style.display = "none";
   modalPrev.style.visibility = "hidden";
   modalNext.style.visibility = "hidden";
+}
+
+modalClose.onclick = function () {
+  closeModal();
 };
 
 modal.addEventListener('click', (event) => {
   var targetClass = event.target.classList;
 
   if (targetClass.contains("modal-inner") || targetClass.contains("modal-content")) {
-    modal.style.display = "none";
+    closeModal();
   }
 });
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
-    modal.style.display = "none";
+    closeModal();
   }
 });
 
