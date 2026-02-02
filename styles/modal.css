@@ -19,7 +19,8 @@
 
 .modal-content img {
   margin: auto;
-  max-width: 1000px;
+  max-width:  1000px;
+  max-height: 900px;
   transition: 0.2s;
   opacity: 0;
 }
@@ -83,6 +84,7 @@
 @media (max-width: 1200px) {
   .modal-content img {
     max-width: 400px;
+    max-height: 800px;
   }
 
   .modal-content.zoomed img {
