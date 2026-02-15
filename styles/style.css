@@ -54,6 +54,11 @@ td {
   font-size: 3em;
 }
 
+.silent {
+  color: #ccc;
+  font-style: italic;
+}
+
 .content-body {
   position: relative;
 }
