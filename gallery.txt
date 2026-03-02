@@ -215,5 +215,5 @@ https://i.imgur.com/YleGNbl.jpeg,https://i.imgur.com/Y5USK32.jpeg | 2026-02-09 1
 https://i.imgur.com/hmBTJwH.jpeg | 2026-02-09 12:04
 https://i.imgur.com/5KbhVoF.jpeg | 2026-02-09 12:05 | default | doodle
 https://i.imgur.com/KvWV6bd.png  | 2026-02-09 12:06 | default | gore,doodle
-https://i.imgur.com/plATZZU.jpeg | 2026-03-03 01:00
+https://i.imgur.com/plATZZU.jpeg | 2026-03-03 01:00 | center right
 https://i.imgur.com/9dRzqcG.png  | 2026-03-03 01:01

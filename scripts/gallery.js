@@ -2,6 +2,7 @@ var modal = document.createElement("div");
 var modalClose = document.createElement("span");
 var modalPrev = document.createElement("span");
 var modalNext = document.createElement("span");
+var modalTelescope = document.createElement("div");
 var page = 1;
 var modalItem = 0;
 var imageLinks = [];
@@ -12,17 +13,12 @@ const warnTags = ["gore", "nsfw"];
 modal.classList.add("modal");
 modalClose.classList.add("modal-close");
 modalClose.innerHTML = "&times;";
-modalClose.style.position = "fixed";
 modalPrev.classList.add("modal-prev");
 modalPrev.innerHTML = "&lt;";
-modalPrev.style.position = "fixed";
 modalNext.classList.add("modal-next");
 modalNext.innerHTML = "&gt;";
-modalNext.style.position = "fixed";
+modalTelescope.classList.add("modal-telescope");
 
-modal.appendChild(modalClose);
-modal.appendChild(modalPrev);
-modal.appendChild(modalNext);
 document.body.insertBefore(
   modal,
   document.getElementsByClassName("content-floatsie")[0],
@@ -41,6 +37,11 @@ function addModalImage(image) {
     if (event.target == contentImg && contentImg.style.opacity === "1") {
       content.classList.toggle("zoomed");
     }
+
+    if (content.classList.contains("zoomed"))
+      modalTelescope.style.visibility = "hidden";
+    else
+      modalTelescope.style.visibility = "visible";
   });
   contentImg.onload = function () {
     content.classList.remove("placeholder");
@@ -48,7 +49,11 @@ function addModalImage(image) {
     contentImg.style.cursor = "zoom-in";
   };
   content.appendChild(contentImg);
+  content.appendChild(modalClose);
+  content.appendChild(modalPrev);
+  content.appendChild(modalNext);
   modal.appendChild(content);
+  modal.appendChild(modalTelescope);
   contentImg.src = image;
 }
 
@@ -58,6 +63,10 @@ function seekImage(direction) {
   else if (direction.toLowerCase() === "right")
     modalItem++;
   addModalImage(imageLinks[modalItem]);
+
+  const activeItem = modalTelescope.getElementsByClassName("gallery-active")[0];
+  if (activeItem)
+    activeItem.scrollIntoView();
 }
 
 function openModal(gallery) {
@@ -82,12 +91,40 @@ function openModal(gallery) {
       seekImage("right");
     }
   });
+
+  var telescopeItems = [];
+
+  loadImages("gallery.txt")
+    .then((images) => {
+      for (let image of images) {
+        let gallery2 = createImage(image);
+        if (gallery2.getAttribute("imagelinks") == gallery.getAttribute("imagelinks"))
+          gallery2.classList.add("gallery-active");
+
+        gallery2.onclick = function () {
+          closeModal();
+          openModal(gallery2);
+        };
+
+        telescopeItems.push(gallery2);
+      }
+      sortPosts(telescopeItems, false);
+
+      for (let item of telescopeItems) {
+        modalTelescope.appendChild(item);
+      }
+
+      const activeItem = modalTelescope.getElementsByClassName("gallery-active")[0];
+      if (activeItem)
+        activeItem.scrollIntoView();
+    });
 }
 
 function closeModal() {
   modal.style.display = "none";
   modalPrev.style.visibility = "hidden";
   modalNext.style.visibility = "hidden";
+  modalTelescope.innerHTML = "";
 
   modalItem = 0;
   imageLinks = [];
@@ -207,11 +244,13 @@ function createImage(image) {
   container.setAttribute("displaylink", 0);
   container.setAttribute("imagelinks", image["links"].join(","));
   container.setAttribute("postDate", image["date"]);
+  gallery.setAttribute("aria-hidden", "false");
 
   if (image["tags"] !== undefined) {
     gallery.setAttribute("tags", image["tags"]);
     if (filterImage(image)) {
       gallery.style.display = "none";
+      gallery.setAttribute("aria-hidden", "true");
       if (warnImage(image)) gallery.classList.add("gallery-nsfw");
     }
   }

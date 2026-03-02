@@ -36,8 +36,9 @@
   height: auto;
   max-width: none;
   max-height: none;
-  cursor: zoom-out;
+  cursor: zoom-out !important;
   padding: 10px;
+  z-index: 3;
 }
 
 .modal-close,
@@ -49,6 +50,7 @@
   transition: 0.3s;
   cursor: pointer;
   user-select: none;
+  z-index: 2;
 }
 
 .modal-prev,
@@ -59,8 +61,8 @@
 }
 
 .modal-close {
-  top: 2.5%;
-  right: 2.5%;
+  top: 1%;
+  right: 12%;
 }
 
 .modal-prev {
@@ -68,7 +70,7 @@
 }
 
 .modal-next {
-  right: 2.5%;
+  right: 12%;
 }
 
 .modal-close:hover,
@@ -81,7 +83,23 @@
   cursor: pointer;
 }
 
+.modal-telescope {
+  display: grid;
+  overflow-y: scroll;
+  margin-left: 10px;
+  padding-right: 20px;
+  background-color: #333;
+}
+
+.modal-telescope .gallery-container:has(.gallery[aria-hidden="false"]) {
+  padding-bottom: 10px;
+}
+
 @media (max-width: 1200px) {
+  .modal-telescope {
+    display: none;
+  }
+
   .modal-content img {
     max-width: 400px;
     max-height: 800px;
