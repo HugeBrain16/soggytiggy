@@ -5,6 +5,7 @@ var modalNext = document.createElement("span");
 var modalTelescope = document.createElement("div");
 var page = 1;
 var modalItem = 0;
+var modalTelescopeIdx = 0;
 var imageLinks = [];
 var postLoadPost = function() {};
 const hiddenTags = ["gore", "nsfw", "doodle"];
@@ -70,6 +71,8 @@ function seekImage(direction) {
 }
 
 function openModal(gallery) {
+  document.body.style.overflow = "hidden";
+
   modalItem = 0;
   imageLinks = gallery.getAttribute("imagelinks").split(",");
 
@@ -121,6 +124,8 @@ function openModal(gallery) {
 }
 
 function closeModal() {
+  document.body.style.overflow = "";
+
   modal.style.display = "none";
   modalPrev.style.visibility = "hidden";
   modalNext.style.visibility = "hidden";
@@ -158,6 +163,38 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') {
     if (modalItem < imageLinks.length - 1) {
       seekImage("right");
+    }
+  }
+
+  const posts = modalTelescope.getElementsByClassName("gallery-container");
+
+  if (event.key == "ArrowUp") {
+    if (modalTelescopeIdx > 0) {
+      modalTelescopeIdx--;
+      let image = posts[modalTelescopeIdx].getElementsByClassName("gallery")[0];
+      while (image.style.display === "none" && modalTelescopeIdx > 0) {
+        modalTelescopeIdx--;
+        image = posts[modalTelescopeIdx].getElementsByClassName("gallery")[0];
+      }
+
+      const targetPost = posts[modalTelescopeIdx];
+      closeModal();
+      openModal(targetPost);
+    }
+  }
+
+  if (event.key == "ArrowDown") {
+    if (modalTelescopeIdx < posts.length - 1) {
+      modalTelescopeIdx++;
+      let image = posts[modalTelescopeIdx].getElementsByClassName("gallery")[0];
+      while (image.style.display === "none" && modalTelescopeIdx < posts.length - 1) {
+        modalTelescopeIdx++;
+        image = posts[modalTelescopeIdx].getElementsByClassName("gallery")[0];
+      }
+
+      const targetPost = posts[modalTelescopeIdx];
+      closeModal();
+      openModal(targetPost);
     }
   }
 });
@@ -300,14 +337,16 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
         if (filterImage(image) && filter === true)
           continue;
 
-        let gallery = createImage(image);
-
-        gallery.onclick = function () {
-          openModal(gallery);
-        };
-        posts.push(gallery);
+        posts.push(createImage(image));
       }
+
       sortPosts(posts, old);
+      for (let idx = 0; idx < posts.length; idx++) {
+        posts[idx].onclick = function() {
+          modalTelescopeIdx = idx;
+          openModal(posts[idx]);
+        }
+      }
 
       if (paged) {
         for (let post of posts) {
