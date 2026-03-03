@@ -104,14 +104,15 @@ function openModal(gallery) {
         if (gallery2.getAttribute("imagelinks") == gallery.getAttribute("imagelinks"))
           gallery2.classList.add("gallery-active");
 
-        gallery2.onclick = function () {
-          closeModal();
-          openModal(gallery2);
-        };
-
         telescopeItems.push(gallery2);
       }
       sortPosts(telescopeItems, false);
+      for (let idx = 0; idx < telescopeItems.length; idx++) {
+        telescopeItems[idx].onclick = function() {
+          modalTelescopeIdx = idx;
+          openModal(telescopeItems[idx]);
+        }
+      }
 
       for (let item of telescopeItems) {
         modalTelescope.appendChild(item);
