@@ -72,6 +72,7 @@ function seekImage(direction) {
 
 function openModal(gallery) {
   document.body.style.overflow = "hidden";
+  modalTelescope.innerHTML = "";
 
   modalItem = 0;
   imageLinks = gallery.getAttribute("imagelinks").split(",");
