@@ -175,6 +175,14 @@ a {
   height: auto;
 }
 
+.masonry-grid-sizer, .masonry-grid-item {
+  width: 20%;
+}
+
+.content-img {
+  width: auto;
+}
+
 .content-divider {
   margin: 0;
   padding: 10px;
