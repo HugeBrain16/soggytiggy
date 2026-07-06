@@ -283,6 +283,7 @@ function createImage(image) {
   container.setAttribute("displaylink", 0);
   container.setAttribute("imagelinks", image["links"].join(","));
   container.setAttribute("postDate", image["date"]);
+  container.setAttribute("title", image["date"]);
   gallery.setAttribute("aria-hidden", "false");
 
   if (image["tags"] !== undefined) {
@@ -326,6 +327,27 @@ function clearPosts() {
   $(".gallery-container").remove();
 }
 
+function injectYears() {
+  var years = [];
+
+  loadImages("gallery.txt").then((images) => {
+    for (let image of images) {
+      const instance = createImage(image);
+
+      const year = instance.getAttribute("postDate").split("-")[0];
+      if (!years.includes(year))
+        years.push(year);
+    }
+
+    years.sort();
+    years.reverse();
+    for (let year of years) {
+      $("#gallery-year").append(`<option value="${year}">${year}</option>`);
+    }
+  });
+
+}
+
 function loadPost(old = false, max = 0, filter = false, paged = false) {
   var content = document.getElementsByClassName("gallery-content")[0];
   var maxPost = 0;
@@ -339,7 +361,13 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
         if (filterImage(image) && filter === true)
           continue;
 
-        posts.push(createImage(image));
+        const instance = createImage(image);
+        const year = instance.getAttribute("postDate").split("-")[0];
+        const selectedYear = $("#gallery-year").val();
+        if (year !== selectedYear && selectedYear !== "all")
+          continue;
+
+        posts.push(instance);
       }
 
       sortPosts(posts, old);

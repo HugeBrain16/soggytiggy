@@ -30,6 +30,9 @@
           <option value="latest">Latest</option>
           <option value="oldest">Oldest</option>
         </select></p>
+        <p id="gallery-year-text">Year: <select id="gallery-year">
+          <option value="all">All</option>
+        </select></p>
         <ul>
           <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
           <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
@@ -76,6 +79,7 @@
         });
       }
 
+      injectYears();
       loadPost(false, 0, false, true);
       clearFilters();
 
@@ -99,7 +103,7 @@
 
         applyFilter();
       });
-      
+
       postLoadPost = function() {
         applyFilter();
       };
@@ -108,6 +112,17 @@
         if (this.value === "latest") {
           loadPost(false, 0, false, true);
         } else if (this.value === "oldest") {
+          loadPost(true, 0, false, true);
+        }
+      });
+
+      $("#gallery-year").on("change", function() {
+        const sort = $("#gallery-sort").val();
+        console.log(sort);
+
+        if (sort === "latest") {
+          loadPost(false, 0, false, true);
+        } else if (sort === "oldest") {
           loadPost(true, 0, false, true);
         }
       });
