@@ -123,6 +123,7 @@ function openModal(gallery) {
       for (let item of telescopeItems) {
         modalTelescope.appendChild(item);
       }
+      onModalOpened();
 
       const activeItem = modalTelescope.getElementsByClassName("gallery-active")[0];
       if (activeItem)

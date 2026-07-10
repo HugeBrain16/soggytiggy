@@ -68,8 +68,8 @@
         });
       }
 
-      function applyFilter() {
-        $(".gallery").each(function() {
+      function applyFilter(gallery) {
+        $(gallery).each(function() {
           const image = $(this);
 
           if (image.attr("tags") !== undefined) {
@@ -112,11 +112,15 @@ Escape: Close`);
             filters = filters.filter(val => val !== cFilter.attr("filter"))
         });
 
-        applyFilter();
+        applyFilter($(".gallery-container").find(".gallery"));
       });
 
       postLoadPost = function() {
-        applyFilter();
+        applyFilter($(".gallery-container").find(".gallery"));
+      };
+
+      onModalOpened = function() {
+        applyFilter($(".modal-telescope").find(".gallery"));
       };
 
       $("#gallery-sort").on("change", function() {
