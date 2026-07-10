@@ -1,13 +1,33 @@
-#news-layout-mobile {
-    display: none;
+.blinkie, .doll {
+	width: 200px;
+}
+
+#left, #right {
+	width: 15%;
+}
+
+@media (max-width: 1800px) {
+	.blinkie, .doll {
+		width: 150px;
+	}
+
+	.stamp {
+		width: 75px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.blinkie, .doll {
+		width: 120px;
+	}
+
+	.stamp {
+		width: 55px;
+	}
 }
 
 @media (max-width: 1000px) {
-    #news-layout-pc {
-        display: none;
-    }
-
-    #news-layout-mobile {
-        display: initial;
-    }
+	#left, #right {
+		width: 80%;
+	}
 }

@@ -31,8 +31,8 @@ https://i.imgur.com/ZJJXQg0.png  | 2024-10-03 19:23
 https://i.imgur.com/kqzlDPN.png  | 2024-10-02 20:31
 https://i.imgur.com/QFPSnSM.png  | 2024-10-15 17:37
 https://i.imgur.com/zd6Y6fW.jpg  | 2024-10-15 23:37
-https://i.imgur.com/8XH5zCv.png  | 2024-10-15 15:16 | center left
-https://i.imgur.com/jo8UZHm.png  | 2024-10-15 19:35
+https://i.imgur.com/8XH5zCv.png  | 2024-10-15 15:16 | center left | doodle
+https://i.imgur.com/jo8UZHm.png  | 2024-10-15 19:35 | default | doodle
 https://i.imgur.com/GCWknlL.jpg  | 2024-10-15 23:35 | default | nsfw
 https://i.imgur.com/4liX519.jpeg | 2024-10-16 15:31
 https://i.imgur.com/ZJ7Vr9L.jpeg | 2024-10-16 15:29 | default | nsfw
@@ -56,9 +56,9 @@ https://i.imgur.com/bqB1kwt.png,https://i.imgur.com/NBzYT2T.png  | 2023-12-24 13
 https://i.imgur.com/Mly6kYx.jpg  | 2023-12-07 13:11
 https://i.imgur.com/U3j3xD0.jpg  | 2023-12-21 13:21
 https://i.imgur.com/wS8uYWo.png  | 2023-12-03 17:12
-https://i.imgur.com/tDPPOvx.jpg  | 2023-12-18 19:19
+https://i.imgur.com/tDPPOvx.jpg  | 2023-12-18 19:19 | default | nsfw
 https://i.imgur.com/MDIfnWq.png  | 2023-12-11 23:45
-https://i.imgur.com/B3VsXCQ.jpg  | 2023-12-18 19:23
+https://i.imgur.com/B3VsXCQ.jpg  | 2023-12-18 19:23 | default | nsfw
 https://i.imgur.com/sOvUoiJ.jpg  | 2023-12-20 10:42
 https://i.imgur.com/izThN2r.jpg  | 2023-11-17 20:09
 https://i.imgur.com/IbOfLy8.png  | 2024-01-04 13:40 | center right
@@ -73,12 +73,12 @@ https://i.imgur.com/t2xNZSn.png  | 2024-02-22 22:57
 https://i.imgur.com/adaJs1K.png  | 2024-03-03 16:56
 https://i.imgur.com/3dDM5lI.png  | 2024-03-12 12:14
 https://i.imgur.com/FpbUmfq.png  | 2024-03-12 17:29
-https://i.imgur.com/fjsKvUq.png,https://i.imgur.com/PCQDNiS.png  | 2024-03-17 16:03
-https://i.imgur.com/BZjwRXX.jpg  | 2024-03-16 20:59
-https://i.imgur.com/deQraBO.png  | 2024-03-17 17:25
+https://i.imgur.com/fjsKvUq.png,https://i.imgur.com/PCQDNiS.png  | 2024-03-17 16:03 | default | nsfw
+https://i.imgur.com/BZjwRXX.jpg  | 2024-03-16 20:59 | default | nsfw
+https://i.imgur.com/deQraBO.png  | 2024-03-17 17:25 | default | nsfw
 https://i.imgur.com/PNMbDVn.png  | 2024-10-25 17:41
-https://i.imgur.com/Z8walYH.png  | 2024-10-22 18:19
-https://i.imgur.com/hi3USvS.png  | 2024-10-24 17:42
+https://i.imgur.com/Z8walYH.png  | 2024-10-22 18:19 | default | nsfw
+https://i.imgur.com/hi3USvS.png  | 2024-10-24 17:42 | default | nsfw
 https://i.imgur.com/K0qm3L2.png  | 2024-10-24 21:10
 https://i.imgur.com/L0Bscvs.png  | 2024-10-25 19:30
 https://i.imgur.com/cvaZoox.png  | 2024-10-31 22:17
@@ -95,7 +95,7 @@ https://i.imgur.com/YyVsPDd.png  | 2024-12-21 20:42 | default | doodle
 https://i.imgur.com/aFvNHuI.png  | 2024-11-24 19:26
 https://i.imgur.com/jFl6uso.png  | 2024-11-24 20:51
 https://i.imgur.com/R1EB5Yl.png  | 2024-12-06 15:43
-https://i.imgur.com/ijRhObF.jpeg,https://i.imgur.com/VxwFi8G.jpeg | 2025-01-18 15:37
+https://i.imgur.com/ijRhObF.jpeg,https://i.imgur.com/VxwFi8G.jpeg | 2025-01-18 15:37 | default | nsfw
 https://i.imgur.com/SHtwEX4.png,https://i.imgur.com/jxgeb0V.png  | 2025-01-28 22:21
 https://i.imgur.com/52wackK.png  | 2025-02-02 13:24
 https://i.imgur.com/yORfA4O.png  | 2025-06-26 00:00
@@ -105,7 +105,7 @@ https://i.imgur.com/5Wu158l.png  | 2025-06-26 00:00 | center left
 https://i.imgur.com/iyckQZR.png  | 2025-06-28 12:00 | center right
 https://i.imgur.com/RzDqY2S.png  | 2025-06-28 20:32
 https://i.imgur.com/qRDsbDX.png  | 2025-07-01 23:28
-https://i.imgur.com/CGGv3rn.png  | 2025-07-26 22:52
+https://i.imgur.com/CGGv3rn.png  | 2025-07-26 22:52 | default | nsfw
 https://i.imgur.com/eyz7VyM.png  | 2025-07-26 21:04
 https://i.imgur.com/tIavz5L.png  | 2025-07-24 00:05
 https://i.imgur.com/BZStzsU.png  | 2025-07-23 17:08
@@ -174,7 +174,7 @@ https://i.imgur.com/rjbcadO.png  | 2025-08-06 02:00 | center left | gore
 https://i.imgur.com/EiM1kEG.png  | 2025-10-24 00:00 | center right
 https://i.imgur.com/b8AbuTK.png,https://i.imgur.com/wRQkeH9.png  | 2025-10-24 21:21 | center left
 https://i.imgur.com/4Ka1GUA.png,https://i.imgur.com/H47MvIo.png  | 2025-10-24 21:23
-https://i.imgur.com/O8yL5Gq.jpeg | 2025-10-26 00:00 | center right
+https://i.imgur.com/O8yL5Gq.jpeg | 2025-10-26 00:00 | center right | doodle
 https://i.imgur.com/tjJX4i8.jpeg | 2025-10-26 00:10 | center right
 https://i.imgur.com/JFKF63O.jpeg | 2025-10-26 20:26
 https://i.imgur.com/4i3JcCV.jpeg | 2025-10-28 23:14 | center right
@@ -184,7 +184,7 @@ https://i.imgur.com/rMiAJI6.png  | 2025-11-02 00:00
 https://i.imgur.com/hW1Ptbz.png  | 2025-11-02 02:00
 https://i.imgur.com/LehpVLn.jpeg | 2025-11-03 00:00
 https://i.imgur.com/ix3f3lo.jpeg | 2025-11-18 00:01
-https://i.imgur.com/CGwe2KQ.jpeg | 2025-11-18 00:02
+https://i.imgur.com/CGwe2KQ.jpeg | 2025-11-18 00:02 | default | nsfw
 https://i.imgur.com/vS4ZPh5.jpeg | 2025-11-18 00:03
 https://i.imgur.com/xzNCvne.jpeg | 2025-11-18 00:04
 https://i.imgur.com/OrJMtQz.jpeg | 2025-11-18 00:05 | center left
@@ -209,9 +209,9 @@ https://i.imgur.com/i5T6LXB.jpeg,https://i.imgur.com/G2bE1nS.jpeg | 2026-02-01 1
 https://i.imgur.com/4c9CFKK.jpeg | 2026-02-02 21:00
 https://i.imgur.com/LbX8ta6.jpeg | 2026-02-02 21:10
 https://i.imgur.com/hdHPoXZ.jpeg | 2026-02-03 19:00
-https://i.imgur.com/y3brKw9.jpeg | 2026-02-09 12:00 | center right
-https://i.imgur.com/7y9RdF1.jpeg | 2026-02-09 12:01
-https://i.imgur.com/BtLzHya.jpeg | 2026-02-09 12:02
+https://i.imgur.com/y3brKw9.jpeg | 2026-02-09 12:00 | center right | nsfw
+https://i.imgur.com/7y9RdF1.jpeg | 2026-02-09 12:01 | default | nsfw
+https://i.imgur.com/BtLzHya.jpeg | 2026-02-09 12:02 | default | nsfw
 https://i.imgur.com/6nu7J2C.jpeg | 2026-02-09 12:03
 https://i.imgur.com/YleGNbl.jpeg,https://i.imgur.com/Y5USK32.jpeg | 2026-02-09 12:04
 https://i.imgur.com/hmBTJwH.jpeg | 2026-02-09 12:04
@@ -220,7 +220,7 @@ https://i.imgur.com/KvWV6bd.png  | 2026-02-09 12:06 | default | gore,doodle
 https://i.imgur.com/plATZZU.jpeg | 2026-03-03 01:00 | center right
 https://i.imgur.com/9dRzqcG.png  | 2026-03-03 01:01
 https://i.imgur.com/pxQQ8ET.jpeg | 2026-03-03 01:02 | center left
-https://i.imgur.com/A09d70W.jpeg | 2026-03-03 01:03
+https://i.imgur.com/A09d70W.jpeg | 2026-03-03 01:03 | default | nsfw
 https://i.imgur.com/OPTRLqF.jpeg | 2026-03-05 00:31 | center left
 https://i.imgur.com/l48Bgwn.jpeg | 2026-03-09 00:01 | center right
 https://i.imgur.com/cpS7PPy.jpeg | 2026-03-09 00:02
@@ -239,10 +239,10 @@ https://i.imgur.com/JEhqh1P.jpeg | 2026-04-14 04:00
 https://i.imgur.com/mjkLIdY.jpeg | 2026-04-22 01:00
 https://i.imgur.com/ByOGpUt.jpeg | 2026-04-23 02:00
 https://i.imgur.com/BWSylBY.jpeg | 2026-04-24 01:00
-https://i.imgur.com/Y1WrZsp.jpeg | 2026-04-25 01:00
+https://i.imgur.com/Y1WrZsp.jpeg | 2026-04-25 01:00 | default | nsfw
 https://i.imgur.com/ATM6igx.jpeg | 2026-05-01 01:00
 https://i.imgur.com/3bGJKrD.jpeg | 2026-06-03 01:00
-https://i.imgur.com/JHG7ql5.jpeg | 2026-06-03 02:00
+https://i.imgur.com/JHG7ql5.jpeg | 2026-06-03 02:00 | default | nsfw
 https://i.imgur.com/STQ132g.jpeg | 2026-06-10 01:00
 https://i.imgur.com/S4Nr88Z.jpeg | 2026-06-10 02:00
 https://i.imgur.com/bfMBVel.jpeg | 2026-06-10 03:00
@@ -251,8 +251,8 @@ https://i.imgur.com/II2ch3f.png  | 2026-06-10 05:00
 https://i.imgur.com/WnILNGW.jpeg | 2026-06-10 06:00
 https://i.imgur.com/YqSxSD0.jpeg | 2026-07-02 00:38
 https://i.imgur.com/lno81iE.jpeg | 2026-07-02 01:35
-https://i.imgur.com/4mG7dfb.jpeg | 2026-07-02 03:08
-https://i.imgur.com/OpEpq53.jpeg | 2026-07-02 08:59
+https://i.imgur.com/4mG7dfb.jpeg | 2026-07-02 03:08 | default | gore
+https://i.imgur.com/OpEpq53.jpeg | 2026-07-02 08:59 | default | nsfw
 https://i.imgur.com/lZVrh8M.jpeg | 2026-07-02 15:03
 https://i.imgur.com/JWS6GoS.jpeg | 2026-07-03 15:03
 https://i.imgur.com/1ZfXPBW.jpeg | 2026-07-04 04:57
@@ -260,4 +260,9 @@ https://i.imgur.com/SKPgeXy.png  | 2026-07-04 05:47
 https://i.imgur.com/2cnJVlS.jpeg | 2026-07-04 14:00
 https://i.imgur.com/RbxGwsd.jpeg | 2026-07-04 15:29
 https://i.imgur.com/cfLQ7OQ.jpeg | 2026-07-05 08:36
-https://i.imgur.com/I7g53nB.jpeg | 2026-07-05 10:53
+https://i.imgur.com/I7g53nB.jpeg | 2026-07-05 10:53 | default | doodle
+https://i.imgur.com/oQ3bk1k.jpeg | 2026-07-08 11:50
+https://i.imgur.com/PmHtOW2.jpeg | 2026-07-08 13:52
+https://i.imgur.com/yP8oPjZ.jpeg | 2026-07-09 04:26
+https://i.imgur.com/1gm2u7H.png  | 2026-07-09 07:33
+https://i.imgur.com/qOv4jMv.jpeg | 2026-07-09 10:35

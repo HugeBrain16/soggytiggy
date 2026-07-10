@@ -3,64 +3,162 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soggytiggy - Home</title>
+    <title>batlord's home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="/styles/style.css" rel="stylesheet">
     <link href="/styles/home.css" rel="stylesheet">
     <link href="/styles/modal.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <script src="/assets/jquery.js"></script>
+    <script src="/scripts/spoiler.js"></script>
   </head>
   <body>
     <div class="content-background-image"></div>
-    <h1 id="title" align="center">Soggytiggy</h1>
-    <div class="animate__animated animate__fadeIn animate__faster content">
-      <div class="content-header">
-        <h1>Welcome!</h1>
-        <img id="divider1" src="https://biscuit.crd.co/assets/images/gallery88/e29b711a.png" style="position: absolute; width: 20%; top: 10px; left: 50%; transform: translateX(-50%);">
-        <div class="content-navbar">
-          <p class="content-navbar-item content-navbar-active">Home</p>
-          <p class="content-navbar-item"><a href="/gallery.html">Gallery</a></p>
-          <p class="content-navbar-item"><a href="/about.html">About</a></p>
-        </div>
+    <h1 id="title" align="center">Batlord</h1>
+    <div class="row-wrapper" align="center">
+      <div id="left" align="center" class="animate__animated animate__fadeIn animate__faster content wrapper">
+        <img class="doll" src="https://i.imgur.com/TdQd80b.png">
       </div>
-      <div class="content-body">
-        <div class="row-wrapper">
-          <div class="wrapper" style="flex-grow: 1;">
-            <p>Welcome to my website! I post all of my artwork here</p>
-            <div class="news-wrapper" id="news-layout-pc">
-              <br/>
-              <h3>News</h3>
-              <div class="news-entry">
-                <p class="news-title">Major site change - 26 December 2025</p>
-                <p>A site overhaul is in the works
-                -
-                update: it's ready :)</p> 
+      <div class="animate__animated animate__fadeIn animate__faster content wrapper" style="flex-grow: 1;">
+        <div class="content-header">
+          <h1>Welcome!</h1>
+        </div>
+        <div class="content-body">
+          <div class="row-wrapper">
+            <div class="wrapper" style="flex-grow: 1;">
+              <p>I post all of my artwork here.</p>
+              <p class="content-navbar-item"><a href="/gallery.html">Go to Gallery</a></p>
+              <div class="spoiler" style="margin-top: 40px;">
+                <div class="row-wrapper" style="justify-content: space-between;">
+                  <div class="wrapper" align="left">
+                    <p>Bands & artists I like (in no particular order):
+                    - Infant Annnihilator / Nekrogoblikon
+                    - Children of Bodom
+                    - Death
+                    - Blood Incantation
+                    - Hermóðr
+                    - Dråpsnatt
+                    - Skogen
+                    - Avenged Sevenfold
+                    - Car Seat Headrest
+                    - Underworld
+                    - Butthole Surfers
+                    - Stone Temple Pilots
+                    - Juice Leskinen
+                    - Leevi and the Leavings
+                    - Lana Del Rey
+                    - Jamiroquai
+                    - Boards of Canada
+                    - Wan Bushi
+                    - Lapfox Trax
+                    - Polaventris
+                    - Darkthrone
+                    - Bathory
+                    - None</p>
+                  </div>
+                  <div class="wrapper" align="left">
+                    <p>Stuff I like:
+                    - Beer
+                    - Linux (I use fedora btw)
+                    - Airsoft
+                    - Long walks
+                    - Dancing
+                    - Traditional painting
+                    - Riichi Mahjong
+                    - FKMT
+                    - S.T.A.L.K.E.R.
+                    - RimWorld
+                    - Clinical Trial
+                    - Project Zomboid
+                    - Balatro
+                    - Stronghold
+                    - Morenatsu</p>
+                  </div>
+                </div>
+                <!--
+                <table>
+                  <tr>
+                    <td>
+                      <p>Bands & artists I like (in no particular order):</p>
+                      <ul>
+                        <li>Infant Annihilator / Nekrogoblikon</li>
+                        <li>Children of Bodom</li>
+                        <li>Death</li>
+                        <li>Blood Incantation</li>
+                        <li>Hermóðr</li>
+                        <li>Dråpsnatt</li>
+                        <li>Skogen</li>
+                        <li>Avenged Sevenfold</li>
+                        <li>Car Seat Headrest</li>
+                        <li>Underworld</li>
+                        <li>Butthole Surfers</li>
+                        <li>Stone Temple Pilots</li>
+                        <li>Juice Leskinen</li>
+                        <li>Leevi and the Leavings</li>
+                        <li>Lana Del Rey</li>
+                        <li>Jamiroquai</li>
+                        <li>Boards of Canada</li>
+                        <li>Wan Bushi</li>
+                        <li>Lapfox Trax</li>
+                        <li>Polaventris</li>
+                        <li>Darkthrone</li>
+                        <li>Bathory</li>
+                        <li>None</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <p>Stuff I like:</p>
+                      <ul>
+                        <li>Beer</li>
+                        <li>Linux (I use fedora btw)</li>
+                        <li>Airsoft</li>
+                        <li>Long walks</li>
+                        <li>Dancing</li>
+                        <li>Traditional painting</li>
+                        <li>Riichi Mahjong</li>
+                        <li>FKMT</li>
+                        <li>S.T.A.L.K.E.R.</li>
+                        <li>RimWorld</li>
+                        <li>Clinical Trial</li>
+                        <li>Project Zomboid</li>
+                        <li>Balatro</li>
+                        <li>Stronghold</li>
+                        <li>Morenatsu</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+                -->
               </div>
             </div>
           </div>
-          <div class="wrapper">
-            <div id="fufudon-entry"></div>
-            <div class="news-wrapper" id="news-layout-mobile">
-              <br/>
-              <h3>News</h3>
-              <div class="news-entry">
-                <p class="news-title">Major site change - 26 December 2025</p>
-                <p>A site overhaul is in the works
-                -
-                update: it's ready :)</p> 
-              </div>
-            </div>
+        </div>
+      </div>
+      <div id="right" class="animate__animated animate__fadeIn animate__faster content wrapper">
+        <div class="content-body">
+          <p style="display: inline-block; background: rgba(255, 255, 255, 0.25); margin: 0; padding: 0 10px 0 10px; white-space: unset; text-align: center;">
+          20 &bull; fin/eng &bull; male
+          </p>
+          <div align="center" style="margin-top: 10px;">
+            <img class="blinkie" src="https://i.imgur.com/w5zWY8F.gif">
+            <img class="blinkie" src="https://i.imgur.com/Ru9qgzo.gif">
+            <img class="blinkie" src="https://i.imgur.com/LDNyL8c.gif">
+            <img class="blinkie" src="https://i.imgur.com/tyCGpMH.gif">
+            <img class="blinkie" src="https://i.imgur.com/QX7rW1n.gif">
+            <img class="blinkie" src="https://i.imgur.com/njxboNQ.gif">
+            <img class="blinkie" src="https://i.imgur.com/zEIgV7Y.gif">
+          </div>
+          <div align="center" style="margin-top: 5px;">
+            <img class="stamp" src="https://i.imgur.com/kWaCHzp.png">
+            <img class="stamp" src="https://i.imgur.com/e1F0TNZ.gif">
+            <img class="stamp" src="https://i.imgur.com/Shg47rT.png">
+            <img class="stamp" src="https://i.imgur.com/1p5DKRp.gif">
+            <img class="stamp" src="https://i.imgur.com/S5BTNxs.png">
+            <img class="stamp" src="https://i.imgur.com/EevL12Q.png">
           </div>
         </div>
       </div>
     </div>
-    <p align="center" id="copyright"><small>@soggytiggy 2023 - 2026, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
-    <img id="doll1" class="doll" src="/assets/doll1.png">
-    <img id="doll2" class="doll" src="/assets/doll2.png">
-    <img id="doll3" class="doll" src="/assets/doll3.png">
-    <img id="doll4" class="doll" src="/assets/doll4.png">
-    <script src="/scripts/doll.js"></script>
-    <script src="/scripts/fufudon.js"></script>
+    <p align="center" id="copyright"><small>@batlord 2023 - 2026, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
   </body>
 </html>

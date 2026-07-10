@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@font-face {
+  font-family: Signtelly;
+  src: url('/assets/signtelly.ttf');
+}
+
+:root {
+  --text-color-main: #f4fbff;
+  --box-layout-color: rgba(20, 20, 20, 0.5);
+  --text-shadow: drop-shadow(1px 1px #444);
+}
+
 body {
   font-family: 'Gentium Plus', sans-serif;
   margin: 0;
   margin-top: 10px;
-  padding-left: 18%;
-  padding-right: 18%;
-  color: #f4fbff;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: var(--text-color-main);
 }
 
 section {
@@ -16,7 +27,7 @@ section {
 h1, h2, h3 {
   margin: 0;
   padding: 0;
-  filter: drop-shadow(1px 1px #444);
+  filter: var(--text-shadow);
   font-size: 2.5em;
 }
 
@@ -32,7 +43,7 @@ td {
 p {
   margin-top: 10px;
   font-size: 1.4em;
-  filter: drop-shadow(1px 1px #444);
+  filter: var(--text-shadow);
   white-space: pre-line;
   margin-bottom: 10px;
 }
@@ -46,17 +57,10 @@ td {
   margin: 0;
 }
 
-#soggy-header {
-  margin-bottom: 10px;
-}
-
-#brand {
-  font-size: 3em;
-}
-
 .silent {
   color: #ccc;
   font-style: italic;
+  font-size: 0.9rem;
 }
 
 .content-body {
@@ -101,8 +105,9 @@ td {
   margin: 10px;
   margin-top: 0;
   margin-bottom: 15px;
-  background-color: rgba(20, 28, 66, 0.90);
+  background-color: var(--box-layout-color);
   border-radius: 2px;
+  border: 2px solid #555;
 }
 
 .content-main {
@@ -161,12 +166,7 @@ a {
 
 .content-navbar-item:hover, a:hover {
   cursor: pointer;
-  text-shadow: #f4fbff 1px 0 10px;
-}
-
-.content-boxbg {
-  padding: 5px;
-  background-color: #9dad76;
+  text-shadow: var(--text-color-main) 1px 0 10px;
 }
 
 .small-img {
@@ -192,9 +192,10 @@ a {
 }
 
 #title {
+  font-family: Signtelly;
   margin-top: 5%;
   margin-bottom: 30px;
-  font-size: 4em;
+  font-size: 5em;
   filter: drop-shadow(2.5px 2.5px #222);
   color: #fff;
 }
@@ -204,7 +205,6 @@ a {
   display: flex;
   justify-content: right;
   align-items: right;
-  margin-top: 20vh;
 }
 
 .row-wrapper {
@@ -220,32 +220,21 @@ a {
     margin-right: 10px;
 }
 
-.doll {
-  visibility: hidden;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.spoiler-shown::before, .spoiler-hidden::before {
+  cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-#doll1 {
-  width: 30%;
+.spoiler-hidden::before {
+  content: "Show Spoiler";
+  border: 2px solid #aaa;
 }
 
-#doll2 {
-  width: 25%;
-  left: -25px;
-}
-
-#doll3 {
-  width: 10%;
-  left: 40px;
-  bottom: -5px;
-}
-
-#doll4 {
-  width: 10%;
-  left: 40px;
-  bottom: -20px;
+.spoiler-shown::before {
+  color: #555;
+  content: "Hide Spoiler";
+  border: 2px solid #555;
 }
 
 @media (max-width: 1000px) {
@@ -256,10 +245,6 @@ a {
 
   h1, h2, h3 {
     font-size: 2em;
-  }
-
-  .news-title {
-    font-size: 1.1em;
   }
 
   p {
@@ -281,16 +266,8 @@ a {
     background-position: 20% 50%;
   }
 
-  .doll {
-    display: none;
-  }
-
-  #divider1 {
-    display: none;
-  }
-
   .row-wrapper {
-      display: block;
-      align-items: unset;
+    display: block;
+    align-items: unset;
   }
 }

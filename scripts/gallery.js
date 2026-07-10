@@ -105,6 +105,11 @@ function openModal(gallery) {
         if (gallery2.getAttribute("imagelinks") == gallery.getAttribute("imagelinks"))
           gallery2.classList.add("gallery-active");
 
+        const year = gallery2.getAttribute("postDate").split("-")[0];
+        const selectedYear = $("#gallery-year").val();
+        if (year !== selectedYear && selectedYear !== "all")
+          continue;
+
         telescopeItems.push(gallery2);
       }
       sortPosts(telescopeItems, false);
@@ -170,7 +175,7 @@ document.addEventListener('keydown', (event) => {
 
   const posts = modalTelescope.getElementsByClassName("gallery-container");
 
-  if (event.key == "ArrowUp") {
+  if (event.key == "ArrowUp" || event.shiftKey && event.key === " ") {
     if (modalTelescopeIdx > 0) {
       modalTelescopeIdx--;
       let image = posts[modalTelescopeIdx].getElementsByClassName("gallery")[0];
@@ -185,7 +190,7 @@ document.addEventListener('keydown', (event) => {
     }
   }
 
-  if (event.key == "ArrowDown") {
+  if (event.key == "ArrowDown" || !event.shiftKey && event.key === " ") {
     if (modalTelescopeIdx < posts.length - 1) {
       modalTelescopeIdx++;
       let image = posts[modalTelescopeIdx].getElementsByClassName("gallery")[0];
@@ -340,15 +345,15 @@ function injectYears() {
     }
 
     years.sort();
-    years.reverse();
     for (let year of years) {
-      $("#gallery-year").append(`<option value="${year}">${year}</option>`);
+      $("#gallery-year").prepend(`<option value="${year}">${year}</option>`);
     }
+    $("#gallery-year").val($("#gallery-year option:first").val());
   });
 
 }
 
-function loadPost(old = false, max = 0, filter = false, paged = false) {
+function loadPost(old = false, max = 0, pageMax = 30, filter = false, paged = false) {
   var content = document.getElementsByClassName("gallery-content")[0];
   var maxPost = 0;
   var posts = [];
@@ -380,7 +385,7 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
 
       if (paged) {
         for (let post of posts) {
-          if (chunk.length === 30) {
+          if (chunk.length === pageMax) {
             chunks.push(chunk);
             chunk = [];
           }
@@ -419,7 +424,7 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
 
       $("body").off("click", ".gallery-page-page").on("click", ".gallery-page-page", function() {
         page = parseInt($(this).text());
-        loadPost(old, max, filter, paged);
+        loadPost(old, max, pageMax, filter, paged);
       });
 
       $("#gallery-page-prev").off("click").on("click", function() {
@@ -429,7 +434,7 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
         if (page < 1)
           return;
 
-        loadPost(old, max, filter, paged);
+        loadPost(old, max, pageMax, filter, paged);
       });
 
       $("#gallery-page-next").off("click").on("click", function() {
@@ -439,7 +444,7 @@ function loadPost(old = false, max = 0, filter = false, paged = false) {
         if (page > chunks.length)
           return;
 
-        loadPost(old, max, filter, paged);
+        loadPost(old, max, pageMax, filter, paged);
       });
       postLoadPost();
     })

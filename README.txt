@@ -1,4 +1,4 @@
-soggytiggy: redesigned #2
+batlord: redesigned (rebranded) #3
 
 ## How to setup upload tool
 

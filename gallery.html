@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soggytiggy - Gallery</title>
+    <title>batlord's gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="/styles/style.css" rel="stylesheet"> 
     <link href="/styles/gallery.css" rel="stylesheet">
@@ -13,46 +13,48 @@
   </head>
   <body>
     <div class="content-background-image"></div>
-    <h1 id="title" align="center">Soggytiggy</h1>
-    <div class="animate__animated animate__fadeIn animate__faster content">
-      <div class="content-header">
-        <h1>Gallery</h1>
-        <img id="divider1" src="https://biscuit.crd.co/assets/images/gallery88/e29b711a.png" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">
-        <div class="content-navbar">
-          <p class="content-navbar-item"><a href="/index.html">Home</a></p>
-          <p class="content-navbar-item content-navbar-active">Gallery</p>
-          <p class="content-navbar-item"><a href="/about.html">About</a></p>
+    <div class="row-wrapper">
+      <div id="left" class="animate__animated animate__fadeIn animate__faster content wrapper">
+        <div class="content-header">
+          <h1 id="title" style="margin-bottom: 0;">Batlord</h1>
+          <h4 style="padding-top: 0; margin-top: 0;">Gallery</h4>
+        </div>
+        <div class="content-body">
+          <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+          </select></p>
+          <p id="gallery-year-text">Year: <select id="gallery-year">
+            <option value="all">All</option>
+          </select></p>
+          <ul>
+            <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodle/sketch</li>
+            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
+            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/suggestive</li>
+          </ul>
+          <p id="shortcuts" class="silent"><i class="fa-regular fa-circle-question"></i> Viewer shortcuts</p>
+          <p class="content-navbar-item" style="display: inline-block;"><a href="/index.html">&lt;- Go to Home</a></p>
         </div>
       </div>
-      <div class="content-body">
-        <p align="center">My commissions are open at <a class="content-button" href="https://soggytiggy-prices.carrd.co">soggytiggy.carrd.co</a>, if you're interested</p>
-        <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
-          <option value="latest">Latest</option>
-          <option value="oldest">Oldest</option>
-        </select></p>
-        <p id="gallery-year-text">Year: <select id="gallery-year">
-          <option value="all">All</option>
-        </select></p>
-        <ul>
-          <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodles</li>
-          <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
-          <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/Suggestive</li>
-        </ul>
-        <div align="center">
-          <ul id="gallery-page">
-            <li id="gallery-page-prev">Prev</li>
-            <li id="gallery-page-pages"></li>
-            <li id="gallery-page-next">Next</li>
-          </ul>
+      <div id="right" class="animate__animated animate__fadeIn animate__faster content wrapper">
+        <div class="content-body">
+          <div align="center">
+            <ul id="gallery-page">
+              <li id="gallery-page-prev">Prev</li>
+              <li id="gallery-page-pages"></li>
+              <li id="gallery-page-next">Next</li>
+            </ul>
+          </div>
+          <div class="gallery-content" align="center"></div>
         </div>
-        <div class="gallery-content"></div>
       </div>
     </div>
-    <p align="center" id="copyright"><small>@soggytiggy 2023 - 2026, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
+    <p align="center" id="copyright"><small>@batlord 2023 - 2026, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
     <script src="/scripts/gallery.js"></script>
     <script>
       var SHOW_FILTERED_CONTENT = false;
       var filters = [];
+      var pageMax = 30;
 
       function clearFilters() {
         $(".gallery-filter-toggle").each(function() {
@@ -71,17 +73,26 @@
           const image = $(this);
 
           if (image.attr("tags") !== undefined) {
-            if (image.attr("tags").split(",").some(filter => filters.includes(filter)))
+            if (image.attr("tags").split(",").some(filter => filters.includes(filter))) {
               image.css("display", "inline-grid");
-            else
+              image.siblings().css("display", "inherit");
+            } else {
               image.css("display", "none");
+              image.siblings().css("display", "none");
+            }
           }
         });
       }
 
       injectYears();
-      loadPost(false, 0, false, true);
+      loadPost(false, 0, pageMax, false, true);
       clearFilters();
+
+      $("#shortcuts").attr("title", `Up Arrow/Shift+Space: Go back
+Down Arrow+Space: Go forward
+Left Arrow: Flip left
+Right Arrow: Flip Right
+Escape: Close`);
 
       $(".gallery-filter-toggle").on("change", function() {
         if ($(this).hasClass("gallery-filter-unsafe")) {
@@ -110,20 +121,20 @@
 
       $("#gallery-sort").on("change", function() {
         if (this.value === "latest") {
-          loadPost(false, 0, false, true);
+          loadPost(false, 0, pageMax, false, true);
         } else if (this.value === "oldest") {
-          loadPost(true, 0, false, true);
+          loadPost(true, 0, pageMax, false, true);
         }
       });
 
       $("#gallery-year").on("change", function() {
+        page = 1;
         const sort = $("#gallery-sort").val();
-        console.log(sort);
 
         if (sort === "latest") {
-          loadPost(false, 0, false, true);
+          loadPost(false, 0, pageMax, false, true);
         } else if (sort === "oldest") {
-          loadPost(true, 0, false, true);
+          loadPost(true, 0, pageMax, false, true);
         }
       });
     </script>
