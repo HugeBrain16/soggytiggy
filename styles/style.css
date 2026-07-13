@@ -127,6 +127,10 @@ a {
   transition: all 100ms;
 }
 
+.clean-link {
+  text-decoration: none !important;
+}
+
 .content-icon {
   color: #fff;
   vertical-align: middle;
