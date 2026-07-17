@@ -1,26 +1,34 @@
 $(document).ready(function() {
 	$(".spoiler").each(function() {
+		const spoiler = $(this);
 		const content = $(this).html();
 
 		if (!$(this).hasClass("spoiler-hidden"))
 			$(this).addClass("spoiler-hidden");
 
-		$(this).attr("spoiler-content", content);
 		$(this).html("");
 
-		$(this).on("click", function() {
-			if ($(this).hasClass("spoiler-hidden")) {
-				$(this).removeClass("spoiler-hidden");
-				$(this).addClass("spoiler-shown");
+		$(this).append('<div class="spoiler-toggle"></div>');
+		$(this).append('<div class="spoiler-content"></div>');
+		$(this).find(".spoiler-content").html(content);
 
-				$(this).html($(this).attr("spoiler-content"));
-				$(this).attr("spoiler-content", "");
-			} else if ($(this).hasClass("spoiler-shown")) {
-				$(this).removeClass("spoiler-shown");
-				$(this).addClass("spoiler-hidden");
+		const toggle = $(this).find(".spoiler-toggle");
+		toggle.html("Show Spoiler");
+		$(this).find(".spoiler-content").hide();
 
-				$(this).attr("spoiler-content", $(this).html());
-				$(this).html("");
+		toggle.on("click", function() {
+			if (spoiler.hasClass("spoiler-hidden")) {
+				spoiler.removeClass("spoiler-hidden");
+				spoiler.addClass("spoiler-shown");
+
+				$(this).html("Hide Spoiler");
+				$(this).siblings(".spoiler-content").show();
+			} else if (spoiler.hasClass("spoiler-shown")) {
+				spoiler.removeClass("spoiler-shown");
+				spoiler.addClass("spoiler-hidden");
+
+				$(this).html("Show Spoiler");
+				$(this).siblings(".spoiler-content").hide();
 			}
 		})
 	});
