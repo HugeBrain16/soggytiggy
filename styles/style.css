@@ -111,13 +111,44 @@ td {
   top: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url('/assets/wallpaper.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background:
+    url('https://i.imgur.com/FhNFdCR.gif'),
+    url('https://i.imgur.com/xk61EqH.png'),
+    url('/assets/wallpaper.jpg');
+  background-repeat:
+    repeat,
+    no-repeat
+    no-repeat;
+  background-size:
+    40%,
+    cover,
+    cover;
+  background-position: 
+    center,
+    center,
+    center;
   width: 100%;
   height: 100%;
   filter: brightness(65%);
+}
+
+.floating {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .content {
@@ -130,7 +161,6 @@ td {
   margin-top: 0;
   margin-bottom: 15px;
   background-color: var(--box-layout-color);
-  border-radius: 2px;
   border: 2px solid #555;
 }
 

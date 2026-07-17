@@ -14,27 +14,30 @@
   <body>
     <div class="content-background-image"></div>
     <div class="row-wrapper">
-      <div id="left" class="animate__animated animate__fadeIn animate__faster content wrapper">
-        <div class="content-header">
-          <h1 id="title" style="margin-bottom: 0;"><a class="clean-link" href="/index.html">Batlord</a></h1>
-          <h4 style="padding-top: 0; margin-top: 0;">Gallery</h4>
+      <div id="left" class="wrapper">
+        <div class="animate__animated animate__fadeIn animate__faster content">
+          <div class="content-header">
+            <h1 id="title" style="margin-bottom: 0;"><a class="clean-link" href="/index.html">Batlord</a></h1>
+            <h4 style="padding-top: 0; margin-top: 0;">Gallery</h4>
+          </div>
+          <div class="content-body">
+            <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
+              <option value="latest">Latest</option>
+              <option value="oldest">Oldest</option>
+            </select></p>
+            <p id="gallery-year-text">Year: <select id="gallery-year">
+              <option value="all">All</option>
+            </select></p>
+            <ul>
+              <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodle/sketch</li>
+              <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
+              <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/suggestive</li>
+            </ul>
+            <p id="shortcuts" class="silent"><i class="fa-regular fa-circle-question"></i> Viewer shortcuts</p>
+            <p class="content-navbar-item" style="display: inline-block;"><a href="/index.html">&lt;- Go to Home</a></p>
+          </div>
         </div>
-        <div class="content-body">
-          <p id="gallery-sort-text">Sort by: <select id="gallery-sort">
-            <option value="latest">Latest</option>
-            <option value="oldest">Oldest</option>
-          </select></p>
-          <p id="gallery-year-text">Year: <select id="gallery-year">
-            <option value="all">All</option>
-          </select></p>
-          <ul>
-            <li><input type="checkbox" class="gallery-filter-toggle" filter="doodle"> Show doodle/sketch</li>
-            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="gore"> Show gore</li>
-            <li><input type="checkbox" class="gallery-filter-toggle gallery-filter-unsafe" filter="nsfw"> Show NSFW/suggestive</li>
-          </ul>
-          <p id="shortcuts" class="silent"><i class="fa-regular fa-circle-question"></i> Viewer shortcuts</p>
-          <p class="content-navbar-item" style="display: inline-block;"><a href="/index.html">&lt;- Go to Home</a></p>
-        </div>
+        <img src="https://i.imgur.com/LtRPz6q.gif">
       </div>
       <div id="right" class="animate__animated animate__fadeIn animate__faster content wrapper">
         <div class="content-body">

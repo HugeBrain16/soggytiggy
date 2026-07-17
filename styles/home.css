@@ -2,8 +2,53 @@
 	width: 200px;
 }
 
+.doll {
+	margin-top: 20px;
+}
+
 #left, #right {
-	width: 15%;
+	width: 18%;
+}
+
+#crow {
+	width: 150px;
+	margin-bottom: -10px;
+}
+
+#right {
+	margin-top: -140px;
+}
+
+#dollbox, #profile {
+	background:
+		url('https://i.imgur.com/FhNFdCR.gif'),
+		url('https://i.imgur.com/BOxYyXO.jpeg');
+	background-size:
+		cover,
+		cover;
+	background-position:
+		center,
+		center;
+}
+
+#middle {
+	background:
+		url('https://i.imgur.com/FhNFdCR.gif'),
+		url('https://i.imgur.com/Vy44t5I.jpeg');
+	background-size:
+		cover,
+		cover;
+	background-position:
+		center,
+		center;
+}
+
+#angel1 {
+	width: 300px;
+	position: absolute;
+	left: 0;
+	margin-top: -190px;
+	margin-left: -100px;
 }
 
 @media (max-width: 1800px) {
