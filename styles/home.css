@@ -75,4 +75,10 @@
 	#left, #right {
 		width: 80%;
 	}
+
+	#angel1 {
+		width: 200px;
+		margin-top: -75px;
+		margin-left: -80px;
+	}
 }
