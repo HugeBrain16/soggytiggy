@@ -258,9 +258,16 @@ a {
   color: #fff;
 }
 
-#copyright {
-  width: 100%;
+#copyright, #copyright-desktop {
   display: flex;
+}
+
+#copyright-mobile {
+  display: none;
+}
+
+#copyright-desktop, #copyright-mobile, #copyright {
+  width: 100%;
   justify-content: right;
   align-items: right;
 }
@@ -296,6 +303,14 @@ a {
 }
 
 @media (max-width: 1000px) {
+  #copyright-mobile {
+    display: flex;
+  }
+
+  #copyright-desktop {
+    display: none;
+  }
+
   body {
     padding-left: 1%;
     padding-right: 1%;
