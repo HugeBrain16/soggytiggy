@@ -59,6 +59,10 @@ small {
   text-align: center;
 }
 
+#winamp-container {
+  margin-top: -655px;
+}
+
 @media (max-width: 700px) {
   body {
     padding-left: 1.5%;
@@ -66,7 +70,8 @@ small {
   }
 
   #winamp-container {
-    margin-bottom: 540px;
+    margin-top: -350px;
+    margin-bottom: 840px;
   }
 
   .album-card {

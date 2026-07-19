@@ -77,6 +77,11 @@
 		width: 80%;
 	}
 
+	#middle {
+		margin-top: 0;
+		margin-bottom: 150px;
+	}
+
 	#angel1 {
 		width: 200px;
 		margin-top: -75px;

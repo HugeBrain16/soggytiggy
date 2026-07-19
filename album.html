@@ -9,6 +9,7 @@
     <link href="/styles/album.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <script src="/assets/jquery.js"></script>
+    <script src="/scripts/spoiler.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   </head>
   <body>
@@ -23,9 +24,39 @@
           <div class="content-body">
             <p class="content-navbar-item" style="display: inline-block;"><a href="/index.html">&lt;- Go to Home</a></p>
           </div>
+          <div class="spoiler" style="margin-top: 20px;">
+            <div class="wrapper">
+              <p>Bands & artists I like (in no particular order):
+              - None
+              - Infant Annihilator / Nekrogoblikon
+              - Children of Bodom
+              - Death
+              - Blood Incantation
+              - Hermóðr
+              - Dråpsnatt
+              - Skogen
+              - Avenged Sevenfold
+              - Car Seat Headrest
+              - Underworld
+              - Butthole Surfers
+              - Stone Temple Pilots
+              - Juice Leskinen
+              - Leevi and the Leavings
+              - Lana Del Rey
+              - Jamiroquai
+              - Boards of Canada
+              - Wan Bushi
+              - Lapfox Trax
+              - Basshunter
+              - Polaventris
+              - Darkthrone
+              - Bathory
+              - Burzum</p>
+            </div>
+          </div>
         </div>
         <img src="https://i.imgur.com/LtRPz6q.gif">
-        <div style="margin-top: 265px;" id="winamp-container"></div>
+        <div id="winamp-container"></div>
       </div>
       <div id="right" class="animate__animated animate__fadeIn animate__faster content wrapper">
         <div class="content-body">
@@ -194,10 +225,12 @@
         },
         playlist: {
           position: { top: 115, left: 0 },
-          size: { extraHeight: 10, extraWidth: 0 },
+          size: { extraHeight: 8, extraWidth: 0 },
           closed: false,
         }
       },
+      zIndex: -1,
+      enableHotkeys: true
     });
 
     webamp.renderWhenReady(document.getElementById("winamp-container"));
