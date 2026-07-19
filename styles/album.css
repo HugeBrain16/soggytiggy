@@ -1,6 +1,6 @@
 body {
   padding-left: 2%;
-  padding-right: 2%;
+  padding-right: 15%;
 }
 
 ul {
@@ -38,7 +38,7 @@ small {
 
 .album-card {
   vertical-align: top;
-  width: 330px;
+  width: 264px;
   margin: 10px;
   display: inline-block;
   background: rgba(34, 34, 34, 0.4);
@@ -46,7 +46,7 @@ small {
 }
 
 .album-card img {
-  width: 328px;
+  width: 260px;
   border-bottom: 1px solid #aaa;
 }
 
@@ -60,7 +60,7 @@ small {
 }
 
 #winamp-container {
-  margin-top: -655px;
+  margin-right: -290px;
 }
 
 @media (max-width: 700px) {
@@ -70,8 +70,8 @@ small {
   }
 
   #winamp-container {
-    margin-top: -350px;
-    margin-bottom: 840px;
+    margin-top: 430px;
+    margin-right: 0;
   }
 
   .album-card {
