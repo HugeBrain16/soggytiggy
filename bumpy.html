@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>batlord's bumpy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="/styles/style.css" rel="stylesheet"> 
+    <link href="/styles/bumpy.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <script src="/assets/jquery.js"></script>
+  </head>
+  <body>
+    <div class="content-background-image"></div>
+    <div class="row-wrapper">
+      <div id="left" class="wrapper">
+        <div class="animate__animated animate__fadeIn animate__faster content">
+          <div class="content-header">
+            <h1 id="title" style="margin-bottom: 0;"><a class="clean-link" href="/index.html">Batlord</a></h1>
+            <h4 style="padding-top: 0; margin-top: 0;">Bumpy</h4>
+          </div>
+          <div class="content-body">
+            <p class="content-navbar-item" style="display: inline-block;"><a href="/index.html">&lt;- Go to Home</a></p>
+          </div>
+        </div>
+        <img src="https://i.imgur.com/LtRPz6q.gif">
+      </div>
+      <div id="right" class="animate__animated animate__fadeIn animate__faster content wrapper">
+        <div class="content-body">
+          <p><span class="ac-butt" id="counter-add">New</span></p>
+          <table id="counter-container">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Count</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p align="center" id="copyright"><small>@batlord 2023 - 2026, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+      const supabase = createClient("https://zevtenftxphwdswqpkhj.supabase.co", "sb_publishable_k5wszeydfOkb-3newK0Plw_HrMjdZwn");
+      const { data, error } = await supabase.from("counter").select("*");
+
+      $("#counter-add").on("click", async function() {
+        var name = prompt("Enter name:");
+        if (name !== null && name.trim() !== "") {
+          const { data, error } = await supabase.from("counter").insert([
+            { name: name.trim() }
+          ]).select().single();
+
+          if (data)
+            $("#counter-container tbody").append(row(data.id, data.name, data.count))
+        }
+      });
+
+      $("#counter-container tbody").on("click", ".inc-butt", async function() {
+        const id = $(this).data("id");
+        const count = $(this).data("count");
+
+        await supabase.from("counter").update({ count: count + 1 }).eq("id", id);
+        $(`#count-value-${id}`).text(count + 1);
+        $(this).data("count", count + 1);
+        $(this).siblings(".dec-butt").data("count", count + 1);
+      });
+
+      $("#counter-container tbody").on("click", ".dec-butt", async function() {
+        const id = $(this).data("id");
+        const count = $(this).data("count");
+
+        if (count > 0) {
+          await supabase.from("counter").update({ count: count - 1 }).eq("id", id);
+          $(`#count-value-${id}`).text(count - 1);
+          $(this).data("count", count - 1);
+          $(this).siblings(".inc-butt").data("count", count - 1);
+        }
+      });
+
+      $("#counter-container tbody").on("click", ".del-butt", async function() {
+        const id = $(this).data("id");
+
+        if (confirm("Are you sure?")) {
+          await supabase.from("counter").delete().eq("id", id);
+          $(`#count-id-${id}`).remove();
+        }
+      });
+
+      $("#counter-container tbody").on("click", ".ins-butt", async function() {
+        const id = $(this).data("id");
+
+        var input = prompt("Enter count:");
+        if (input === null)
+          return;
+
+        var count = Number(input);
+
+        if (!Number.isNaN(count)) {
+          if (count > 0) {
+            await supabase.from("counter").update({ count: count }).eq("id", id);
+            $(`#count-value-${id}`).text(count);
+            $(this).siblings(".inc-butt").data("count", count);
+            $(this).siblings(".dec-butt").data("count", count);
+          } else alert("Can't be less than 0!");
+        } else alert("Invalid value!");
+      });
+
+      function row(id, name, count) {
+        return `
+          <tr id="count-id-${id}">
+            <td>${name}</td>
+            <td id="count-value-${id}">${count}</td>
+            <td><span class="ac-butt inc-butt" data-id="${id}" data-count="${count}">Bump!</span> <span class="ac-butt dec-butt" data-id="${id}" data-count="${count}">Debump</span> <span data-id="${id}" class="ac-butt del-butt">Delete</span> <span class="ac-butt ins-butt" data-id="${id}">Insert</span>
+          </tr>
+        `
+      }
+
+      data.forEach(function(item) {
+        $("#counter-container tbody").append(row(item.id, item.name, item.count));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#left {
+  width: 20%;
+}
+
+#right {
+  width: 95%;
+}
+
+#counter-container {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+th {
+  background-color: #444;
+}
+
+td {
+  background-color: #222;
+}
+
+td, th {
+  padding: 5px 30px 5px 5px;
+  margin: 0 40px 0 40px;
+}
+
+.ac-butt {
+  user-select: none;
+  cursor: pointer;
+  padding: 0 5px 0 5px;
+  border: 2px solid #aaa;
+}
+
+.ac-butt:hover {
+  text-shadow: 0 0 2px #fff;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+  }
+
+  #left, #right {
+    width: 88%;
+  }
+}
