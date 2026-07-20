@@ -27,7 +27,7 @@ jobs:
         cp gallery.txt  public
         cp favicon.ico  public
         cp album.html   public
-        cp bumpy.html   public
+        cp kiwi.html    public
 
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v3
