@@ -1,0 +1,56 @@
+body {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#left {
+  width: 20%;
+}
+
+#right {
+  width: 95%;
+}
+
+img, video {
+  max-width: 300px;
+}
+
+.grid-active {
+  z-index: 10 !important;
+  border: 1px solid #fff;
+  background: rgba(0,0,0,0.65);
+}
+
+.grid-item-text {
+  display: none;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.grid-active .grid-item-text {
+  display: block;
+}
+
+.grid-item {
+  cursor: pointer;
+  z-index: 9;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+  }
+
+  #left, #right {
+    width: 88%;
+  }
+}

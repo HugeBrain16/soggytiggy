@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>batlord's things</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="/styles/style.css" rel="stylesheet"> 
+    <link href="/styles/things.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <script src="/assets/jquery.js"></script>
+    <script src="/scripts/spoiler.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  </head>
+  <body>
+    <div class="content-background-image"></div>
+    <div class="row-wrapper">
+      <div id="left" class="wrapper">
+        <div class="animate__animated animate__fadeIn animate__faster content">
+          <div class="content-header">
+            <h1 id="title" style="margin-bottom: 0;"><a class="clean-link" href="/index.html">Batlord</a></h1>
+            <h4 style="padding-top: 0; margin-top: 0;">Things I Like</h4>
+          </div>
+          <div class="content-body">
+            <p class="content-navbar-item" style="display: inline-block;"><a href="/index.html">&lt;- Go to Home</a></p>
+          </div>
+        </div>
+        <img src="https://i.imgur.com/LtRPz6q.gif">
+      </div>
+      <div id="right" class="animate__animated animate__fadeIn animate__faster content wrapper">
+        <div class="content-body">
+          <div class="grid" id="images">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p align="center" id="copyright"><small>@batlord 2023 - 2026, managed by <a target="_blank" href="https://github.com/hugebrain16">@hugebrain16</a></small></p>
+    <script>
+      const images = [
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/uCkzEAQYrnfvNtKFT6aNSHmFSosEL9Hq8TIBo1LCyLXtPjztdJsfIllDUuTy.png", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/OMENA.png", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/82f12af19f594e928f4fe5cfdf8509c7~tplv-jj85edgx6n-image-origin.jpeg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/fantastic.jpg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/1500x500.jpg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/7e0a21ab72a143b4b42e6960d01d73d3~tplv-jj85edgx6n-image-origin.jpeg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/G-2rKndXMAAmSMu.jpg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/G6TAA5uW4AAI7f4.jpg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/GtgeHsyXcAAHpy9.jpg", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/had-a-dream-after-the-debate-that-there-was-a-third-party-v0-uqxdizihff9d1.webp", type: "image" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/Popsikkaat_%20Stuff%20Mart%20-sviitti.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/goylivesmatter.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/moe.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/dq7dMlLPnCnOY2ES.mp4", type: "video"},
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/1779988484047518.webm", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/1757896412975161.webm", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/coal.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/ap0bioP769KG_LW9.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/fligu.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/shecoming.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/waterdaniel.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/LO9cIp3dj3pW4tVP.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/tiktok_reynr0d_7566430755291729160.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/ai%20gaming.mp4", type: "video" },
+        { url: "https://file.garden/aOf31PFhxWt7Kbzd/Batlord/Website/Shelf/ze%20new%20world%20ordah.mp4", type: "video" },
+      ];
+
+      $(document).ready(function() {
+        images.forEach(function(image) {
+          var el = '<div class="grid-item">';
+          if (image.type === "video")
+            el += `<video src="${image.url}"></video>`;
+          else if (image.type === "image")
+            el += `<img src="${image.url}">`;
+          el += `<p class="grid-item-text">${image.text ? image.text : ""}</p></div>`;
+          $("#images").append(el);
+        });
+
+        $('.grid').masonry({
+          itemSelector: '.grid-item',
+          columnWidth: 0,
+          transitionDuration: 0,
+        });
+
+        $(".grid-item").on("click", function() {
+          var prevClick = $("#images").find(".grid-active");
+
+          var prevVid = prevClick.find("video");
+          if (prevVid.length) {
+            prevVid.attr("controls", false);
+            prevVid[0].pause();
+            prevVid[0].currentTime = 0;
+          }
+
+          prevClick.removeClass("grid-active");
+          $(this).addClass("grid-active");
+
+          var vid = $(this).find("video");
+          if (vid.length) {
+            vid.attr("controls", true);
+            vid[0].play();
+            vid[0].muted = true;
+          }
+
+          if (prevClick.is(this)) {
+            $(this).removeClass("grid-active");
+
+            if (vid.length) {
+              vid.attr("controls", false);
+              vid[0].pause();
+              vid[0].currentTime = 0;
+            }
+          }
+        });
+    });
+    </script>
+  </body>
+</html>
