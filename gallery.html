@@ -76,7 +76,7 @@
           const image = $(this);
 
           if (image.attr("tags") !== undefined) {
-            if (image.attr("tags").split(",").some(filter => filters.includes(filter))) {
+            if (image.attr("tags").split(",").every(filter => filters.includes(filter))) {
               image.css("display", "inline-grid");
               image.siblings().css("display", "inherit");
             } else {
